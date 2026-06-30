@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spring Street Loft — VENUE DEN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="preview.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body style="background:var(--canvas)">
+
+<!-- NAV -->
+<nav class="nav-wrap nav-page" style="position:sticky;top:0;z-index:40;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between">
+  <a href="preview.html" class="nav-logo" style="font-family:var(--ff-display);font-size:1.25rem;font-weight:300;letter-spacing:.06em;text-decoration:none;color:var(--ink)">VENUE DEN</a>
+  <div class="nav-links" style="display:flex;gap:2rem;font-size:.75rem;font-weight:500;letter-spacing:.04em">
+    <a href="spaces.html" style="text-decoration:none;color:var(--muted)">Browse Spaces</a>
+    <a href="neighborhoods.html" style="text-decoration:none;color:var(--muted)">Neighborhoods</a>
+    <a href="collections.html" style="text-decoration:none;color:var(--muted)">Collections</a>
+    <a href="inspiration.html" style="text-decoration:none;color:var(--muted)">Inspiration</a>
+    <a href="services.html" style="text-decoration:none;color:var(--muted)">Services</a>
+    <a href="journal.html" style="text-decoration:none;color:var(--muted)">Journal</a>
+  </div>
+  <a href="concierge.html" class="nav-cta" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)">Begin a Project →</a>
+</nav>
+
+<!-- PHOTO GALLERY -->
+<div class="space-gallery" style="margin:0">
+  <div class="gallery-main">
+    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=85" alt="Spring Street Loft main">
+    <div style="position:absolute;bottom:1.25rem;right:1.25rem;display:flex;gap:.5rem">
+      <button style="font-size:.6875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--white);color:var(--ink);border:none;padding:.5rem 1rem;border-radius:2px;cursor:pointer;display:flex;align-items:center;gap:.375rem">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x=".5" y=".5" width="11" height="11" rx=".5" stroke="currentColor" stroke-width="1.2"/><path d="M3 6h6M6 3v6" stroke="currentColor" stroke-width="1.2"/></svg>
+        View all 24 photos
+      </button>
+      <button style="font-size:.6875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--white);color:var(--ink);border:none;padding:.5rem 1rem;border-radius:2px;cursor:pointer">3D Tour</button>
+    </div>
+  </div>
+  <div class="gallery-thumb">
+    <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" alt="Spring Street Loft detail">
+  </div>
+  <div class="gallery-thumb" style="position:relative">
+    <img src="https://images.unsplash.com/photo-1567967455389-e432b1e8f812?w=600&q=80" alt="Spring Street Loft window">
+    <div class="gallery-more">+20</div>
+  </div>
+</div>
+
+<!-- BREADCRUMB + TITLE BAR -->
+<div style="background:var(--white);border-bottom:.5px solid var(--stone);padding:.875rem 3rem">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+    <div class="breadcrumb">
+      <a href="spaces.html">Spaces</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>SoHo</span>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--ink)">Spring Street Loft</span>
+    </div>
+    <div style="display:flex;gap:.75rem;align-items:center">
+      <button style="font-size:.75rem;color:var(--muted);background:none;border:.5px solid var(--stone);padding:.4rem .875rem;border-radius:2px;cursor:pointer;display:flex;align-items:center;gap:.375rem">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 9.5S1.5 6.5 1.5 4a2.5 2.5 0 0 1 4.5-1.5A2.5 2.5 0 0 1 10.5 4C10.5 6.5 6 9.5 6 9.5Z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+        Save
+      </button>
+      <button style="font-size:.75rem;color:var(--muted);background:none;border:.5px solid var(--stone);padding:.4rem .875rem;border-radius:2px;cursor:pointer">Share</button>
+      <button style="font-size:.75rem;font-weight:600;color:var(--muted);background:none;border:.5px solid var(--stone);padding:.4rem .875rem;border-radius:2px;cursor:pointer">Download Spec Sheet</button>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL BODY -->
+<div style="max-width:1200px;margin:0 auto;padding:0 3rem">
+  <div class="detail-layout">
+
+    <!-- LEFT CONTENT -->
+    <div>
+
+      <!-- Title + Quick Stats -->
+      <div style="padding-bottom:2.5rem;border-bottom:.5px solid var(--stone);margin-bottom:2.5rem">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;margin-top:2rem">
+          <div>
+            <div style="font-size:.625rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">SoHo · Ground Floor · Storefront</div>
+            <h1 style="font-family:var(--ff-display);font-size:2.5rem;font-weight:300;color:var(--ink);line-height:.95;letter-spacing:-.03em;margin-bottom:.75rem">Spring Street Loft</h1>
+            <div style="font-size:.9375rem;color:var(--muted)">133 Spring Street, SoHo, New York, NY 10012</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:2.5rem;margin-top:1.5rem">
+          <div style="text-align:center">
+            <div style="font-family:var(--ff-display);font-size:1.625rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">1,800</div>
+            <div style="font-size:.625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">sq ft</div>
+          </div>
+          <div style="width:.5px;background:var(--stone)"></div>
+          <div style="text-align:center">
+            <div style="font-family:var(--ff-display);font-size:1.625rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">14</div>
+            <div style="font-size:.625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">ft ceilings</div>
+          </div>
+          <div style="width:.5px;background:var(--stone)"></div>
+          <div style="text-align:center">
+            <div style="font-family:var(--ff-display);font-size:1.625rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">38</div>
+            <div style="font-size:.625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">ft frontage</div>
+          </div>
+          <div style="width:.5px;background:var(--stone)"></div>
+          <div style="text-align:center">
+            <div style="font-family:var(--ff-display);font-size:1.625rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">12K</div>
+            <div style="font-size:.625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">daily foot traffic</div>
+          </div>
+          <div style="width:.5px;background:var(--stone)"></div>
+          <div style="text-align:center">
+            <div style="font-family:var(--ff-display);font-size:1.625rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">12</div>
+            <div style="font-size:.625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">past activations</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="spec-section">
+        <h2 class="spec-section-title">About This Space</h2>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;max-width:64ch">Spring Street Loft is one of SoHo's most sought-after popup destinations — a raw yet refined ground-floor retail space with 38 feet of north-facing storefront windows and original cast-iron columns. The space has hosted activations for LVMH brands, emerging luxury labels, and DTC companies making their first foray into physical retail.</p>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.8;max-width:64ch">The open-plan layout accommodates everything from intimate brand presentations to fully built-out flagship experiences. A dedicated loading bay on Mercer Street provides seamless move-in, and the built-in lighting track can be fully reconfigured for any aesthetic.</p>
+      </div>
+
+      <!-- Specifications -->
+      <div class="spec-section">
+        <h2 class="spec-section-title">Space Specifications</h2>
+        <div class="spec-grid">
+          <span class="spec-label">Total Square Footage</span><span class="spec-value">1,800 sq ft</span>
+          <span class="spec-label">Ceiling Height</span><span class="spec-value">14 ft (original pressed tin)</span>
+          <span class="spec-label">Storefront Width</span><span class="spec-value">38 linear feet</span>
+          <span class="spec-label">Window Dimensions</span><span class="spec-value">12 ft × 8 ft (×4 bays)</span>
+          <span class="spec-label">Floor</span><span class="spec-value">Original hardwood, whitewashed</span>
+          <span class="spec-label">Walls</span><span class="spec-value">Painted plaster, paintable</span>
+          <span class="spec-label">Electrical</span><span class="spec-value">200A service, 40 circuits</span>
+          <span class="spec-label">Internet</span><span class="spec-value">1 Gbps fiber (included)</span>
+          <span class="spec-label">HVAC</span><span class="spec-value">Central A/C + Heat</span>
+          <span class="spec-label">Lighting</span><span class="spec-value">Track system (reconfigurable)</span>
+          <span class="spec-label">Loading</span><span class="spec-value"><span class="spec-badge">✓ Loading dock</span></span>
+          <span class="spec-label">Elevator</span><span class="spec-value"><span class="spec-badge">✓ Freight elevator</span></span>
+          <span class="spec-label">Storage</span><span class="spec-value">400 sq ft backroom</span>
+          <span class="spec-label">Bathrooms</span><span class="spec-value">2 (1 ADA)</span>
+          <span class="spec-label">ADA Access</span><span class="spec-value"><span class="spec-badge">✓ Fully compliant</span></span>
+          <span class="spec-label">Security</span><span class="spec-value">Pre-wired (camera-ready)</span>
+          <span class="spec-label">Minimum Rental</span><span class="spec-value">7 days</span>
+          <span class="spec-label">After-Hours Access</span><span class="spec-value"><span class="spec-badge">✓ 24/7</span></span>
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div class="spec-section">
+        <h2 class="spec-section-title">Amenities</h2>
+        <div class="amenity-grid">
+          <span class="amenity-tag has">Storefront Windows</span>
+          <span class="amenity-tag has">Loading Dock</span>
+          <span class="amenity-tag has">Freight Elevator</span>
+          <span class="amenity-tag has">1 Gbps WiFi</span>
+          <span class="amenity-tag has">Track Lighting</span>
+          <span class="amenity-tag has">ADA Compliant</span>
+          <span class="amenity-tag has">Climate Control</span>
+          <span class="amenity-tag has">24/7 Access</span>
+          <span class="amenity-tag has">Backroom Storage</span>
+          <span class="amenity-tag">Fitting Rooms</span>
+          <span class="amenity-tag has">POS-Ready</span>
+          <span class="amenity-tag has">Camera Pre-wired</span>
+          <span class="amenity-tag">Rooftop Access</span>
+          <span class="amenity-tag has">Paintable Walls</span>
+          <span class="amenity-tag has">Open Floor Plan</span>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="spec-section">
+        <h2 class="spec-section-title">Location & Foot Traffic</h2>
+        <div style="background:var(--ivory);border:.5px solid var(--stone);border-radius:2px;height:220px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:var(--muted);font-size:.875rem">
+          [Interactive map — Spring Street at Mercer, SoHo]
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem">
+          <div style="background:var(--ivory);border:.5px solid var(--stone);padding:1.25rem;text-align:center;border-radius:2px">
+            <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">12,000</div>
+            <div style="font-size:.5625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.25rem">Daily foot traffic</div>
+          </div>
+          <div style="background:var(--ivory);border:.5px solid var(--stone);padding:1.25rem;text-align:center;border-radius:2px">
+            <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">78%</div>
+            <div style="font-size:.5625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.25rem">Ages 25–44</div>
+          </div>
+          <div style="background:var(--ivory);border:.5px solid var(--stone);padding:1.25rem;text-align:center;border-radius:2px">
+            <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--ink);letter-spacing:-.03em">$185K</div>
+            <div style="font-size:.5625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.25rem">Median HHI</div>
+          </div>
+        </div>
+        <div style="font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.75rem">Nearby Brands</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.375rem">
+          <span class="brand-tag">Chloé</span><span class="brand-tag">Vans</span><span class="brand-tag">Louis Vuitton</span><span class="brand-tag">Balenciaga</span><span class="brand-tag">Acne Studios</span><span class="brand-tag">Opening Ceremony</span><span class="brand-tag">Aesop</span><span class="brand-tag">Glossier</span><span class="brand-tag">Supreme</span><span class="brand-tag">& Other Stories</span>
+        </div>
+        <div style="margin-top:1.25rem;font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.5rem">Nearby Transit</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.375rem">
+          <span style="font-size:.6875rem;font-weight:600;background:var(--ink);color:var(--white);padding:.25rem .625rem;border-radius:3px">C/E — Spring St (1 block)</span>
+          <span style="font-size:.6875rem;font-weight:600;background:var(--ink);color:var(--white);padding:.25rem .625rem;border-radius:3px">N/R/W — Prince St (3 blocks)</span>
+        </div>
+      </div>
+
+      <!-- Previous Activations -->
+      <div class="spec-section">
+        <h2 class="spec-section-title">Previous Activations</h2>
+        <div class="prev-activations">
+          <div class="prev-act-card">
+            <div class="prev-act-img"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=80" alt="SKIMS activation"></div>
+            <div class="prev-act-brand">SKIMS</div>
+            <div class="prev-act-desc">Valentine's Day Collection Launch · Feb 2024</div>
+          </div>
+          <div class="prev-act-card">
+            <div class="prev-act-img"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80" alt="Rag & Bone activation"></div>
+            <div class="prev-act-brand">Rag & Bone</div>
+            <div class="prev-act-desc">Holiday Collection · Nov–Dec 2023</div>
+          </div>
+          <div class="prev-act-card">
+            <div class="prev-act-img"><img src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=400&q=80" alt="Aesop activation"></div>
+            <div class="prev-act-brand">Aesop</div>
+            <div class="prev-act-desc">New Product Reveal · Sep 2023</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /detail-left -->
+
+    <!-- STICKY SIDEBAR -->
+    <div class="detail-sidebar">
+
+      <div class="booking-card">
+        <div class="booking-price">$4,200</div>
+        <div class="booking-price-note">per week · 7-day minimum</div>
+
+        <div class="booking-dates">
+          <div class="booking-date-field">
+            <div class="booking-date-label">Move In</div>
+            <div class="booking-date-val">Select date</div>
+          </div>
+          <div class="booking-date-field">
+            <div class="booking-date-label">Move Out</div>
+            <div class="booking-date-val">Select date</div>
+          </div>
+        </div>
+
+        <div style="margin:1rem 0;background:var(--ivory);border:.5px solid var(--stone);border-radius:1px;padding:1rem">
+          <div style="font-size:.5625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">Availability — July 2026</div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:.25rem;text-align:center">
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">S</div>
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">M</div>
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">T</div>
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">W</div>
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">T</div>
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">F</div>
+            <div style="font-size:.5rem;font-weight:600;letter-spacing:.06em;color:var(--muted);padding:.25rem 0">S</div>
+            <div style="font-size:.6875rem;color:var(--stone);padding:.3rem;border-radius:2px">—</div>
+            <div style="font-size:.6875rem;color:var(--stone);padding:.3rem;border-radius:2px">—</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">1</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">2</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">3</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">4</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">5</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">6</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">7</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">8</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">9</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">10</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">11</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">12</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">13</div>
+            <div style="font-size:.6875rem;background:rgba(28,26,24,.06);color:var(--muted);padding:.3rem;border-radius:2px;text-decoration:line-through">14</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">15</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">16</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">17</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">18</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">19</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">20</div>
+            <div style="font-size:.6875rem;background:rgba(184,66,42,.08);color:var(--accent);padding:.3rem;border-radius:2px;font-weight:500">21</div>
+          </div>
+          <div style="display:flex;gap:1rem;margin-top:.75rem;font-size:.5625rem;color:var(--muted)">
+            <div style="display:flex;align-items:center;gap:.375rem"><span style="width:10px;height:10px;border-radius:2px;background:rgba(184,66,42,.12);display:inline-block"></span>Available</div>
+            <div style="display:flex;align-items:center;gap:.375rem"><span style="width:10px;height:10px;border-radius:2px;background:rgba(28,26,24,.08);display:inline-block"></span>Booked</div>
+          </div>
+        </div>
+
+        <div class="booking-estimate">
+          <span class="booking-estimate-label">7 nights × $4,200</span>
+          <span class="booking-estimate-val">$29,400</span>
+        </div>
+        <div class="booking-estimate" style="padding-top:.5rem;border-top:none">
+          <span class="booking-estimate-label">VenueDen service fee</span>
+          <span class="booking-estimate-val">$2,940</span>
+        </div>
+
+        <button onclick="window.location='concierge.html'" style="width:100%;padding:1rem;background:var(--ink);color:var(--white);border:none;border-radius:1px;font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin-top:1.25rem;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Request a Tour</button>
+        <p style="font-size:.6875rem;color:var(--muted);text-align:center;margin-top:.75rem">No charges until you're ready to book</p>
+      </div>
+
+      <div class="expert-card">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--stone);margin:0 auto .875rem;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Concierge" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div style="font-family:var(--ff-display);font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:.375rem">Sofia Reyes</div>
+        <div style="font-size:.625rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem">Your Space Concierge</div>
+        <p class="expert-card p">Sofia has helped 80+ brands activate in SoHo. She'll answer your questions and guide you from first look to launch day.</p>
+        <button class="expert-btn" onclick="window.location='concierge.html'">Talk to an Expert</button>
+      </div>
+
+    </div><!-- /sidebar -->
+  </div><!-- /detail-layout -->
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--dark);padding:5rem 3rem 3rem">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end">
+    <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--white);letter-spacing:.04em">VENUE DEN</div>
+    <div style="font-size:.75rem;color:rgba(255,255,255,.2)">© 2026 VENUE DEN. New York City.</div>
+    <a href="mailto:hello@venueden.com" style="font-family:var(--ff-display);font-size:1rem;font-weight:300;color:var(--accent);text-decoration:none">hello@venueden.com</a>
+  </div>
+</footer>
+</body>
+</html>

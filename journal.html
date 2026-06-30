@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Journal — VENUE DEN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="preview.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body style="background:var(--canvas)">
+
+<nav class="nav-wrap nav-page" style="position:sticky;top:0;z-index:40;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between">
+  <a href="preview.html" style="font-family:var(--ff-display);font-size:1.25rem;font-weight:300;letter-spacing:.06em;text-decoration:none;color:var(--ink)">VENUE DEN</a>
+  <div style="display:flex;gap:2rem;font-size:.75rem;font-weight:500;letter-spacing:.04em">
+    <a href="spaces.html" style="text-decoration:none;color:var(--muted)">Browse Spaces</a>
+    <a href="neighborhoods.html" style="text-decoration:none;color:var(--muted)">Neighborhoods</a>
+    <a href="inspiration.html" style="text-decoration:none;color:var(--muted)">Inspiration</a>
+    <a href="journal.html" style="text-decoration:none;color:var(--ink)">Journal</a>
+  </div>
+  <a href="concierge.html" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)">Begin a Project →</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div style="padding:6rem 3rem 2rem;max-width:1200px;margin:0 auto">
+  <div class="eyebrow">Editorial</div>
+  <h1 style="font-family:var(--ff-display);font-size:clamp(3rem,6vw,6rem);font-weight:300;color:var(--ink);letter-spacing:-.04em;line-height:.88;margin:1rem 0 1.5rem">The Journal</h1>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+    <div class="chip active" onclick="filterJournal('all',this)">All</div>
+    <div class="chip" onclick="filterJournal('retail',this)">Retail Strategy</div>
+    <div class="chip" onclick="filterJournal('neighborhoods',this)">Neighborhoods</div>
+    <div class="chip" onclick="filterJournal('fashion',this)">Fashion</div>
+    <div class="chip" onclick="filterJournal('trends',this)">Trends</div>
+    <div class="chip" onclick="filterJournal('guides',this)">Guides</div>
+    <div class="chip" onclick="filterJournal('interviews',this)">Interviews</div>
+  </div>
+</div>
+
+<!-- FEATURED HERO ARTICLE -->
+<div class="journal-hero-article" style="max-width:1200px;margin:0 auto 0">
+  <div class="journal-hero-img">
+    <img src="https://images.unsplash.com/photo-1483653085674-f9a45df6f8c6?w=800&q=85" alt="SoHo guide">
+  </div>
+  <div class="journal-hero-text">
+    <div class="journal-hero-cat">Neighborhood Guide</div>
+    <div class="journal-hero-title">Why SoHo Still Dominates New York's Popup Calendar in 2026</div>
+    <p style="font-size:.875rem;color:rgba(255,255,255,.35);line-height:1.7;margin:1rem 0 1.5rem;max-width:44ch">Cast-iron columns. 12,000 daily pedestrians. The most photographed storefronts in fashion. Here's why brands keep coming back — and why the neighborhood keeps getting more competitive.</p>
+    <div class="journal-hero-meta">By Sofia Reyes · 8 min read · June 2026</div>
+  </div>
+</div>
+
+<!-- ARTICLE GRID -->
+<div style="max-width:1200px;margin:0 auto;padding:4rem 3rem 8rem">
+  <div class="journal-grid" id="journalGrid">
+
+    <div class="article-card" data-cat="retail">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Popup cost">
+      </div>
+      <div class="article-cat">Retail Strategy</div>
+      <div class="article-title">How Much Does a SoHo Popup Actually Cost in 2026?</div>
+      <div class="article-excerpt">The honest breakdown — from space rental to security to content creation. What nobody tells you before you book.</div>
+      <div class="article-meta">Marcus Chen · 12 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="fashion">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80" alt="NYFW">
+      </div>
+      <div class="article-cat">Fashion Week</div>
+      <div class="article-title">The Complete Brand's Guide to NYFW Popups</div>
+      <div class="article-excerpt">Timing, neighborhoods, budget expectations, and the insider moves that separate a successful NYFW activation from an expensive lesson.</div>
+      <div class="article-meta">Isabelle Mora · 15 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="trends">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" alt="Retail trends">
+      </div>
+      <div class="article-cat">Trends</div>
+      <div class="article-title">The 5 Retail Trends Defining Luxury Popup Culture Right Now</div>
+      <div class="article-excerpt">From hyper-personalized brand environments to the return of experiential retail, what's working in 2026 and why.</div>
+      <div class="article-meta">Editorial Team · 9 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="guides">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80" alt="Popup checklist">
+      </div>
+      <div class="article-cat">Guide</div>
+      <div class="article-title">The VenueDen Popup Checklist: 47 Things to Confirm Before Launch Day</div>
+      <div class="article-excerpt">From lease signatures to POS systems to staff briefings — the definitive pre-opening checklist for serious brands.</div>
+      <div class="article-meta">Marcus Chen · 7 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="neighborhoods">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80" alt="Williamsburg">
+      </div>
+      <div class="article-cat">Neighborhood Guide</div>
+      <div class="article-title">Williamsburg Is Winning: Why Brooklyn Is Now NYC's Most Exciting Popup Market</div>
+      <div class="article-excerpt">Foot traffic is up 40% since 2023. Rents are still 60% below SoHo. And the demographic is exactly who DTC brands have been chasing.</div>
+      <div class="article-meta">Sofia Reyes · 10 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="interviews">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Interview">
+      </div>
+      <div class="article-cat">Interview</div>
+      <div class="article-title">"The Space Told the Story": A Conversation with the Creative Director Behind Three VenueDen Activations</div>
+      <div class="article-excerpt">Isabelle Mora on what makes a popup feel inevitable rather than constructed — and why the best campaigns start with the floor plan.</div>
+      <div class="article-meta">VenueDen · 18 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="retail guides">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1526057565006-20beab8dd2ed?w=600&q=80" alt="Permits">
+      </div>
+      <div class="article-cat">Guide</div>
+      <div class="article-title">NYC Popup Permits: The Only Guide You'll Need</div>
+      <div class="article-excerpt">DCA licensing, DOB permits, event approvals — what you need, what you can skip, and exactly how long each takes to file.</div>
+      <div class="article-meta">Legal Team · 6 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="trends fashion">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80" alt="Beauty popups">
+      </div>
+      <div class="article-cat">Trends</div>
+      <div class="article-title">Beauty's Popup Moment: How Fragrance and Skincare Brands Are Redefining Retail Theater</div>
+      <div class="article-excerpt">Sensory design, appointment-only models, and the community dinners that turned a product launch into a cultural moment.</div>
+      <div class="article-meta">Isabelle Mora · 11 min read</div>
+    </div>
+
+    <div class="article-card" data-cat="retail">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&q=80" alt="Retail strategy">
+      </div>
+      <div class="article-cat">Retail Strategy</div>
+      <div class="article-title">How Long Should Your Popup Last? The Data-Backed Answer</div>
+      <div class="article-excerpt">We analyzed 150 activations across NYC. Here's what the numbers say about the sweet spot between buzz, conversion, and ROI.</div>
+      <div class="article-meta">Editorial Team · 8 min read</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SUBSCRIBE BAND -->
+<div style="background:var(--ink);padding:5rem 3rem;text-align:center">
+  <h2 style="font-family:var(--ff-display);font-size:clamp(1.75rem,3vw,3rem);font-weight:300;color:var(--white);letter-spacing:-.02em;margin-bottom:.75rem">The Retail Intelligence<br><em style="font-style:italic">Brief</em></h2>
+  <p style="font-size:.875rem;color:rgba(255,255,255,.3);margin-bottom:2rem">Monthly: neighborhood data, trend reports, and the best available spaces — direct to your inbox.</p>
+  <div style="display:flex;gap:.75rem;max-width:400px;margin:0 auto">
+    <input type="email" placeholder="your@brand.com" style="flex:1;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.12);border-radius:1px;padding:.9375rem 1.25rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--white);outline:none" onfocus="this.style.borderColor='rgba(255,255,255,.3)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'">
+    <button style="font-size:.625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--white);border:none;padding:.9375rem 1.5rem;border-radius:1px;cursor:pointer;white-space:nowrap;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Subscribe</button>
+  </div>
+</div>
+
+<footer style="background:var(--dark);padding:3rem">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center">
+    <div style="font-family:var(--ff-display);font-size:1.5rem;font-weight:300;color:var(--white);letter-spacing:.04em">VENUE DEN</div>
+    <div style="font-size:.75rem;color:rgba(255,255,255,.2)">© 2026 VENUE DEN. New York City.</div>
+    <a href="mailto:hello@venueden.com" style="font-family:var(--ff-display);font-size:.9375rem;font-weight:300;color:var(--accent);text-decoration:none">hello@venueden.com</a>
+  </div>
+</footer>
+
+<script>
+function filterJournal(cat, btn){
+  document.querySelectorAll('.insp-filters .chip, .journal-grid ~ * .chip, nav ~ * .chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(item=>{
+    const cats = item.dataset.cat || '';
+    item.style.display = (cat==='all' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

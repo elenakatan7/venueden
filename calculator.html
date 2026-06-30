@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Popup Cost Calculator — VENUE DEN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="preview.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body style="background:var(--canvas)">
+
+<!-- NAV -->
+<nav class="nav-wrap nav-page" style="position:sticky;top:0;z-index:40;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between">
+  <a href="preview.html" class="nav-logo" style="font-family:var(--ff-display);font-size:1.25rem;font-weight:300;letter-spacing:.06em;text-decoration:none;color:var(--ink)">VENUE DEN</a>
+  <div class="nav-links" style="display:flex;gap:2rem;font-size:.75rem;font-weight:500;letter-spacing:.04em">
+    <a href="spaces.html" style="text-decoration:none;color:var(--muted)">Browse Spaces</a>
+    <a href="neighborhoods.html" style="text-decoration:none;color:var(--muted)">Neighborhoods</a>
+    <a href="services.html" style="text-decoration:none;color:var(--muted)">Services</a>
+    <a href="journal.html" style="text-decoration:none;color:var(--muted)">Journal</a>
+  </div>
+  <a href="concierge.html" class="nav-cta" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)">Begin a Project →</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header" style="padding:7rem 3rem 4rem;max-width:none">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow">Planning Tool</div>
+    <h1 style="font-family:var(--ff-display);font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;color:var(--ink);letter-spacing:-.04em;line-height:.9;margin-bottom:1.25rem">Popup Cost<br><em style="font-style:italic;font-weight:300">Calculator</em></h1>
+    <p style="font-size:1.0625rem;color:var(--muted);max-width:52ch;line-height:1.75">Estimate your total popup investment across space, production, staffing, and marketing. Adjust inputs and see a live breakdown instantly.</p>
+  </div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 3rem">
+  <div class="calc-layout">
+
+    <!-- INPUTS -->
+    <div class="calc-steps">
+
+      <!-- Step 1: Industry -->
+      <div class="calc-step">
+        <div class="calc-step-header">
+          <div class="calc-step-num">1</div>
+          <div class="calc-step-title">What industry are you in?</div>
+        </div>
+        <div class="calc-options">
+          <div class="calc-option selected" onclick="selectOption(this,'industry','fashion',4000)" >
+            <span class="calc-option-label">Fashion & Apparel</span>
+            <span class="calc-option-note">RTW, streetwear, luxury</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'industry','beauty',3500)">
+            <span class="calc-option-label">Beauty & Wellness</span>
+            <span class="calc-option-note">Skincare, fragrance, wellness</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'industry','food',2800)">
+            <span class="calc-option-label">Food & Beverage</span>
+            <span class="calc-option-note">DTC brands, specialty F&B</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'industry','tech',5000)">
+            <span class="calc-option-label">Tech & Electronics</span>
+            <span class="calc-option-note">Product demos, launches</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'industry','art',2500)">
+            <span class="calc-option-label">Art & Design</span>
+            <span class="calc-option-note">Galleries, exhibitions</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'industry','home',3800)">
+            <span class="calc-option-label">Home & Lifestyle</span>
+            <span class="calc-option-note">Furniture, decor, objects</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Space Size -->
+      <div class="calc-step">
+        <div class="calc-step-header">
+          <div class="calc-step-num">2</div>
+          <div class="calc-step-title">How much space do you need?</div>
+        </div>
+        <div class="calc-options">
+          <div class="calc-option" onclick="selectOption(this,'size','xs',1200)">
+            <span class="calc-option-label">Under 500 sq ft</span>
+            <span class="calc-option-note">Intimate / editorial</span>
+          </div>
+          <div class="calc-option selected" onclick="selectOption(this,'size','sm',2400)">
+            <span class="calc-option-label">500–1,000 sq ft</span>
+            <span class="calc-option-note">Boutique popup</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'size','md',4200)">
+            <span class="calc-option-label">1,000–2,000 sq ft</span>
+            <span class="calc-option-note">Standard retail</span>
+          </div>
+          <div class="calc-option" onclick="selectOption(this,'size','lg',7800)">
+            <span class="calc-option-label">2,000–5,000 sq ft</span>
+            <span class="calc-option-note">Flagship experience</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Duration -->
+      <div class="calc-step">
+        <div class="calc-step-header">
+          <div class="calc-step-num">3</div>
+          <div class="calc-step-title">How long is the activation?</div>
+        </div>
+        <div class="calc-options">
+          <div class="calc-option" onclick="setDuration(this,1,0.8)">
+            <span class="calc-option-label">Weekend (2–3 days)</span>
+            <span class="calc-option-note">Flash sale, brand moment</span>
+          </div>
+          <div class="calc-option selected" onclick="setDuration(this,2,1.0)">
+            <span class="calc-option-label">1 Week</span>
+            <span class="calc-option-note">Most popular</span>
+          </div>
+          <div class="calc-option" onclick="setDuration(this,4,1.7)">
+            <span class="calc-option-label">2–4 Weeks</span>
+            <span class="calc-option-note">Seasonal campaign</span>
+          </div>
+          <div class="calc-option" onclick="setDuration(this,12,3.2)">
+            <span class="calc-option-label">1–3 Months</span>
+            <span class="calc-option-note">Extended residency</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Services -->
+      <div class="calc-step">
+        <div class="calc-step-header">
+          <div class="calc-step-num">4</div>
+          <div class="calc-step-title">Which services do you need?</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.875rem">
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Store Design & Concept</div>
+              <div style="font-size:.75rem;color:var(--muted)">Mood, layout, visual direction</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$3,500</span>
+              <input type="checkbox" checked class="service-check" data-val="3500" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Build-Out & Fabrication</div>
+              <div style="font-size:.75rem;color:var(--muted)">Walls, fixtures, shelving, signage</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$8,000</span>
+              <input type="checkbox" checked class="service-check" data-val="8000" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Furniture & Fixtures</div>
+              <div style="font-size:.75rem;color:var(--muted)">Rental or purchase sourcing</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$2,800</span>
+              <input type="checkbox" class="service-check" data-val="2800" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Staffing (per week)</div>
+              <div style="font-size:.75rem;color:var(--muted)">Brand ambassador team</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$3,200</span>
+              <input type="checkbox" checked class="service-check" data-val="3200" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Photography & Content</div>
+              <div style="font-size:.75rem;color:var(--muted)">Launch day shoot + social assets</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$2,400</span>
+              <input type="checkbox" class="service-check" data-val="2400" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Security</div>
+              <div style="font-size:.75rem;color:var(--muted)">Uniformed, insured</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$1,600</span>
+              <input type="checkbox" class="service-check" data-val="1600" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Insurance</div>
+              <div style="font-size:.75rem;color:var(--muted)">Short-term retail liability</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$800</span>
+              <input type="checkbox" checked class="service-check" data-val="800" onchange="updateTotal()">
+            </div>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.875rem 1.25rem;border:.5px solid var(--stone);border-radius:2px;background:var(--white);transition:background .15s" onmouseover="this.style.background='var(--ivory)'" onmouseout="this.style.background='var(--white)'">
+            <div>
+              <div style="font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:.125rem">Permits & Compliance</div>
+              <div style="font-size:.75rem;color:var(--muted)">NYC retail occupancy filing</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.8125rem;color:var(--muted)">+$500</span>
+              <input type="checkbox" class="service-check" data-val="500" onchange="updateTotal()">
+            </div>
+          </label>
+        </div>
+      </div>
+
+    </div><!-- /calc-steps -->
+
+    <!-- LIVE RESULT -->
+    <div class="calc-result">
+      <div class="calc-result-title">Estimated Total</div>
+      <div class="calc-total" id="calcTotal">$21,900</div>
+      <div class="calc-total-note" id="calcRange">Typical range: $18K–$28K for this configuration</div>
+
+      <div class="calc-breakdown">
+        <div class="calc-line">
+          <span class="calc-line-label">Space rental</span>
+          <span class="calc-line-val" id="lineRent">$2,400/wk</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Store Design & Concept</span>
+          <span class="calc-line-val" id="lineDesign">$3,500</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Build-Out & Fabrication</span>
+          <span class="calc-line-val" id="lineBuild">$8,000</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Furniture & Fixtures</span>
+          <span class="calc-line-val" id="lineFurniture" style="color:var(--muted)">—</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Staffing</span>
+          <span class="calc-line-val" id="lineStaff">$3,200</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Photography & Content</span>
+          <span class="calc-line-val" id="linePhoto" style="color:var(--muted)">—</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Security</span>
+          <span class="calc-line-val" id="lineSecurity" style="color:var(--muted)">—</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Insurance</span>
+          <span class="calc-line-val" id="lineInsurance">$800</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-line-label">Permits</span>
+          <span class="calc-line-val" id="linePermit" style="color:var(--muted)">—</span>
+        </div>
+        <div class="calc-line total-line">
+          <span class="calc-line-label">Estimated Total</span>
+          <span class="calc-line-val" id="calcTotalSmall">$21,900</span>
+        </div>
+      </div>
+
+      <div class="calc-cta-note">This estimate excludes product inventory, travel, and marketing spend. Actual costs depend on scope, timeline, and build complexity.</div>
+
+      <button onclick="window.location='concierge.html'" style="width:100%;margin-top:1.5rem;padding:1rem;background:var(--ink);color:var(--white);border:none;border-radius:1px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Get a Custom Quote →</button>
+
+      <div style="text-align:center;margin-top:.875rem">
+        <a href="spaces.html" style="font-size:.75rem;color:var(--muted);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">Browse spaces within this budget →</a>
+      </div>
+    </div>
+
+  </div><!-- /calc-layout -->
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--dark);padding:5rem 3rem 3rem;margin-top:6rem">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end">
+    <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--white);letter-spacing:.04em">VENUE DEN</div>
+    <div style="font-size:.75rem;color:rgba(255,255,255,.2)">© 2026 VENUE DEN. New York City.</div>
+    <a href="mailto:hello@venueden.com" style="font-family:var(--ff-display);font-size:1rem;font-weight:300;color:var(--accent);text-decoration:none">hello@venueden.com</a>
+  </div>
+</footer>
+
+<script>
+const costs = {industry:4000, size:2400, duration:1.0};
+let serviceTotal = 3500 + 8000 + 3200 + 800;
+
+function selectOption(el, category, key, val){
+  el.closest('.calc-options').querySelectorAll('.calc-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  costs[category] = val;
+  updateTotal();
+}
+
+function setDuration(el, weeks, multiplier){
+  el.closest('.calc-options').querySelectorAll('.calc-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  costs.duration = multiplier;
+  updateTotal();
+}
+
+function updateTotal(){
+  serviceTotal = 0;
+  document.querySelectorAll('.service-check').forEach(cb=>{
+    if(cb.checked) serviceTotal += parseInt(cb.dataset.val);
+  });
+  const base = costs.industry * costs.duration + costs.size * costs.duration;
+  const total = base + serviceTotal;
+  const fmt = v=>'$'+v.toLocaleString();
+  document.getElementById('calcTotal').textContent = fmt(total);
+  document.getElementById('calcTotalSmall').textContent = fmt(total);
+  document.getElementById('lineRent').textContent = fmt(costs.size)+'/wk';
+  const lo = Math.round(total * .85 / 100)*100;
+  const hi = Math.round(total * 1.35 / 100)*100;
+  document.getElementById('calcRange').textContent = 'Typical range: '+fmt(lo)+'–'+fmt(hi)+' for this configuration';
+  // Update line items visibility
+  const map = {3500:'lineDesign',8000:'lineBuild',2800:'lineFurniture',3200:'lineStaff',2400:'linePhoto',1600:'lineSecurity',800:'lineInsurance',500:'linePermit'};
+  document.querySelectorAll('.service-check').forEach(cb=>{
+    const id = map[cb.dataset.val];
+    if(id){
+      const el = document.getElementById(id);
+      if(el){ el.textContent = cb.checked ? '$'+Number(cb.dataset.val).toLocaleString() : '—'; el.style.color = cb.checked ? '' : 'var(--muted)'; }
+    }
+  });
+}
+</script>
+</body>
+</html>
