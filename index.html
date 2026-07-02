@@ -22,7 +22,19 @@
       <li><a href="journal.html">Journal</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
-    <a href="concierge.html" class="nav-cta">Start a Project</a>
+    <div class="nav-right">
+      <a href="concierge.html" class="nav-cta">Start a Project</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-progress"><i id="pageProgress"></i></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="spaces.html">Spaces</a>
+    <a href="services.html">Services</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="journal.html">Journal</a>
+    <a href="about.html">About</a>
+    <a href="concierge.html" class="mobile-menu-cta">Start a Project &#8594;</a>
   </div>
 </nav>
 
@@ -315,9 +327,15 @@
     function(w) {
       var v = w.querySelector('video.scrub-video');
       v.load();
+      // Per-chapter scrub progress bar, pinned to the bottom of the sticky frame
+      var bar = document.createElement('div');
+      bar.className = 'chapter-progress';
+      w.querySelector('.vsticky').appendChild(bar);
       return { wrap: w, video: v, target: 0, current: -1 };
     }
   );
+
+  var pageProgress = document.getElementById('pageProgress');
 
   function updateTargets() {
     var vh = window.innerHeight;
@@ -332,6 +350,10 @@
       if (r.top <= 80 && r.bottom >= 80) overDark = true;
     });
     nav.classList.toggle('scrolled', !overDark);
+    if (pageProgress) {
+      var total = document.documentElement.scrollHeight - vh;
+      pageProgress.style.transform = 'scaleX(' + (total > 0 ? window.scrollY / total : 0) + ')';
+    }
   }
   window.addEventListener('scroll', updateTargets, { passive: true });
   window.addEventListener('resize', updateTargets, { passive: true });
@@ -340,10 +362,13 @@
   (function tick() {
     sections.forEach(function(s) {
       if (!s.near) return;
-      var v = s.video;
-      if (!v.duration) return;
       if (s.current < 0) s.current = s.target;
       s.current += (s.target - s.current) * 0.14;
+      // Drive all scroll-linked motion (video zoom, title drift, hero fade,
+      // chapter progress bar) from one smoothed CSS variable
+      s.wrap.style.setProperty('--p', s.current.toFixed(4));
+      var v = s.video;
+      if (!v.duration) return;
       var t = s.current * Math.max(v.duration - 0.08, 0);
       if (Math.abs(v.currentTime - t) > 0.01 && v.readyState >= 2 && !v.seeking) {
         v.currentTime = t;
@@ -351,6 +376,18 @@
     });
     requestAnimationFrame(tick);
   })();
+
+  // Mobile menu
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (burger) {
+    burger.addEventListener('click', function() {
+      nav.classList.toggle('menu-open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { nav.classList.remove('menu-open'); });
+    });
+  }
 
   // Only one FAQ open at a time
   var faqs = document.querySelectorAll('.faq-list details');
