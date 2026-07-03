@@ -116,7 +116,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .trusted{padding:2.5rem 0;border-bottom:1px solid var(--line);background:var(--bg)}
 .trusted-row{display:flex;align-items:center;gap:3rem}
 .trusted-label{font-size:.75rem;font-weight:500;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
-.trusted-logos{display:flex;align-items:center;justify-content:space-between;flex:1;gap:2rem;flex-wrap:wrap}
+.trusted-logos{display:flex;align-items:center;justify-content:space-between;flex:1;gap:1.25rem 2.5rem;flex-wrap:wrap}
+@media(max-width:1200px){
+  .trusted-row{flex-direction:column;gap:1.5rem;align-items:center;text-align:center}
+  .trusted-logos{justify-content:center;width:100%}
+  .trusted-logos span{font-size:.9375rem}
+}
 .trusted-logos span{font-size:1.0625rem;font-weight:700;letter-spacing:.12em;color:var(--ink);opacity:.35;transition:opacity .25s}
 .trusted-logos span:nth-child(2){font-weight:400;font-style:italic;letter-spacing:0}
 .trusted-logos span:nth-child(4){font-weight:500;letter-spacing:.02em}
@@ -239,6 +244,10 @@ details[open] .faq-x::after{transform:scaleY(0)}
 @media(max-width:1080px){
   .wrap{padding:0 2rem}
   .nav-inner{padding:0 2rem}
+  .vcontent{padding:0 2.5rem}
+  .vcontent--center{padding:0 2rem}
+  .nav-links{gap:1.5rem}
+  .nav-links a{font-size:.8125rem}
   .how-grid{grid-template-columns:repeat(2,1fr);gap:3rem 2rem}
   .hood-grid{grid-template-columns:repeat(2,1fr)}
   .space-grid{grid-template-columns:1fr 1fr}

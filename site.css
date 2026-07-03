@@ -403,3 +403,21 @@ a.concierge-contact-val:hover{color:var(--white)}
   .hood-grid{grid-template-columns:1fr;gap:3rem}
   .prev-activations{grid-template-columns:repeat(2,1fr)}
 }
+
+/* MOBILE HARDENING — overrides inline-styled navs and paddings on interior pages */
+@media(max-width:900px){
+  .nav-wrap{padding:0 1.25rem!important;gap:1rem}
+  .nav-links{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:1.25rem!important;max-width:56vw;white-space:nowrap}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-cta{white-space:nowrap}
+  .search-bar-row{flex-wrap:wrap;padding:0 1.25rem!important;gap:.5rem}
+  .search-field-sep{display:none}
+  .search-field{min-width:calc(50% - .5rem)}
+  .search-submit{width:100%}
+  .section-content{padding:1.5rem!important}
+  .page-header{padding:5rem 1.25rem 2.5rem!important}
+}
+@media(max-width:560px){
+  .all-hoods-grid,.collection-grid,.prev-activations,.portal-stat-cards{grid-template-columns:1fr!important}
+  .insp-grid{columns:1!important}
+}
