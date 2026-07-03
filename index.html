@@ -42,7 +42,7 @@
 <section class="vchapter" id="chapter0">
   <div class="vsticky">
     <video class="vbg" muted loop autoplay playsinline preload="auto" poster="assets/img/hero-store.jpg">
-      <source src="assets/video/street.mp4" type="video/mp4" />
+      <source src="assets/video/hero-soho.mp4" type="video/mp4" />
     </video>
     <div class="vscrim"></div>
     <div class="vcontent vcontent--center">
@@ -102,7 +102,7 @@
 <section class="vchapter" id="chapter1">
   <div class="vsticky">
     <video class="vbg" muted loop playsinline preload="auto">
-      <source src="assets/video/mall.mp4" type="video/mp4" />
+      <source src="assets/video/empty-space.mp4" type="video/mp4" />
     </video>
     <div class="vscrim"></div>
     <div class="vcontent">
@@ -198,6 +198,22 @@
   </div>
 </section>
 
+<!-- CHAPTER: THE FINISHED SPACE -->
+<section class="vchapter" id="chapter-result">
+  <div class="vsticky">
+    <video class="vbg" muted loop playsinline preload="auto">
+      <source src="assets/video/boutique.mp4" type="video/mp4" />
+    </video>
+    <div class="vscrim"></div>
+    <div class="vcontent">
+      <p class="vkicker">The result</p>
+      <h2 class="vtitle">Spaces people<br><em>remember.</em></h2>
+      <p class="vsub">Warm light, honest materials, merchandising that lets the product breathe. The craft is in a hundred small decisions &#8212; and it&#8217;s what customers photograph, share, and come back for.</p>
+      <a href="case-studies.html" class="btn btn-ghost">See finished work</a>
+    </div>
+  </div>
+</section>
+
 <!-- WHY VENUE DEN -->
 <section class="why">
   <div class="wrap">
@@ -270,7 +286,7 @@
 <section class="vchapter vchapter--short" id="chapter3">
   <div class="vsticky vsticky--short">
     <video class="vbg" muted loop playsinline preload="auto">
-      <source src="assets/video/store.mp4" type="video/mp4" />
+      <source src="assets/video/facade.mp4" type="video/mp4" />
     </video>
     <div class="vscrim vscrim--heavy"></div>
     <div class="vcontent vcontent--center">
@@ -364,11 +380,34 @@
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       var v = e.target.querySelector('video');
-      if (!v) return;
-      if (e.isIntersecting) { v.play().catch(function(){}); } else { v.pause(); }
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        if (v) v.play().catch(function(){});
+      } else if (v) {
+        v.pause();
+      }
     });
   }, { threshold: 0.2 });
   document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
+
+  // Subtle parallax on editorial imagery — a few pixels of drift, images only
+  var plxEls = document.querySelectorAll('.help-media img, .space-media img, .project-media img, .split-media img');
+  plxEls.forEach(function(el) { el.classList.add('plx'); el.style.transform = 'scale(1.12)'; });
+  var plxTick = false;
+  function parallax() {
+    var vh = window.innerHeight;
+    plxEls.forEach(function(el) {
+      var r = el.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      var p = (r.top + r.height / 2 - vh / 2) / vh; // -0.5 .. 0.5 while visible
+      el.style.transform = 'scale(1.12) translateY(' + (p * -24).toFixed(1) + 'px)';
+    });
+    plxTick = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!plxTick) { plxTick = true; requestAnimationFrame(parallax); }
+  }, { passive: true });
+  parallax();
 
   var pageProgress = document.getElementById('pageProgress');
   function onScrollUpdate() {
