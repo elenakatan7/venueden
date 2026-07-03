@@ -50,7 +50,7 @@
 <!-- HERO — CHAPTER 0 -->
 <section class="vchapter scrub-wrap" id="chapter0">
   <div class="vsticky">
-    <video class="vbg scrub-video" muted playsinline preload="auto" poster="assets/img/hero-store.jpg">
+    <video class="vbg scrub-video" muted loop autoplay playsinline preload="auto" poster="assets/img/hero-store.jpg">
       <source src="assets/video/street.mp4" type="video/mp4" />
     </video>
     <div class="vscrim"></div>
@@ -322,31 +322,36 @@
   // Each .scrub-wrap is taller than the viewport; the video is pinned inside.
   // Scroll progress through the section maps to video.currentTime, with a
   // lerp toward the target time so scrubbing feels smooth, not steppy.
-  var sections = Array.prototype.map.call(
-    document.querySelectorAll('.scrub-wrap'),
-    function(w) {
-      var v = w.querySelector('video.scrub-video');
-      v.load();
-      // Per-chapter scrub progress bar, pinned to the bottom of the sticky frame
-      var bar = document.createElement('div');
-      bar.className = 'chapter-progress';
-      w.querySelector('.vsticky').appendChild(bar);
-      return { wrap: w, video: v, target: 0, current: -1 };
-    }
-  );
+  // Videos roll on their own: loop, muted, playing whenever their chapter is
+  // on screen (paused off-screen to save battery). The bar at the bottom of
+  // each chapter tracks the video's own playback, not the scroll.
+  document.querySelectorAll('video.scrub-video').forEach(function(v) {
+    v.loop = true;
+    var bar = document.createElement('div');
+    bar.className = 'chapter-progress';
+    v.closest('.vsticky').appendChild(bar);
+    v.addEventListener('timeupdate', function() {
+      if (v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')';
+    });
+  });
+
+  var videoObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      var v = e.target.querySelector('video');
+      if (!v) return;
+      if (e.isIntersecting) { v.play().catch(function(){}); }
+      else { v.pause(); }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
 
   var pageProgress = document.getElementById('pageProgress');
 
-  function updateTargets() {
+  function onScrollUpdate() {
     var vh = window.innerHeight;
     var overDark = false;
-    sections.forEach(function(s) {
-      var r = s.wrap.getBoundingClientRect();
-      var scrollable = r.height - vh;
-      if (scrollable <= 0) return;
-      var p = -r.top / scrollable;
-      s.target = Math.min(Math.max(p, 0), 1);
-      s.near = r.top < vh && r.bottom > 0;
+    document.querySelectorAll('.vchapter').forEach(function(ch) {
+      var r = ch.getBoundingClientRect();
       if (r.top <= 80 && r.bottom >= 80) overDark = true;
     });
     nav.classList.toggle('scrolled', !overDark);
@@ -355,27 +360,9 @@
       pageProgress.style.transform = 'scaleX(' + (total > 0 ? window.scrollY / total : 0) + ')';
     }
   }
-  window.addEventListener('scroll', updateTargets, { passive: true });
-  window.addEventListener('resize', updateTargets, { passive: true });
-  updateTargets();
-
-  (function tick() {
-    sections.forEach(function(s) {
-      if (!s.near) return;
-      if (s.current < 0) s.current = s.target;
-      s.current += (s.target - s.current) * 0.14;
-      // Drive all scroll-linked motion (video zoom, title drift, hero fade,
-      // chapter progress bar) from one smoothed CSS variable
-      s.wrap.style.setProperty('--p', s.current.toFixed(4));
-      var v = s.video;
-      if (!v.duration) return;
-      var t = s.current * Math.max(v.duration - 0.08, 0);
-      if (Math.abs(v.currentTime - t) > 0.01 && v.readyState >= 2 && !v.seeking) {
-        v.currentTime = t;
-      }
-    });
-    requestAnimationFrame(tick);
-  })();
+  window.addEventListener('scroll', onScrollUpdate, { passive: true });
+  window.addEventListener('resize', onScrollUpdate, { passive: true });
+  onScrollUpdate();
 
   // Mobile menu
   var burger = document.getElementById('navBurger');
