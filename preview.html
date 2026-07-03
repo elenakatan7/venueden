@@ -101,9 +101,7 @@
 <!-- CHAPTER: SOURCING -->
 <section class="vchapter" id="chapter1">
   <div class="vsticky">
-    <video class="vbg" muted loop playsinline preload="auto">
-      <source src="assets/video/empty-space.mp4" type="video/mp4" />
-    </video>
+    <video class="vbg" muted loop playsinline preload="none" data-src="assets/video/empty-space.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">Venue Sourcing</p>
@@ -166,18 +164,22 @@
   </div>
 </section>
 
-<!-- CHAPTER: PRODUCTION -->
-<section class="vchapter" id="chapter2">
+<!-- CHAPTER: PRODUCTION — scroll-triggered transformation triptych -->
+<section class="vchapter vchapter--transform" id="chapter2">
   <div class="vsticky">
-    <video class="vbg" muted loop playsinline preload="auto">
-      <source src="assets/video/build.mp4" type="video/mp4" />
-    </video>
+    <video class="vbg tstage active" muted loop playsinline preload="none" data-src="assets/video/empty-space.mp4"></video>
+    <video class="vbg tstage" muted loop playsinline preload="none" data-src="assets/video/midbuild.mp4"></video>
+    <video class="vbg tstage" muted loop playsinline preload="none" data-src="assets/video/doors.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">Pop-Up Production</p>
       <h2 class="vtitle">From empty storefront<br>to <em>opening day.</em></h2>
       <p class="vsub">Millwork, paint, lighting, window vinyl, fixtures, flowers on the counter. One production team coordinating every trade &#8212; so you never manage a contractor in your life.</p>
       <a href="services.html" class="btn btn-ghost">See what we produce</a>
+    </div>
+    <div class="tlabel">
+      <span class="tlabel-text" id="tlabelText">The empty space</span>
+      <span class="tlabel-count" id="tlabelCount">1 / 3</span>
     </div>
   </div>
 </section>
@@ -201,9 +203,7 @@
 <!-- CHAPTER: THE FINISHED SPACE -->
 <section class="vchapter" id="chapter-result">
   <div class="vsticky">
-    <video class="vbg" muted loop playsinline preload="auto">
-      <source src="assets/video/boutique.mp4" type="video/mp4" />
-    </video>
+    <video class="vbg" muted loop playsinline preload="none" data-src="assets/video/boutique.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">The result</p>
@@ -285,9 +285,7 @@
 <!-- LANDLORD BANNER -->
 <section class="vchapter vchapter--short" id="chapter3">
   <div class="vsticky vsticky--short">
-    <video class="vbg" muted loop playsinline preload="auto">
-      <source src="assets/video/facade.mp4" type="video/mp4" />
-    </video>
+    <video class="vbg" muted loop playsinline preload="none" data-src="assets/video/facade.mp4"></video>
     <div class="vscrim vscrim--heavy"></div>
     <div class="vcontent vcontent--center">
       <p class="vkicker">For property owners</p>
@@ -377,18 +375,60 @@
       if (v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')';
     });
   });
+  // Lazy-attach video sources shortly before they scroll into view
+  function attach(v) {
+    if (v.dataset.src && !v.src) { v.src = v.dataset.src; v.load(); }
+  }
+  var lazyObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('video').forEach(attach);
+        lazyObs.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '120% 0px' });
+  document.querySelectorAll('.vchapter').forEach(function(el) { lazyObs.observe(el); });
+
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      var v = e.target.querySelector('video');
+      var vids = e.target.querySelectorAll('video');
       if (e.isIntersecting) {
         e.target.classList.add('in-view');
-        if (v) v.play().catch(function(){});
-      } else if (v) {
-        v.pause();
+        vids.forEach(function(v) {
+          if (!v.classList.contains('tstage') || v.classList.contains('active')) v.play().catch(function(){});
+        });
+      } else {
+        vids.forEach(function(v) { v.pause(); });
       }
     });
   }, { threshold: 0.2 });
   document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
+
+  // Transformation triptych: crossfade stages as you scroll through the chapter
+  var transform = document.querySelector('.vchapter--transform');
+  var tStages = transform ? transform.querySelectorAll('.tstage') : [];
+  var tLabels = ['The empty space', 'The build', 'Doors open'];
+  var tText = document.getElementById('tlabelText');
+  var tCount = document.getElementById('tlabelCount');
+  var curStage = 0;
+  function updateStage() {
+    if (!transform) return;
+    var r = transform.getBoundingClientRect();
+    var scrollable = r.height - window.innerHeight;
+    if (scrollable <= 0) return;
+    var p = Math.min(Math.max(-r.top / scrollable, 0), 0.999);
+    var stage = Math.floor(p * 3);
+    if (stage === curStage) return;
+    curStage = stage;
+    tStages.forEach(function(v, i) {
+      v.classList.toggle('active', i === stage);
+      if (i === stage) { attach(v); v.play().catch(function(){}); } else { v.pause(); }
+    });
+    tText.style.opacity = 0;
+    setTimeout(function() { tText.textContent = tLabels[stage]; tText.style.opacity = 1; }, 250);
+    tCount.textContent = (stage + 1) + ' / 3';
+  }
+  window.addEventListener('scroll', updateStage, { passive: true });
 
   // Subtle parallax on editorial imagery — a few pixels of drift, images only
   var plxEls = document.querySelectorAll('.help-media img, .space-media img, .project-media img, .split-media img');
