@@ -4,9 +4,9 @@
 /* COMPAT TOKENS — legacy variables the interior pages reference, mapped to
    the current brand (Geist, white canvas, clay accent) */
 :root{
-  --canvas:#FFFFFF;
-  --ivory:#F6F5F2;
-  --stone:#E7E4DE;
+  --canvas:#FAF7F2;
+  --ivory:#F3EEE5;
+  --stone:#E4DCCE;
   --ff-display:'Geist','Inter',-apple-system,'Segoe UI',sans-serif;
   --ff-body:'Geist','Inter',-apple-system,'Segoe UI',sans-serif;
 }

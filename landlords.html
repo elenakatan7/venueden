@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Landlords — Venue Den | Activate Your Vacant Storefront, NYC</title>
+  <meta name="description" content="Own a vacant retail space in New York? Venue Den activates empty storefronts with premium, professionally managed pop-up experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav" style="position:sticky">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
+    <ul class="nav-links">
+      <li><a href="brands.html">Brands</a></li>
+      <li><a href="landlords.html" style="color:var(--accent)">Landlords</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="spaces.html">Spaces</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="concierge.html" class="nav-cta">Book a Consultation</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="brands.html">Brands</a>
+    <a href="landlords.html">Landlords</a>
+    <a href="services.html">Services</a>
+    <a href="spaces.html">Spaces</a>
+    <a href="about.html">About</a>
+    <a href="concierge.html" class="mobile-menu-cta">Book a Consultation &#8594;</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="label">For landlords &amp; property owners</p>
+    <h1 class="h2">An empty storefront<br>is <em>expensive.</em></h1>
+    <p class="page-hero-sub">Every dark month costs rent, curb appeal, and negotiating power with your next tenant. We turn vacant retail into income — beautiful, professionally managed pop-up activations with brands worth having on your block.</p>
+  </div>
+</header>
+
+<section style="background:var(--bg)">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media"><img src="assets/img/hood-flatiron.jpg" alt="Premium New York retail property" loading="lazy" /></div>
+      <div>
+        <p class="label">What you get</p>
+        <h3>Income and upkeep, without the workload.</h3>
+        <ul class="check-list">
+          <li>Monetize the vacancy with flexible short-term agreements</li>
+          <li>Curated brand partnerships &#8212; we bring tenants worth having</li>
+          <li>Professional management from install to broom-clean handback</li>
+          <li>Activations that lift foot traffic on the whole block</li>
+          <li>Your space maintained, insured, and photographed beautifully</li>
+          <li>A storefront that shows alive &#8212; the best marketing for a long-term lease</li>
+        </ul>
+        <a href="concierge.html" class="btn btn-solid">List your property</a>
+      </div>
+    </div>
+
+    <div class="split">
+      <div>
+        <p class="label">How it works</p>
+        <h3>You hand us the keys. We handle the rest.</h3>
+        <p>We assess the space, agree on terms, and match it with brands from our pipeline. Our production team manages every install and breakdown to a standard your building will be glad to host — and we return the space ready for its next chapter.</p>
+        <p>No listing fees. No lock-in. You approve every brand before it signs.</p>
+        <a href="faq.html" class="btn btn-outline">Common questions</a>
+      </div>
+      <div class="split-media"><img src="assets/img/space-prince.jpg" alt="An activated storefront" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-wrap">
+    <h2 class="cta-h">Put your space<br><em>to work.</em></h2>
+    <p class="cta-sub">Tell us about the property. We&#8217;ll respond within two business days with an honest read on its pop-up potential.</p>
+    <div class="cta-actions">
+      <a href="concierge.html" class="btn btn-solid btn-lg">Talk to us</a>
+      <a href="mailto:hello@venueden.co" class="cta-mail">hello@venueden.co</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none">
+      <span>&#169; 2026 Venue Den &#8212; New York City</span>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="brands.html">Brands</a><a href="about.html">About</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var burger=document.getElementById('navBurger');
+  var mobileMenu=document.getElementById('mobileMenu');
+  if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
+  mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
+})();
+</script>
+</body>
+</html>

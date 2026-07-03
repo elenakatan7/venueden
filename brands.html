@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Brands — Venue Den | Pop-Up Venue Sourcing &amp; Production, NYC</title>
+  <meta name="description" content="Launching a pop-up in New York? Venue Den sources your space anywhere in the city and produces the build from empty storefront to opening day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav" style="position:sticky">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
+    <ul class="nav-links">
+      <li><a href="brands.html" style="color:var(--accent)">Brands</a></li>
+      <li><a href="landlords.html">Landlords</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="spaces.html">Spaces</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="concierge.html" class="nav-cta">Book a Consultation</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="brands.html">Brands</a>
+    <a href="landlords.html">Landlords</a>
+    <a href="services.html">Services</a>
+    <a href="spaces.html">Spaces</a>
+    <a href="about.html">About</a>
+    <a href="concierge.html" class="mobile-menu-cta">Book a Consultation &#8594;</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="label">For brands</p>
+    <h1 class="h2">Your next store, without<br>the <em>eighteen phone calls.</em></h1>
+    <p class="page-hero-sub">Launching a pop-up in New York usually means juggling brokers, landlords, contractors, sign makers, and a timeline that slips weekly. With Venue Den it means one conversation — and a store that opens on the day we said it would.</p>
+  </div>
+</header>
+
+<section style="background:var(--bg)">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media"><img src="assets/img/hood-soho.jpg" alt="Sourcing spaces across New York" loading="lazy" /></div>
+      <div>
+        <p class="label">Step one</p>
+        <h3>We find the space — anywhere in the city.</h3>
+        <p>We aren&#8217;t limited to a portfolio. Sometimes the right venue is one of our managed spaces; more often we source it from our network or negotiate directly with a landlord. Your brief drives the search:</p>
+        <ul class="check-list">
+          <li>Brand identity, product category, and launch goals</li>
+          <li>Neighborhood, foot traffic, and customer demographic</li>
+          <li>Budget, timeline, and store size</li>
+          <li>The customer experience you want people to walk out remembering</li>
+        </ul>
+        <a href="concierge.html" class="btn btn-solid">Start the search</a>
+      </div>
+    </div>
+
+    <div class="split">
+      <div>
+        <p class="label">Step two</p>
+        <h3>We produce the build — every trade, one team.</h3>
+        <p>Concept and space planning, construction and millwork, lighting, window vinyl, signage, fixtures, furniture, styling. We coordinate the vendors, run the schedule, walk the site, and hold the quality bar so you never manage a contractor.</p>
+        <ul class="check-list">
+          <li>Creative direction and floor plans that sell</li>
+          <li>Construction, fabrication, and finishes, managed daily</li>
+          <li>Branding and graphics, from storefront vinyl to wayfinding</li>
+          <li>On-site crews for setup, security, cleaning, and breakdown</li>
+        </ul>
+        <a href="services.html" class="btn btn-outline">Everything we produce</a>
+      </div>
+      <div class="split-media"><img src="assets/img/space-wooster.jpg" alt="Pop-up production build" loading="lazy" /></div>
+    </div>
+
+    <div class="split">
+      <div class="split-media"><img src="assets/img/case-soleil.jpg" alt="A finished Venue Den store" loading="lazy" /></div>
+      <div>
+        <p class="label">Opening day</p>
+        <h3>You walk into a finished store.</h3>
+        <p>Our clients&#8217; favorite moment is the first walkthrough: lights on, shelves merchandised, windows dressed, flowers on the counter. A skincare brand did $480K in a 30-day run on Spring Street. A fashion label&#8217;s capsule sold through in six days.</p>
+        <a href="case-studies.html" class="btn btn-outline">Read the case studies</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-wrap">
+    <h2 class="cta-h">Let&#8217;s build <em>yours.</em></h2>
+    <p class="cta-sub">Tell us what you&#8217;re launching. Space options and a production plan within two business days.</p>
+    <div class="cta-actions">
+      <a href="concierge.html" class="btn btn-solid btn-lg">Book a Consultation</a>
+      <a href="mailto:hello@venueden.co" class="cta-mail">hello@venueden.co</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none">
+      <span>&#169; 2026 Venue Den &#8212; New York City</span>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="landlords.html">Landlords</a><a href="about.html">About</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var burger=document.getElementById('navBurger');
+  var mobileMenu=document.getElementById('mobileMenu');
+  if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
+  mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
+})();
+</script>
+</body>
+</html>
