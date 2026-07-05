@@ -178,6 +178,13 @@ section{position:relative;z-index:2}
 .trusted-logos span:nth-child(4){font-weight:500;letter-spacing:.02em}
 .trusted-logos span:nth-child(6){font-weight:600;letter-spacing:.3em}
 .trusted-logos span:hover{opacity:.9}
+.logo-wall{display:flex;flex-wrap:wrap;justify-content:center;gap:1.375rem 3rem;max-width:1000px;margin:0 auto}
+.logo-wall span{font-size:1rem;font-weight:600;letter-spacing:.18em;color:var(--ink);opacity:.42;white-space:nowrap;transition:opacity .25s}
+.logo-wall span:hover{opacity:.85}
+.trusted-more{text-align:center;margin-top:2.25rem}
+.trusted-more a{font-family:var(--ff-serif);font-style:italic;font-size:1rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .2s,border-color .2s}
+.trusted-more a:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:720px){.logo-wall{gap:1rem 1.75rem}.logo-wall span{font-size:.8125rem;letter-spacing:.14em}}
 @media(max-width:1200px){
   .trusted-row{flex-direction:column;gap:1.5rem;align-items:center;text-align:center}
   .trusted-logos{justify-content:center;width:100%}
