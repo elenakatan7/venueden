@@ -91,6 +91,8 @@ section{position:relative;z-index:2}
 .tlabel-text{font-family:var(--ff-serif);font-style:italic;font-size:1.25rem;color:rgba(255,255,255,.9);transition:opacity .25s}
 .tlabel-count{font-size:.6875rem;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.5)}
 .vbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vbg-fade{opacity:0;transition:opacity 1.2s var(--ease)}
+.vbg-fade.ready{opacity:1}
 .chapter-progress{position:absolute;bottom:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);z-index:3}
 .vscrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,9,6,.5),rgba(12,9,6,.3) 45%,rgba(12,9,6,.65))}
 .vscrim--heavy{background:rgba(12,9,6,.7)}
