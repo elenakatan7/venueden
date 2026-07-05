@@ -441,3 +441,6 @@ a.concierge-contact-val:hover{color:var(--white)}
   .all-hoods-grid,.collection-grid,.prev-activations,.portal-stat-cards{grid-template-columns:1fr!important}
   .insp-grid{columns:1!important}
 }
+
+/* TEAM MONOGRAMS — initials tiles until real headshots are provided */
+.team-monogram{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--ivory);border:1px solid var(--stone);border-radius:14px;font-family:var(--ff-display);font-size:2.5rem;font-weight:600;letter-spacing:.06em;color:var(--accent)}
