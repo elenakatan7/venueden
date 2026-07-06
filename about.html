@@ -1,133 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About — VenueDen | NYC Pop-Up Production Agency</title>
-<meta name="description" content="VenueDen is the pop-up partner we always wanted: one team that finds the space, runs the build, and answers the phone at every step.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="preview.css">
-<link rel="stylesheet" href="site.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — VenueDen | The Pop-Up Retail Partner, NYC</title>
+  <meta name="description" content="VenueDen is a New York pop-up retail partner: one team that sources the venue, runs the production, and answers the phone at every step." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VenueDen" />
+  <meta property="og:title" content="About — VenueDen" />
+  <meta property="og:description" content="One team that finds the space, runs the build, and answers the phone." />
+  <meta property="og:image" content="https://venueden.com/assets/img/hero-store.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="preview.css" />
+  <style>
+    .exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem}
+    .exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}
+    .roster{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem 2rem;max-width:900px;margin:2.5rem auto 0}
+    .roster span{font-size:.75rem;font-weight:500;letter-spacing:.12em;color:var(--muted);opacity:.75}
+    .value-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+    .value{background:var(--bg-soft);border-radius:16px;padding:2.5rem 2.25rem}
+    .value small{display:block;font-family:var(--ff-serif);font-style:italic;font-size:1.125rem;color:var(--accent);margin-bottom:1rem}
+    .value h4{font-size:1.125rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.75rem}
+    .value p{font-size:.9375rem;line-height:1.7;color:var(--muted)}
+    @media(max-width:1080px){.value-row{grid-template-columns:1fr}}
+    @media(max-width:720px){.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}.roster{gap:.5rem 1.25rem}.roster span{font-size:.6875rem}}
+  </style>
 </head>
-<body style="background:var(--canvas)">
+<body>
 
-<nav class="nav-wrap nav-page" style="position:sticky;top:0;z-index:40;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between">
-  <a href="index.html" style="font-family:var(--ff-display);font-size:1.25rem;font-weight:300;letter-spacing:.06em;text-decoration:none;color:var(--ink)">VENUE DEN</a>
-  <div style="display:flex;gap:2rem;font-size:.75rem;font-weight:500;letter-spacing:.04em">
-    <a href="brands.html" style="text-decoration:none;color:var(--muted)">Brands</a>
-    <a href="industries.html" style="text-decoration:none;color:var(--muted)">Industries</a>
-    <a href="landlords.html" style="text-decoration:none;color:var(--muted)">Landlords</a>
-    <a href="services.html" style="text-decoration:none;color:var(--muted)">Services</a>
-    <a href="about.html" style="text-decoration:none;color:var(--ink)">About</a>
+<nav class="nav scrolled" id="nav" style="position:sticky">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
+    <ul class="nav-links">
+      <li><a href="brands.html">Brands</a></li>
+      <li><a href="landlords.html">Landlords</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" style="color:var(--accent)">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="concierge.html" class="nav-cta">Start a Project</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+    </div>
   </div>
-  <a href="concierge.html" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)">Start a Project →</a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="brands.html">Brands</a>
+    <a href="landlords.html">Landlords</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="concierge.html" class="mobile-menu-cta">Start a Project &#8594;</a>
+  </div>
 </nav>
 
-<!-- HERO SPLIT -->
-<div class="about-page-hero">
-  <div class="about-hero-text">
-    <div class="about-hero-text-inner">
-      <div class="eyebrow">Our Story</div>
-      <h1 style="font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--ink);letter-spacing:-.04em;line-height:.9;margin:1rem 0 1.75rem">We built the<br>partner we<br>always <em style="font-style:italic">wanted.</em></h1>
-      <p style="font-size:1.0625rem;color:var(--muted);line-height:1.8;max-width:48ch;margin-bottom:1.5rem">Every pop-up we&#8217;d ever been close to had the same problem. Finding the space was hard. Then the lease, the permits, the build, the signage, the staff &#8212; each with its own vendor, its own timeline, and nobody holding the whole thing.</p>
-      <p style="font-size:1.0625rem;color:var(--muted);line-height:1.8;max-width:48ch">VenueDen is the company we kept wishing we could hire: one small team that finds the space, runs the build, and answers the phone at every step in between.</p>
+<header class="page-hero">
+  <div class="wrap">
+    <p class="label">About</p>
+    <h1 class="h2">We built the partner<br>we always <em>wanted.</em></h1>
+  </div>
+</header>
+
+<section style="background:var(--bg);padding-bottom:8rem">
+  <div class="wrap">
+    <div class="split" style="margin:0">
+      <div class="reveal">
+        <p>Every pop-up we&#8217;d ever been close to had the same problem. Finding the space was hard. Then came the lease, the permits, the build, the signage, the staff &#8212; each with its own vendor, its own timeline, and nobody holding the whole thing.</p>
+        <p style="margin-top:1.25rem">VenueDen is the company we kept wishing we could hire: one small team that finds the space, runs the build, and answers the phone at every step in between.</p>
+        <p style="margin-top:1.25rem">We do pop-up retail. Not PR, not influencer campaigns, not marketing. The store itself &#8212; found, built, opened, and closed properly.</p>
+      </div>
+      <div class="split-media reveal"><img src="assets/img/ed-capsule.webp" alt="Inside a VenueDen build" loading="lazy" /></div>
     </div>
   </div>
-  <div class="about-hero-img">
-    <img src="assets/img/ed-capsule.webp" alt="VenueDen team">
-  </div>
-</div>
+</section>
 
-<!-- SELECTED CLIENTS -->
-<div style="background:var(--ivory);padding:5rem 3rem">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="eyebrow" style="justify-content:center;display:flex">Selected clients</div>
-    <div class="logo-wall" style="margin-top:2.5rem">
-      <span>AUDEMARS&nbsp;PIGUET</span>
-      <span>NIKE</span>
-      <span>ADIDAS</span>
-      <span>SUPREME</span>
-      <span>NETFLIX</span>
-      <span>LULULEMON</span>
-      <span>H&amp;M</span>
-      <span>DAVID&nbsp;YURMAN</span>
-      <span>MAYBELLINE</span>
-      <span>OLAPLEX</span>
-      <span>ULTA&nbsp;BEAUTY</span>
-      <span>REVLON</span>
-      <span>ANASTASIA&nbsp;BEVERLY&nbsp;HILLS</span>
-      <span>WELLA</span>
-      <span>MEDICUBE</span>
-      <span>TORRIDEN</span>
-      <span>BIODANCE</span>
-      <span>DERMA&nbsp;E</span>
-      <span>CLEARDEA</span>
-      <span>CATHAY&nbsp;PACIFIC</span>
-      <span>BACARDI</span>
-      <span>ACTIVISION</span>
+<section style="background:var(--bg-soft);padding:8rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">How we work</p>
+      <h2 class="h2">Three rules we <em>don&#8217;t break.</em></h2>
+    </div>
+    <div class="value-row">
+      <div class="value reveal"><small>01</small><h4>One team, no hand-offs</h4><p>The space, the lease, the build &#8212; one project owner from first conversation to final invoice.</p></div>
+      <div class="value reveal"><small>02</small><h4>Honest numbers</h4><p>No hidden fees, no vague timelines, no surprises on move-in day. The quote you approve is the number you pay.</p></div>
+      <div class="value reveal"><small>03</small><h4>The neighborhood is the product</h4><p>Space without context is square footage. We match brands to blocks &#8212; foot traffic, neighbors, how the street feels at 6pm.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg);padding:8rem 0">
+  <div class="wrap" style="text-align:center">
+    <p class="label reveal" style="justify-content:center;display:flex">Selected experience</p>
+    <p class="section-note reveal" style="margin:0 auto;max-width:54ch">Past experience and activations connected to teams behind brands including:</p>
+    <div class="exp-row reveal" style="margin-top:2.75rem">
       <span>GLITCH&nbsp;PRODUCTIONS</span>
-      <span>ARIANA&nbsp;GRANDE&nbsp;MERCH</span>
-      <span>GODSPEED</span>
-      <span>LIQUID&nbsp;I.V.</span>
-      <span>THE&nbsp;GIVING&nbsp;MOVEMENT</span>
-      <span>ASOS</span>
-      <span>ADANOLA</span>
-      <span>MADEWELL</span>
-      <span>ONER&nbsp;ACTIVE</span>
-      <span>CAMI&nbsp;NYC</span>
-      <span>GIMAGUAS</span>
       <span>STEVE&nbsp;MADDEN</span>
       <span>VICTORIA&#8217;S&nbsp;SECRET</span>
+      <span>SAMSUNG</span>
+      <span>LIQUID&nbsp;I.V.</span>
       <span>MODE&nbsp;MISCHIEF</span>
     </div>
-    <p style="text-align:center;margin-top:2.5rem;font-size:.875rem;color:var(--muted)">Past experience and activations connected to teams behind these brands Engagements span venue sourcing, leasing, and pop-up production &#8212; scoped to what each launch needed.#8212; spanning venue sourcing, leasing, and pop-up production, scoped to what each launch needed.</p>
-  </div>
-</div>
-
-<!-- VALUES -->
-<div class="about-values">
-  <div style="max-width:1200px;margin:0 auto;padding:0 3rem">
-    <div style="max-width:520px;margin-bottom:1rem">
-      <div class="eyebrow">What We Believe</div>
-      <h2 style="font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--ink);letter-spacing:-.03em;line-height:.95;margin-top:.75rem">The values that<br>drive every<br><em style="font-style:italic">decision.</em></h2>
+    <div class="roster reveal">
+      <span>AUDEMARS&nbsp;PIGUET</span><span>NIKE</span><span>ADIDAS</span><span>SUPREME</span><span>NETFLIX</span><span>LULULEMON</span><span>H&amp;M</span><span>DAVID&nbsp;YURMAN</span><span>MAYBELLINE</span><span>OLAPLEX</span><span>ULTA&nbsp;BEAUTY</span><span>REVLON</span><span>ANASTASIA&nbsp;BEVERLY&nbsp;HILLS</span><span>WELLA</span><span>MEDICUBE</span><span>TORRIDEN</span><span>BIODANCE</span><span>DERMA&nbsp;E</span><span>CLEARDEA</span><span>CATHAY&nbsp;PACIFIC</span><span>BACARDI</span><span>ACTIVISION</span><span>ARIANA&nbsp;GRANDE&nbsp;MERCH</span><span>GODSPEED</span><span>THE&nbsp;GIVING&nbsp;MOVEMENT</span><span>ASOS</span><span>ADANOLA</span><span>MADEWELL</span><span>ONER&nbsp;ACTIVE</span><span>CAMI&nbsp;NYC</span><span>GIMAGUAS</span>
     </div>
-    <div class="values-grid">
-      <div class="value-item">
-        <div class="value-num">01</div>
-        <div class="value-title">One team, no hand-offs</div>
-        <div class="value-desc">The space, the lease, the build — one project owner from first conversation to final invoice.</div>
-      </div>
-      <div class="value-item">
-        <div class="value-num">02</div>
-        <div class="value-title">Honest numbers</div>
-        <div class="value-desc">No hidden fees, no vague timelines, no surprises on move-in day. The quote you approve is the number you pay.</div>
-      </div>
-      <div class="value-item">
-        <div class="value-num">03</div>
-        <div class="value-title">The neighborhood is the product</div>
-        <div class="value-desc">Space without context is just square footage. We match brands to blocks — foot traffic, neighbors, and the way the street feels at 6pm.</div>
-      </div>
+    <p class="section-note reveal" style="margin:2.25rem auto 0;max-width:56ch">Engagements span venue sourcing, leasing, and pop-up production &#8212; scoped to what each launch needed.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-wrap">
+    <h2 class="cta-h">Let&#8217;s build<br><em>your store.</em></h2>
+    <p class="cta-sub">Tell us what you&#8217;re planning. Response within one business day.</p>
+    <div class="cta-actions">
+      <a href="concierge.html" class="btn btn-solid btn-lg">Start a Project</a>
+      <a href="mailto:hello@venueden.com" class="cta-mail">hello@venueden.com</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- CTA -->
-<div style="background:var(--ivory);padding:7rem 3rem;text-align:center">
-  <div style="max-width:560px;margin:0 auto">
-    <h2 style="font-family:var(--ff-display);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--ink);letter-spacing:-.03em;line-height:.95;margin-bottom:1.5rem">Ready to build<br><em style="font-style:italic">your store?</em></h2>
-    <p style="font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:2.5rem">Talk to our concierge team. We'll find the right space, build the right experience, and be there every step of the way.</p>
-    <a href="concierge.html" style="display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--ink);padding:1.0625rem 2.75rem;text-decoration:none;border-radius:1px;transition:opacity .2s">Begin Your Project →</a>
-    <p style="margin-top:1.5rem"><a href="faq.html" style="font-size:.8125rem;font-weight:500;color:var(--muted);text-decoration:underline;text-underline-offset:3px">Questions first? Read the FAQ →</a></p>
-  </div>
-</div>
-
-<footer style="background:var(--dark);padding:5rem 3rem 3rem">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end">
-    <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--white);letter-spacing:.04em">VENUE DEN</div>
-    <div style="font-size:.75rem;color:rgba(255,255,255,.35);display:flex;gap:1.5rem"><a href="services.html" style="color:rgba(255,255,255,.5);text-decoration:none">Services</a><a href="about.html" style="color:rgba(255,255,255,.5);text-decoration:none">About</a><a href="faq.html" style="color:rgba(255,255,255,.5);text-decoration:none">FAQ</a><span>© 2026 VenueDen · NYC</span></div>
-    <a href="mailto:hello@venueden.com" style="font-family:var(--ff-display);font-size:1rem;font-weight:300;color:var(--accent);text-decoration:none">hello@venueden.com</a>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none">
+      <span>&#169; 2026 VenueDen &#8212; New York City</span>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="services.html">Services</a><a href="faq.html">FAQ</a></div>
+    </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var burger=document.getElementById('navBurger');
+  var mobileMenu=document.getElementById('mobileMenu');
+  if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
+  mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
 </body>
 </html>

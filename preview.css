@@ -310,3 +310,11 @@ section{position:relative;z-index:2}
   .footer-bottom{flex-direction:column;gap:.75rem}
   .page-hero{padding:8rem 0 3rem}
 }
+
+/* Accessibility: keyboard focus + reduced motion */
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.vcontent,.hero-line{opacity:1!important;transform:none!important}
+  .plx{transform:none!important}
+}

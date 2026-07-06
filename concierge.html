@@ -1,174 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Start a Project — VenueDen | NYC Pop-Up Concierge</title>
-<meta name="description" content="Tell us about your pop-up. VenueDen responds within one business day with space options, a production outline, and an estimated budget.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="preview.css">
-<link rel="stylesheet" href="site.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start a Project — VenueDen | NYC Pop-Up Retail</title>
+  <meta name="description" content="Tell us about your pop-up. VenueDen responds within one business day with space options, a production outline, and an honest budget." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VenueDen" />
+  <meta property="og:title" content="Start a Project — VenueDen" />
+  <meta property="og:description" content="Response within one business day." />
+  <meta property="og:image" content="https://venueden.com/assets/img/hero-store.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="preview.css" />
+  <style>
+    .contact-grid{display:grid;grid-template-columns:5fr 6fr;gap:5rem;align-items:start}
+    .contact-aside p{color:var(--muted);line-height:1.75;max-width:38ch}
+    .contact-fact{margin-top:2.5rem}
+    .contact-fact small{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.375rem}
+    .contact-fact span,.contact-fact a{font-size:1.0625rem;font-weight:500;color:var(--ink);text-decoration:none}
+    .cform{display:flex;flex-direction:column;gap:1.25rem}
+    .cform label{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+    .cform input,.cform textarea{width:100%;box-sizing:border-box;background:#fff;border:1px solid var(--bg-beige);border-radius:12px;padding:1rem 1.125rem;font-family:inherit;font-size:1rem;color:var(--ink);outline:none;transition:border-color .25s}
+    .cform input:focus,.cform textarea:focus{border-color:var(--accent)}
+    .cform textarea{resize:vertical;min-height:8.5rem;line-height:1.6}
+    .cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    .cform button{margin-top:.5rem}
+    .form-note{font-size:.8125rem;color:var(--muted)}
+    @media(max-width:1080px){.contact-grid{grid-template-columns:1fr;gap:3.5rem}}
+    @media(max-width:720px){.cform .row2{grid-template-columns:1fr}}
+  </style>
 </head>
-<body style="background:var(--canvas)">
+<body>
 
-<nav class="nav-wrap nav-page" style="position:fixed;top:0;z-index:40;left:0;right:0;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between">
-  <a href="index.html" style="font-family:var(--ff-display);font-size:1.25rem;font-weight:300;letter-spacing:.06em;text-decoration:none;color:var(--ink)">VENUE DEN</a>
-  <div style="display:flex;gap:2rem;font-size:.75rem;font-weight:500;letter-spacing:.04em">
-    <a href="brands.html" style="text-decoration:none;color:var(--muted)">Brands</a>
-    <a href="industries.html" style="text-decoration:none;color:var(--muted)">Industries</a>
-    <a href="landlords.html" style="text-decoration:none;color:var(--muted)">Landlords</a>
-    <a href="services.html" style="text-decoration:none;color:var(--muted)">Services</a>
-    <a href="about.html" style="text-decoration:none;color:var(--muted)">About</a>
+<nav class="nav scrolled" id="nav" style="position:sticky">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
+    <ul class="nav-links">
+      <li><a href="brands.html">Brands</a></li>
+      <li><a href="landlords.html">Landlords</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="mailto:hello@venueden.com" class="nav-cta">hello@venueden.com</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+    </div>
   </div>
-  <a href="mailto:hello@venueden.com" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)">hello@venueden.com</a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="brands.html">Brands</a>
+    <a href="landlords.html">Landlords</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="mailto:hello@venueden.com" class="mobile-menu-cta">hello@venueden.com &#8594;</a>
+  </div>
 </nav>
 
-<!-- FULL-BLEED SPLIT LAYOUT -->
-<div class="concierge-layout" style="margin-top:64px">
-
-  <!-- LEFT: DARK ATMOSPHERIC -->
-  <div class="concierge-left">
-    <div class="concierge-left-bg">
-      <img src="assets/img/ed-vacant.webp" alt="">
-    </div>
-    <div class="concierge-left-content">
-      <div style="font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25)">VenueDen Concierge</div>
-      <div class="concierge-headline">Your popup<br><em style="font-style:italic;font-weight:300">partner.</em><br>Not just a booking.</div>
-      <div class="concierge-sub">Tell us about your brand, your goals, and your timeline. We'll handle everything else — from space selection to the moment you open your doors.</div>
-      <div class="concierge-contact-row">
-        <div class="concierge-contact-item">
-          <span class="concierge-contact-label">Email</span>
-          <a href="mailto:hello@venueden.com" class="concierge-contact-val">hello@venueden.com</a>
-        </div>
-        <div class="concierge-contact-item">
-          <span class="concierge-contact-label">Response Time</span>
-          <span class="concierge-contact-val">Within one business day</span>
-        </div>
-        <div class="concierge-contact-item">
-          <span class="concierge-contact-label">Office Hours</span>
-          <span class="concierge-contact-val">Mon–Fri, 9am–7pm ET</span>
-        </div>
-      </div>
-    </div>
+<header class="page-hero" style="padding-bottom:4rem">
+  <div class="wrap">
+    <p class="label">Start a project</p>
+    <h1 class="h2">Tell us what<br>you&#8217;re <em>planning.</em></h1>
   </div>
+</header>
 
-  <!-- RIGHT: FORM -->
-  <div class="concierge-right">
-    <div class="concierge-form-wrap">
-      <div style="font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">Begin Your Project</div>
-      <div class="concierge-form-title">Tell us about<br>your activation.</div>
-      <div class="concierge-form-note">No obligation. We'll review your project and respond with available spaces, a production outline, and an estimated budget — within one business day.</div>
-
-      <form onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1rem">
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
-          <div>
-            <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">First Name</label>
-            <input type="text" placeholder="Jane" style="width:100%;box-sizing:border-box;background:var(--white);border:.5px solid var(--stone);border-radius:1px;padding:.9375rem 1rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--ink);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ink)'" onblur="this.style.borderColor='var(--stone)'">
-          </div>
-          <div>
-            <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Last Name</label>
-            <input type="text" placeholder="Smith" style="width:100%;box-sizing:border-box;background:var(--white);border:.5px solid var(--stone);border-radius:1px;padding:.9375rem 1rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--ink);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ink)'" onblur="this.style.borderColor='var(--stone)'">
-          </div>
+<section style="background:var(--bg);padding-bottom:9rem">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-aside">
+        <p>A few lines is enough &#8212; the brand, the moment, and roughly when. We&#8217;ll come back with space directions, a production outline, and an honest budget.</p>
+        <div class="contact-fact"><small>Email</small><a href="mailto:hello@venueden.com">hello@venueden.com</a></div>
+        <div class="contact-fact"><small>Response</small><span>Within one business day</span></div>
+        <div class="contact-fact"><small>Hours</small><span>Mon&#8211;Fri, 9am&#8211;7pm ET</span></div>
+        <div class="contact-fact"><small>Landlords</small><span>Same form &#8212; tell us about the space instead.</span></div>
+      </div>
+      <form class="cform" id="cform">
+        <div class="row2">
+          <div><label for="f-name">Name</label><input id="f-name" name="Name" type="text" autocomplete="name" required></div>
+          <div><label for="f-brand">Brand or property</label><input id="f-brand" name="Brand / property" type="text" autocomplete="organization" required></div>
         </div>
-
-        <div>
-          <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Brand / Company</label>
-          <input type="text" placeholder="Your brand name" style="width:100%;box-sizing:border-box;background:var(--white);border:.5px solid var(--stone);border-radius:1px;padding:.9375rem 1rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--ink);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ink)'" onblur="this.style.borderColor='var(--stone)'">
+        <div class="row2">
+          <div><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email" required></div>
+          <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
         </div>
-
-        <div>
-          <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Email</label>
-          <input type="email" placeholder="hello@yourbrand.com" style="width:100%;box-sizing:border-box;background:var(--white);border:.5px solid var(--stone);border-radius:1px;padding:.9375rem 1rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--ink);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ink)'" onblur="this.style.borderColor='var(--stone)'">
-        </div>
-
-        <div>
-          <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Industry</label>
-          <select class="form-select-styled">
-            <option value="">Select your industry</option>
-            <option>Fashion & Apparel</option>
-            <option>Beauty & Wellness</option>
-            <option>Food & Beverage</option>
-            <option>Technology</option>
-            <option>Art & Design</option>
-            <option>Home & Lifestyle</option>
-            <option>Jewelry & Accessories</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
-          <div>
-            <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Preferred Neighborhood</label>
-            <select class="form-select-styled">
-              <option>SoHo</option>
-              <option>Nolita</option>
-              <option>NoHo</option>
-              <option>Tribeca</option>
-              <option>Chelsea</option>
-              <option>Meatpacking</option>
-              <option>Flatiron</option>
-              <option>Williamsburg</option>
-              <option>Open to suggestions</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Total Budget</label>
-            <select class="form-select-styled">
-              <option>Under $10K</option>
-              <option>$10K–$25K</option>
-              <option>$25K–$50K</option>
-              <option>$50K–$100K</option>
-              <option>$100K+</option>
-              <option>Need guidance</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Target Launch Date</label>
-          <input type="text" placeholder="September 2026" style="width:100%;box-sizing:border-box;background:var(--white);border:.5px solid var(--stone);border-radius:1px;padding:.9375rem 1rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--ink);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ink)'" onblur="this.style.borderColor='var(--stone)'">
-        </div>
-
-        <div>
-          <label style="font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.375rem">Tell us about your activation</label>
-          <textarea placeholder="Describe your brand, the campaign, what kind of experience you're imagining, and anything else that's helpful..." rows="4" style="width:100%;box-sizing:border-box;background:var(--white);border:.5px solid var(--stone);border-radius:1px;padding:.9375rem 1rem;font-family:var(--ff-body);font-size:.9375rem;color:var(--ink);outline:none;resize:none;transition:border-color .2s;line-height:1.6" onfocus="this.style.borderColor='var(--ink)'" onblur="this.style.borderColor='var(--stone)'"></textarea>
-        </div>
-
-        <button type="submit" id="submitBtn" style="width:100%;padding:1.0625rem;background:var(--ink);color:var(--white);border:none;border-radius:1px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Send to Concierge →</button>
-
-        <div class="response-promise">
-          <div class="response-dot"></div>
-          <span>We read every inquiry — expect a response within one business day</span>
-        </div>
+        <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind &#8212; and anything else useful." required></textarea></div>
+        <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
+        <p class="form-note">We read every inquiry. Expect a response within one business day.</p>
       </form>
-
-      <!-- SUCCESS STATE -->
-      <div id="successMsg" style="display:none;text-align:center;padding:3rem 0">
-        <div style="font-family:var(--ff-display);font-size:3rem;font-weight:300;color:var(--ink);letter-spacing:-.03em;line-height:1;margin-bottom:1rem">Thank you.</div>
-        <p style="font-size:.9375rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">We'll be in touch within one business day with space options, a production outline, and a preliminary budget estimate.</p>
-        <a href="faq.html" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none">Read the FAQ while you wait →</a>
+      <div id="sent" style="display:none">
+        <h3 style="font-size:2rem;letter-spacing:-.03em;margin-bottom:1rem">Thank you.</h3>
+        <p style="color:var(--muted);line-height:1.75;max-width:44ch">Your email app should have opened with the message ready to send. We&#8217;ll reply within one business day. <a href="faq.html" style="color:var(--ink)">Read the FAQ while you wait &#8594;</a></p>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none">
+      <span>&#169; 2026 VenueDen &#8212; New York City</span>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="services.html">Services</a><a href="faq.html">FAQ</a></div>
+    </div>
+  </div>
+</footer>
 
 <script>
-function handleSubmit(e){
-  e.preventDefault();
-  var form = e.target;
-  var lines = [];
-  form.querySelectorAll('input, select, textarea').forEach(function(f){
-    var label = f.closest('div') && f.closest('div').querySelector('label');
-    var key = label ? label.textContent.trim() : (f.placeholder || 'Field');
-    if (f.value) lines.push(key + ': ' + f.value);
+(function(){
+  var nav=document.getElementById('nav');
+  var burger=document.getElementById('navBurger');
+  var mobileMenu=document.getElementById('mobileMenu');
+  if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
+  mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
+  document.getElementById('cform').addEventListener('submit',function(e){
+    e.preventDefault();
+    var lines=[];
+    this.querySelectorAll('input,textarea').forEach(function(f){ if(f.value) lines.push(f.name+': '+f.value); });
+    var brand=document.getElementById('f-brand').value||'venueden.com';
+    window.location.href='mailto:hello@venueden.com?subject='+encodeURIComponent('Pop-up inquiry — '+brand)+'&body='+encodeURIComponent('New inquiry from venueden.com\n\n'+lines.join('\n'));
+    this.style.display='none';
+    document.getElementById('sent').style.display='block';
   });
-  var body = 'New pop-up inquiry from venueden.com%0D%0A%0D%0A' + encodeURIComponent(lines.join('\n'));
-  window.location.href = 'mailto:hello@venueden.com?subject=' + encodeURIComponent('Pop-up inquiry — ' + (lines[0] ? lines[0].split(': ')[1] : 'venueden.com')) + '&body=' + body;
-  form.style.display='none';
-  document.getElementById('successMsg').style.display='block';
-}
+})();
 </script>
 </body>
 </html>
