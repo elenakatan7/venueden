@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Landlords — VenueDen | Activate Your Vacant Storefront, NYC</title>
-  <meta name="description" content="Own a vacant retail space in New York? VenueDen activates empty storefronts with premium, professionally managed pop-up experiences." />
+  <title>For Landlords — VenueDen | Turn Vacant Retail into Opportunity, NYC</title>
+  <meta name="description" content="VenueDen activates vacant New York storefronts with vetted brands and professionally managed pop-ups — insured, protected, and returned broom-clean." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VenueDen" />
+  <meta property="og:title" content="For Landlords — VenueDen" />
+  <meta property="og:description" content="Turn vacant retail into opportunity." />
   <meta property="og:image" content="https://venueden.com/assets/img/hero-store.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,24 +16,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="preview.css" />
   <style>
-  .assure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
-  .assure{background:var(--bg-soft);border-radius:16px;padding:2.25rem 2rem}
-  .assure h4{font-size:1.125rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.75rem}
-  .assure p{font-size:.9375rem;line-height:1.7;color:var(--muted)}
-  .tline{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem;position:relative}
-  .tline::before{content:"";position:absolute;top:.5rem;left:2%;right:2%;height:1px;background:var(--bg-beige)}
-  .tstep{position:relative;padding-top:2rem}
-  .tstep::before{content:"";position:absolute;top:0;left:0;width:1.0625rem;height:1.0625rem;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-  .tstep h4{font-size:1.0625rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.5rem}
-  .tstep p{font-size:.875rem;line-height:1.65;color:var(--muted)}
-  .tstep small{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.625rem}
-  @media(max-width:1080px){.assure-grid{grid-template-columns:1fr}.tline{grid-template-columns:1fr 1fr}.tline::before{display:none}}
-  @media(max-width:720px){.tline{grid-template-columns:1fr}}
+    /* model flow */
+    .flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.875rem;margin-top:3.5rem}
+    .flow-node{background:var(--bg);border-radius:999px;padding:1rem 1.75rem;font-size:.9375rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+    .flow-node.hl{background:var(--dark);color:#fff}
+    .flow-arrow{font-family:var(--ff-serif);font-style:italic;color:var(--accent);font-size:1.25rem}
+    /* trust cards */
+    .trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3.5rem}
+    .trust-card{background:var(--bg-soft);border-radius:16px;padding:2rem 1.5rem;transition:transform .45s var(--ease)}
+    .trust-card:hover{transform:translateY(-4px)}
+    .trust-card small{display:block;font-family:var(--ff-serif);font-style:italic;font-size:1rem;color:var(--accent);margin-bottom:.875rem}
+    .trust-card h4{font-size:1rem;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:.5rem}
+    .trust-card p{font-size:.8125rem;line-height:1.6;color:var(--muted)}
+    /* timeline */
+    .tline{display:grid;grid-template-columns:repeat(5,1fr);gap:1.75rem;margin-top:3.5rem;position:relative}
+    .tline::before{content:"";position:absolute;top:.5rem;left:2%;right:2%;height:1px;background:var(--bg-beige)}
+    .tstep{position:relative;padding-top:2rem}
+    .tstep::before{content:"";position:absolute;top:0;left:0;width:1.0625rem;height:1.0625rem;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+    .tstep h4{font-size:1rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.375rem}
+    .tstep p{font-size:.8125rem;line-height:1.6;color:var(--muted)}
+    .tstep small{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+    /* spaces portfolio */
+    .port{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+    .port figure{position:relative;margin:0;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-beige)}
+    .port img{width:100%;height:100%;object-fit:cover;display:block}
+    .port figcaption{position:absolute;left:1.375rem;right:1.375rem;bottom:1.25rem;z-index:2;color:#fff}
+    .port figcaption strong{display:block;font-size:1.125rem;font-weight:600;letter-spacing:-.01em}
+    .port figcaption span{font-size:.8125rem;color:rgba(255,255,255,.85)}
+    .port figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,9,6,.55),transparent 45%)}
+    /* objections */
+    .faq-list{margin-top:3rem}
+    .stagger{transition-delay:calc(var(--i,0)*80ms)}
+    @media(max-width:1080px){.trust-grid{grid-template-columns:1fr 1fr}.tline{grid-template-columns:1fr 1fr}.tline::before{display:none}.port{grid-template-columns:1fr}}
+    @media(max-width:720px){.tline{grid-template-columns:1fr}.flow-node{font-size:.8125rem;padding:.8125rem 1.25rem}}
   </style>
 </head>
 <body>
 
-<nav class="nav scrolled" id="nav" style="position:sticky">
+<nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
     <ul class="nav-links">
@@ -54,92 +76,131 @@
   </div>
 </nav>
 
-<header class="page-hero">
-  <div class="wrap">
-    <p class="label">For landlords &amp; property owners</p>
-    <h1 class="h2">An empty storefront<br>is <em>expensive.</em></h1>
-    <p class="page-hero-sub">Every dark month costs rent, curb appeal, and negotiating power with your next tenant. We turn vacant retail into income — beautiful, professionally managed pop-up activations with brands worth having on your block.</p>
-  </div>
-</header>
-
-<section style="background:var(--bg)">
-  <div class="wrap">
-    <div class="split">
-      <div class="split-media"><img src="assets/img/ed-castiron.webp" alt="Premium New York retail property" loading="lazy" /></div>
-      <div>
-        <p class="label">What you get</p>
-        <h3>Income and upkeep, without the workload.</h3>
-        <ul class="check-list">
-          <li>Monetize the vacancy with flexible short-term agreements</li>
-          <li>Curated brand partnerships &#8212; we bring tenants worth having</li>
-          <li>Professional management from install to broom-clean handback</li>
-          <li>Activations that lift foot traffic on the whole block</li>
-          <li>Your space maintained, insured, and photographed beautifully</li>
-          <li>A storefront that shows alive &#8212; the best marketing for a long-term lease</li>
-        </ul>
-        <a href="concierge.html" class="btn btn-solid">List your property</a>
-      </div>
-    </div>
-
-    <div class="split">
-      <div>
-        <p class="label">How it works</p>
-        <h3>You hand us the keys. We handle the rest.</h3>
-        <p>We assess the space, agree on terms, and match it with brands from our pipeline. Our production team manages every install and breakdown to a standard your building will be glad to host — and we return the space ready for its next chapter.</p>
-        <p>No listing fees. No lock-in. You approve every brand before it signs.</p>
-        <a href="faq.html" class="btn btn-outline">Common questions</a>
-      </div>
-      <div class="split-media"><img src="assets/img/ed-whitebox.webp" alt="An activated storefront" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
-
-<!-- ASSURANCE -->
-<section style="background:var(--bg);padding:1rem 0 8rem">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="label">The questions that matter</p>
-      <h2 class="h2" style="max-width:15em">Your property, <em>protected.</em></h2>
-    </div>
-    <div class="assure-grid">
-      <div class="assure reveal">
-        <h4>How brands are vetted</h4>
-        <p>We only bring tenants we&#8217;d put our name behind: established brands and funded launches with a real team, a real plan, and insurance in place. You approve every brand before anything is signed.</p>
-      </div>
-      <div class="assure reveal">
-        <h4>How the space is protected</h4>
-        <p>Certificates of insurance before move-in. A documented walkthrough before and after every activation. Builds designed to be removed &#8212; and removed properly, by our crew.</p>
-      </div>
-      <div class="assure reveal">
-        <h4>If something goes wrong</h4>
-        <p>You call one number and it&#8217;s our problem. We manage the brand, the vendors, and the fix &#8212; that&#8217;s the point of a managed activation instead of a stranger with keys.</p>
+<!-- HERO -->
+<section class="vchapter" id="chapter0">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/landlord-hero.mp4" muted playsinline loop preload="auto"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <h1 class="hero-h1">Turn vacant retail<br>into <em>opportunity.</em></h1>
+      <div class="hero-actions">
+        <a href="concierge.html" class="btn btn-solid btn-lg">Tell Us About Your Property</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS TIMELINE -->
-<section style="background:var(--bg-soft);padding:8rem 0">
+<!-- THE MODEL -->
+<section style="background:var(--bg-soft);padding:9rem 0">
+  <div class="wrap" style="text-align:center">
+    <div class="reveal">
+      <p class="label" style="justify-content:center;display:flex">The model</p>
+      <h2 class="h2">A dark storefront costs you every month.<br><em>Ours don&#8217;t stay dark.</em></h2>
+    </div>
+    <div class="flow reveal">
+      <span class="flow-node">Vacant space</span>
+      <span class="flow-arrow">&#8594;</span>
+      <span class="flow-node hl">VenueDen</span>
+      <span class="flow-arrow">&#8594;</span>
+      <span class="flow-node">Curated brand</span>
+      <span class="flow-arrow">&#8594;</span>
+      <span class="flow-node">Pop-up</span>
+      <span class="flow-arrow">&#8594;</span>
+      <span class="flow-node">Revenue</span>
+      <span class="flow-arrow">&#8594;</span>
+      <span class="flow-node">Next opportunity</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST CARDS -->
+<section style="background:var(--bg);padding:9rem 0">
   <div class="wrap">
     <div class="reveal">
-      <p class="label">How it works</p>
-      <h2 class="h2">Four steps. <em>No workload.</em></h2>
+      <p class="label">Why owners trust us</p>
+      <h2 class="h2">Your property, <em>looked after.</em></h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal stagger" style="--i:0"><small>01</small><h4>We vet brands</h4><p>Real teams, real plans, insurance in place. You approve every brand before it signs.</p></div>
+      <div class="trust-card reveal stagger" style="--i:1"><small>02</small><h4>We coordinate the process</h4><p>Install to breakdown, our production team runs it &#8212; not the tenant.</p></div>
+      <div class="trust-card reveal stagger" style="--i:2"><small>03</small><h4>We protect the space</h4><p>COIs before move-in, documented walkthroughs, builds designed to be removed.</p></div>
+      <div class="trust-card reveal stagger" style="--i:3"><small>04</small><h4>We manage communication</h4><p>One number to call. Any issue is our problem, not a stranger with keys.</p></div>
+      <div class="trust-card reveal stagger" style="--i:4"><small>05</small><h4>We maximize occupancy</h4><p>Back-to-back activations keep the space lit, earning, and showing beautifully.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="background:var(--bg-soft);padding:9rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">The journey</p>
+      <h2 class="h2">Five steps. <em>No workload.</em></h2>
     </div>
     <div class="tline">
-      <div class="tstep reveal"><small>Step 1</small><h4>Walkthrough</h4><p>We visit the space, assess its pop-up potential, and give you an honest read &#8212; including what it could earn.</p></div>
-      <div class="tstep reveal"><small>Step 2</small><h4>Terms</h4><p>Flexible short-term agreements on your terms. No listing fees, no lock-in, no exclusivity.</p></div>
-      <div class="tstep reveal"><small>Step 3</small><h4>Activation</h4><p>We match a vetted brand, manage the install, and run the activation to a standard your building is glad to host.</p></div>
-      <div class="tstep reveal"><small>Step 4</small><h4>Handback</h4><p>Broom-clean, documented, and photographed &#8212; ready for the next activation or your long-term tenant.</p></div>
+      <div class="tstep reveal stagger" style="--i:0"><small>1</small><h4>Tell us about your property</h4><p>Address, size, and a few photos is plenty.</p></div>
+      <div class="tstep reveal stagger" style="--i:1"><small>2</small><h4>We evaluate the space</h4><p>A walkthrough and an honest read on its pop-up potential.</p></div>
+      <div class="tstep reveal stagger" style="--i:2"><small>3</small><h4>We match the right brand</h4><p>Curated from our pipeline. You approve before anything signs.</p></div>
+      <div class="tstep reveal stagger" style="--i:3"><small>4</small><h4>We coordinate the pop-up</h4><p>Install, run, and breakdown &#8212; managed to a standard your building is glad to host.</p></div>
+      <div class="tstep reveal stagger" style="--i:4"><small>5</small><h4>You earn revenue</h4><p>Flexible terms, no listing fees, no lock-in. Handback is broom-clean.</p></div>
     </div>
   </div>
 </section>
 
+<!-- SPACES WE ACTIVATE -->
+<section style="background:var(--bg);padding:9rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">The spaces we activate</p>
+      <h2 class="h2" style="max-width:15em">Every kind of storefront has a <em>brand waiting for it.</em></h2>
+    </div>
+    <div class="port">
+      <figure class="reveal stagger" style="--i:0"><img src="assets/img/ed-castiron.webp" alt="Cast-iron corner storefront" loading="lazy" /><figcaption><strong>The cast-iron corner</strong><span>SoHo &#8212; flagship launches, global names</span></figcaption></figure>
+      <figure class="reveal stagger" style="--i:1"><img src="assets/img/ed-whitebox.webp" alt="White-box gallery space" loading="lazy" /><figcaption><strong>The white box</strong><span>Nolita &#8212; capsule drops, gallery moments</span></figcaption></figure>
+      <figure class="reveal stagger" style="--i:2"><img src="assets/img/ed-skylit.webp" alt="Skylit loft space" loading="lazy" /><figcaption><strong>The skylit loft</strong><span>Tribeca &#8212; showrooms, quiet luxury</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section style="background:var(--bg-soft);padding:9rem 0">
+  <div class="wrap" style="max-width:860px">
+    <div class="reveal">
+      <p class="label">Straight answers</p>
+      <h2 class="h2">What owners <em>ask first.</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="reveal">
+        <summary>How are brands vetted?<span class="faq-x"></span></summary>
+        <p>Established brands and funded launches only &#8212; a real team, a real plan, insurance in place. You approve every brand before anything is signed.</p>
+      </details>
+      <details class="reveal">
+        <summary>Who manages construction?<span class="faq-x"></span></summary>
+        <p>We do. Our production team runs every install and breakdown with contractors we&#8217;ve worked with across many builds. Tenants never work on your space unsupervised.</p>
+      </details>
+      <details class="reveal">
+        <summary>Who carries insurance?<span class="faq-x"></span></summary>
+        <p>The activating brand carries coverage, and we require certificates of insurance before move-in &#8212; with your requirements written into the agreement.</p>
+      </details>
+      <details class="reveal">
+        <summary>What if something is damaged?<span class="faq-x"></span></summary>
+        <p>We document the space before and after every activation. If anything happens, you call us, and we manage the repair and the claim. One number, our problem.</p>
+      </details>
+      <details class="reveal">
+        <summary>How long are pop-up agreements?<span class="faq-x"></span></summary>
+        <p>Days to months, structured around your leasing strategy. No listing fees, no exclusivity, no lock-in &#8212; the space stays yours.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="cta">
   <div class="wrap cta-wrap">
     <h2 class="cta-h">Put your space<br><em>to work.</em></h2>
-    <p class="cta-sub">Tell us about the property. We&#8217;ll respond within one business day with an honest read on its pop-up potential.</p>
+    <p class="cta-sub">Tell us about the property. An honest read on its pop-up potential within one business day.</p>
     <div class="cta-actions">
-      <a href="concierge.html" class="btn btn-solid btn-lg">Talk to us</a>
+      <a href="concierge.html" class="btn btn-solid btn-lg">Tell Us About Your Property</a>
       <a href="mailto:hello@venueden.com" class="cta-mail">hello@venueden.com</a>
     </div>
   </div>
@@ -149,7 +210,7 @@
   <div class="wrap">
     <div class="footer-bottom" style="border-top:none">
       <span>&#169; 2026 VenueDen &#8212; New York City</span>
-      <div class="footer-legal"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="faq.html">FAQ</a></div>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="brands.html">Brands</a><a href="faq.html">FAQ</a></div>
     </div>
   </div>
 </footer>
@@ -161,8 +222,45 @@
   var mobileMenu=document.getElementById('mobileMenu');
   if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
   mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
-  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}})},{threshold:.05,rootMargin:"0px 0px -30px 0px"});
-  document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el)});
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+  document.querySelectorAll('video.vbg').forEach(function(v){
+    v.loop=true;
+    var bar=document.createElement('div');bar.className='chapter-progress';
+    v.closest('.vsticky').appendChild(bar);
+    v.addEventListener('timeupdate',function(){if(v.duration)bar.style.transform='scaleX('+(v.currentTime/v.duration)+')'});
+  });
+  function attach(v){
+    if(v.dataset.src&&!v.src){v.src=v.dataset.src;v.load();
+      v.classList.add('vbg-fade');
+      v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});}
+    v.play().catch(function(){});
+  }
+  document.querySelectorAll('video').forEach(attach);
+  var videoObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in-view')})},{threshold:.2});
+  document.querySelectorAll('.vchapter').forEach(function(el){videoObs.observe(el)});
+
+  var faqs=document.querySelectorAll('.faq-list details');
+  faqs.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)faqs.forEach(function(o){if(o!==d)o.open=false})})});
+
+  var plxEls=document.querySelectorAll('.port img');
+  plxEls.forEach(function(el){el.classList.add('plx');el.style.transform='scale(1.12)'});
+  var tick=false;
+  function parallax(){
+    var vh=window.innerHeight;
+    plxEls.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh)return;
+      var p=(r.top+r.height/2-vh/2)/vh;
+      el.style.transform='scale(1.12) translateY('+(p*-14)+'px)';
+    });
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(parallax)}},{passive:true});
+  parallax();
 })();
 </script>
 </body>

@@ -3,21 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Brands — VenueDen | Pop-Up Venue Sourcing &amp; Production, NYC</title>
-  <meta name="description" content="Launching a pop-up in New York? VenueDen sources your space anywhere in the city and produces the build from empty storefront to opening day." />
+  <title>For Brands — VenueDen | Pop-Up Retail in New York City</title>
+  <meta name="description" content="Bring your brand into the real world. VenueDen sources pop-up venues across NYC and produces the retail experience — from empty storefront to opening day." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VenueDen" />
+  <meta property="og:title" content="For Brands — VenueDen" />
+  <meta property="og:description" content="Bring your brand into the real world." />
   <meta property="og:image" content="https://venueden.com/assets/img/hero-store.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="preview.css" />
-  <style>.exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem}.exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}@media(max-width:720px){.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}}</style>
+  <style>
+    /* journey */
+    .journey{padding:11rem 0;background:var(--bg)}
+    .j-line{font-size:clamp(1.625rem,3vw,2.75rem);font-weight:500;letter-spacing:-.03em;line-height:1.25;color:var(--muted);max-width:21em;margin-bottom:1em}
+    .j-line strong{color:var(--ink);font-weight:500}
+    .j-line em{color:var(--accent)}
+    /* editorial mosaic */
+    .mosaic{display:grid;grid-template-columns:7fr 5fr;gap:1.5rem;margin-top:4rem}
+    .mosaic figure{position:relative;border-radius:18px;overflow:hidden;margin:0;background:var(--bg-beige)}
+    .mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+    .m-tall{aspect-ratio:4/5}
+    .m-col{display:flex;flex-direction:column;gap:1.5rem}
+    .m-col figure{flex:1;min-height:0}
+    .mosaic figcaption{position:absolute;left:1.375rem;bottom:1.25rem;color:#fff;font-family:var(--ff-serif);font-style:italic;font-size:1.0625rem;z-index:2}
+    .mosaic figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,9,6,.45),transparent 40%)}
+    /* fit cards */
+    .fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
+    .fit{background:var(--bg);border-radius:16px;padding:2.5rem 2.25rem;transition:transform .45s var(--ease)}
+    .fit:hover{transform:translateY(-4px)}
+    .fit h4{font-size:1.25rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.625rem}
+    .fit p{font-size:.9375rem;line-height:1.65;color:var(--muted)}
+    .exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem}
+    .exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}
+    .stagger{transition-delay:calc(var(--i,0)*80ms)}
+    @media(max-width:1080px){.fit-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:720px){.journey{padding:6rem 0}.mosaic{grid-template-columns:1fr}.m-col figure{aspect-ratio:16/10}.fit-grid{grid-template-columns:1fr}.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}}
+  </style>
 </head>
 <body>
 
-<nav class="nav scrolled" id="nav" style="position:sticky">
+<nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
     <ul class="nav-links">
@@ -40,19 +68,96 @@
   </div>
 </nav>
 
-<header class="page-hero">
-  <div class="wrap">
-    <p class="label">For brands</p>
-    <h1 class="h2">Your next store, without<br>the <em>eighteen phone calls.</em></h1>
-    <p class="page-hero-sub">Launching a pop-up in New York usually means juggling brokers, landlords, contractors, sign makers, and a timeline that slips weekly. With VenueDen it means one conversation — and a store that opens on the day we said it would.</p>
+<!-- HERO -->
+<section class="vchapter" id="chapter0">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/brand-hero.mp4" muted playsinline loop preload="auto"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <h1 class="hero-h1">Bring your brand into<br><em>the real world.</em></h1>
+      <div class="hero-actions">
+        <a href="concierge.html" class="btn btn-solid btn-lg">Start Your Project</a>
+      </div>
+    </div>
   </div>
-</header>
+</section>
 
-<section style="background:var(--bg-soft);padding:6rem 0">
+<!-- THE JOURNEY -->
+<section class="journey">
+  <div class="wrap">
+    <p class="j-line reveal">You have a product people love online.</p>
+    <p class="j-line reveal">Now you want them to <strong>hold it.</strong></p>
+    <p class="j-line reveal">That takes the right neighborhood, the right room, and a team that treats your launch like <em>their own.</em></p>
+  </div>
+</section>
+
+<!-- VIDEO CHAPTER — the room -->
+<section class="vchapter">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/walkthrough.mp4" muted playsinline loop preload="none"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <p class="vkicker">The space</p>
+      <h2 class="vtitle">We find rooms<br><em>worth your name.</em></h2>
+      <p class="vsub">SoHo corners, Nolita jewel boxes, Tribeca lofts. We scout, negotiate, and hand you a short-term lease anywhere in New York.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL MOSAIC -->
+<section style="background:var(--bg);padding:9rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">The craft</p>
+      <h2 class="h2" style="max-width:14em">Retail is a <em>physical medium.</em></h2>
+    </div>
+    <div class="mosaic">
+      <figure class="m-tall reveal"><img src="assets/img/ed-castiron.webp" alt="Cast-iron storefront in SoHo" loading="lazy" /><figcaption>The storefront</figcaption></figure>
+      <div class="m-col">
+        <figure class="reveal stagger" style="--i:1"><img src="assets/img/ed-millwork.webp" alt="Millwork detail in progress" loading="lazy" /><figcaption>The build</figcaption></figure>
+        <figure class="reveal stagger" style="--i:2"><img src="assets/img/ed-beauty.webp" alt="Merchandised interior" loading="lazy" /><figcaption>The room, ready</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO CHAPTER — opening day -->
+<section class="vchapter">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/doors.mp4" muted playsinline loop preload="none"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <p class="vkicker">Opening day</p>
+      <h2 class="vtitle">You cut the ribbon.<br><em>We did the rest.</em></h2>
+      <p class="vsub">Lights on, shelves merchandised, windows dressed. Everything before that moment was our problem, not yours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK BEST WITH -->
+<section style="background:var(--bg-soft);padding:9rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">Who we work best with</p>
+      <h2 class="h2">Brands with a world <em>worth walking into.</em></h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit reveal stagger" style="--i:0"><h4>Fashion</h4><p>Capsule drops, seasonal stores, and showrooms with a window that stops the street.</p></div>
+      <div class="fit reveal stagger" style="--i:1"><h4>Beauty</h4><p>Counters built for trial &#8212; mirrors, sightlines, and light that flatters product and people.</p></div>
+      <div class="fit reveal stagger" style="--i:2"><h4>Lifestyle</h4><p>Rooms that feel like the world your brand promises, down to the scent in the air.</p></div>
+      <div class="fit reveal stagger" style="--i:3"><h4>Wellness</h4><p>Calm, considered spaces where people slow down long enough to care.</p></div>
+      <div class="fit reveal stagger" style="--i:4"><h4>Footwear</h4><p>Try-on flow, seating, stock runs &#8212; retail mechanics disguised as design.</p></div>
+      <div class="fit reveal stagger" style="--i:5"><h4>Premium consumer</h4><p>Launches that need a New York moment: entertainment, drinks, tech, culture.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED EXPERIENCE -->
+<section style="background:var(--bg);padding:8rem 0">
   <div class="wrap" style="text-align:center">
-    <p class="label" style="text-align:center;justify-content:center;display:flex">Selected experience</p>
-    <p class="section-note" style="margin:0 auto 2.5rem;max-width:52ch">Past experience and activations connected to teams behind brands including:</p>
-    <div class="exp-row">
+    <p class="label reveal" style="justify-content:center;display:flex">Selected experience</p>
+    <p class="section-note reveal" style="margin:0 auto 2.75rem;max-width:52ch">Past experience and activations connected to teams behind brands including:</p>
+    <div class="exp-row reveal">
       <span>GLITCH&nbsp;PRODUCTIONS</span>
       <span>STEVE&nbsp;MADDEN</span>
       <span>VICTORIA&#8217;S&nbsp;SECRET</span>
@@ -60,63 +165,19 @@
       <span>LIQUID&nbsp;I.V.</span>
       <span>MODE&nbsp;MISCHIEF</span>
     </div>
-    <p class="trusted-more" style="margin-top:2.5rem;text-align:center"><a href="about.html">the full list lives on our About page &#8594;</a></p>
   </div>
 </section>
 
-<section style="background:var(--bg)">
-  <div class="wrap">
-    <div class="split">
-      <div class="split-media"><img src="assets/img/ed-loft.webp" alt="Sourcing spaces across New York" loading="lazy" /></div>
-      <div>
-        <p class="label">Step one</p>
-        <h3>We find the space — anywhere in the city.</h3>
-        <p>We aren&#8217;t limited to a portfolio. Sometimes the right venue is one of our managed spaces; more often we source it from our network or negotiate directly with a landlord. Your brief drives the search:</p>
-        <ul class="check-list">
-          <li>Brand identity, product category, and launch goals</li>
-          <li>Neighborhood, foot traffic, and customer demographic</li>
-          <li>Budget, timeline, and store size</li>
-          <li>The customer experience you want people to walk out remembering</li>
-        </ul>
-        <a href="concierge.html" class="btn btn-solid">Start the search</a>
+<!-- EMOTIONAL END -->
+<section class="vchapter">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/boutique.mp4" muted playsinline loop preload="none"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent vcontent--center" style="position:relative;z-index:2;text-align:center">
+      <h2 class="vtitle">Your next store doesn&#8217;t<br>have to be <em>permanent.</em></h2>
+      <div class="hero-actions" style="justify-content:center">
+        <a href="concierge.html" class="btn btn-solid btn-lg">Start Your Popup</a>
       </div>
-    </div>
-
-    <div class="split">
-      <div>
-        <p class="label">Step two</p>
-        <h3>We produce the build — every trade, one team.</h3>
-        <p>Concept and space planning, construction and millwork, lighting, window vinyl, signage, fixtures, furniture, styling. We coordinate the vendors, run the schedule, walk the site, and hold the quality bar so you never manage a contractor.</p>
-        <ul class="check-list">
-          <li>Creative direction and floor plans that sell</li>
-          <li>Construction, fabrication, and finishes, managed daily</li>
-          <li>Branding and graphics, from storefront vinyl to wayfinding</li>
-          <li>On-site crews for setup, security, cleaning, and breakdown</li>
-        </ul>
-        <a href="services.html" class="btn btn-outline">Everything we produce</a>
-      </div>
-      <div class="split-media"><img src="assets/img/ed-millwork.webp" alt="Pop-up production build" loading="lazy" /></div>
-    </div>
-
-    <div class="split">
-      <div class="split-media"><img src="assets/img/ed-beauty.webp" alt="A finished VenueDen store" loading="lazy" /></div>
-      <div>
-        <p class="label">Opening day</p>
-        <h3>You walk into a finished store.</h3>
-        <p>Our clients&#8217; favorite moment is the first walkthrough: lights on, shelves merchandised, windows dressed, flowers on the counter. You arrive to a store that&#8217;s ready &#8212; and everything before that moment was our problem, not yours.</p>
-        <a href="concierge.html" class="btn btn-outline">Start your project</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="wrap cta-wrap">
-    <h2 class="cta-h">Let&#8217;s build <em>yours.</em></h2>
-    <p class="cta-sub">Tell us what you&#8217;re launching. Space options and a production plan within one business day.</p>
-    <div class="cta-actions">
-      <a href="concierge.html" class="btn btn-solid btn-lg">Start a Project</a>
-      <a href="mailto:hello@venueden.com" class="cta-mail">hello@venueden.com</a>
     </div>
   </div>
 </section>
@@ -125,7 +186,7 @@
   <div class="wrap">
     <div class="footer-bottom" style="border-top:none">
       <span>&#169; 2026 VenueDen &#8212; New York City</span>
-      <div class="footer-legal"><a href="index.html">Home</a><a href="landlords.html">Landlords</a><a href="about.html">About</a><a href="faq.html">FAQ</a></div>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="landlords.html">Landlords</a><a href="faq.html">FAQ</a></div>
     </div>
   </div>
 </footer>
@@ -137,6 +198,42 @@
   var mobileMenu=document.getElementById('mobileMenu');
   if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
   mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+  document.querySelectorAll('video.vbg').forEach(function(v){
+    v.loop=true;
+    var bar=document.createElement('div');bar.className='chapter-progress';
+    v.closest('.vsticky').appendChild(bar);
+    v.addEventListener('timeupdate',function(){if(v.duration)bar.style.transform='scaleX('+(v.currentTime/v.duration)+')'});
+  });
+  function attach(v){
+    if(v.dataset.src&&!v.src){v.src=v.dataset.src;v.load();
+      v.classList.add('vbg-fade');
+      v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});}
+    v.play().catch(function(){});
+  }
+  document.querySelectorAll('video').forEach(attach);
+  var videoObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in-view')})},{threshold:.2});
+  document.querySelectorAll('.vchapter').forEach(function(el){videoObs.observe(el)});
+
+  var plxEls=document.querySelectorAll('.mosaic img');
+  plxEls.forEach(function(el){el.classList.add('plx');el.style.transform='scale(1.12)'});
+  var tick=false;
+  function parallax(){
+    var vh=window.innerHeight;
+    plxEls.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh)return;
+      var p=(r.top+r.height/2-vh/2)/vh;
+      el.style.transform='scale(1.12) translateY('+(p*-14)+'px)';
+    });
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(parallax)}},{passive:true});
+  parallax();
 })();
 </script>
 </body>
