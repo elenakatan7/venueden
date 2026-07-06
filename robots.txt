@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://venueden.com/sitemap.xml

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "venue-preview",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\elena\\Documents\\venue\\server.ps1"],
+      "port": 8081
+    },
+    {
+      "name": "katan-preview",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\elena\\Documents\\katan\\server.ps1"],
+      "port": 4321
+    }
+  ]
+}

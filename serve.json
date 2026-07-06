@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "venue-preview",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["script", "serve.csx"],
+      "port": 8080
+    }
+  ]
+}
