@@ -117,8 +117,8 @@ section{position:relative;z-index:2}
 @keyframes cueDrop{to{top:110%}}
 
 /* STATEMENT */
-.statement{padding:8rem 0;background:var(--bg)}
-.statement-text{font-size:clamp(1.5rem,2.8vw,2.5rem);font-weight:500;line-height:1.35;letter-spacing:-.025em;color:var(--ink);max-width:26em}
+.statement{padding:11rem 0;background:var(--bg)}
+.statement-text{font-size:clamp(1.75rem,3.4vw,3.125rem);font-weight:500;line-height:1.28;letter-spacing:-.03em;color:var(--ink);max-width:22em}
 .statement-text em{color:var(--accent)}
 
 /* HELP */
@@ -159,9 +159,10 @@ section{position:relative;z-index:2}
 .spaces-note a{color:var(--accent);font-weight:500;border-bottom:1px solid currentColor}
 
 /* PROCESS */
-.process{padding:9rem 0;background:var(--bg)}
-.process .h2{margin-bottom:4rem}
+.process{padding:11rem 0;background:var(--bg)}
+.process .h2{margin-bottom:5rem}
 .process-track{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem;position:relative}
+.process-track--five{grid-template-columns:repeat(5,1fr);gap:2rem}
 .process-track::before{content:"";position:absolute;top:.6rem;left:2%;right:2%;height:1px;background:var(--line)}
 .pstep{position:relative;padding-top:2rem}
 .pstep::before{content:"";position:absolute;top:.25rem;left:0;width:11px;height:11px;border-radius:50%;background:var(--accent)}
