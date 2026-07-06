@@ -276,8 +276,8 @@
       if (v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')';
     });
   });
-  // Lazy-attach video sources shortly before they scroll into view.
-  // Videos fade in on first frame instead of popping from black.
+  // Attach and start every video immediately — all footage plays
+  // continuously for the whole visit, nothing waits for scroll.
   function attach(v) {
     if (v.dataset.src && !v.src) {
       v.src = v.dataset.src;
@@ -287,33 +287,16 @@
         v.addEventListener('playing', function() { v.classList.add('ready'); }, { once: true });
       }
     }
+    v.play().catch(function(){});
   }
-  var lazyObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('video').forEach(attach);
-        lazyObs.unobserve(e.target);
-      }
-    });
-  }, { rootMargin: '120% 0px' });
-  document.querySelectorAll('.vchapter').forEach(function(el) { lazyObs.observe(el); });
+  document.querySelectorAll('video').forEach(attach);
 
-  // Play/pause with hysteresis: play once a fifth of the chapter is visible,
-  // but only pause when it has fully left the viewport — no thrashing while a
-  // section slides over the pinned video.
+  // Chapter visibility only drives the text reveals now
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      var vids = e.target.querySelectorAll('video');
-      if (e.intersectionRatio >= 0.2) {
-        e.target.classList.add('in-view');
-        vids.forEach(function(v) {
-          if (!v.classList.contains('tstage') || v.classList.contains('active')) v.play().catch(function(){});
-        });
-      } else if (!e.isIntersecting) {
-        vids.forEach(function(v) { v.pause(); });
-      }
+      if (e.isIntersecting) e.target.classList.add('in-view');
     });
-  }, { threshold: [0, 0.2] });
+  }, { threshold: 0.2 });
   document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
 
   // Transformation triptych: crossfade stages as you scroll through the chapter
@@ -335,9 +318,9 @@
     // scroll jitters at a cut point don't flicker the crossfade
     if (stage === curStage || Math.abs(raw - Math.round(raw)) < 0.06) return;
     curStage = stage;
+    // All three stages keep playing underneath; only opacity crossfades
     tStages.forEach(function(v, i) {
       v.classList.toggle('active', i === stage);
-      if (i === stage) { attach(v); v.play().catch(function(){}); } else { v.pause(); }
     });
     tText.style.opacity = 0;
     setTimeout(function() { tText.textContent = tLabels[stage]; tText.style.opacity = 1; }, 250);
