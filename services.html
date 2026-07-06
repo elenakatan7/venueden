@@ -1,192 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Services — VenueDen | Full-Service Pop-Up Production, NYC</title>
-<meta name="description" content="Space sourcing, leasing, design, fabrication, staffing, logistics — VenueDen handles everything required to bring your NYC pop-up to life.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="preview.css">
-<link rel="stylesheet" href="site.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — VenueDen | From Empty Space to Unforgettable Retail, NYC</title>
+  <meta name="description" content="One partner for the whole pop-up: venue sourcing, lease negotiation, design, construction, staffing coordination, launch, and teardown — in New York City." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VenueDen" />
+  <meta property="og:title" content="Services — VenueDen" />
+  <meta property="og:description" content="Everything your popup needs. One partner." />
+  <meta property="og:image" content="https://venueden.com/assets/img/hero-store.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="preview.css" />
+  <style>
+    /* ——— Services page ——— */
+    .story{padding:11rem 0 9rem;background:var(--bg)}
+    .story-line{font-size:clamp(1.5rem,2.8vw,2.5rem);font-weight:500;letter-spacing:-.03em;line-height:1.3;color:var(--ink);max-width:24em;margin-bottom:1.1em}
+    .story-line.dim{color:var(--muted)}
+    .story-line em{color:var(--accent)}
+    .stage-head{display:flex;align-items:baseline;gap:1.25rem;margin-bottom:1.25rem}
+    .stage-num{font-family:var(--ff-serif);font-style:italic;font-size:1.125rem;color:var(--accent);letter-spacing:.02em;white-space:nowrap}
+    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.875rem;margin-top:3rem}
+    .cap-tile{background:var(--bg-soft);border-radius:14px;padding:1.5rem 1.375rem;font-size:.9375rem;font-weight:500;letter-spacing:-.01em;color:var(--ink);transition:transform .45s var(--ease),background .45s var(--ease)}
+    .cap-tile:hover{transform:translateY(-4px);background:var(--bg-beige)}
+    .cap-tile small{display:block;margin-top:.375rem;font-size:.75rem;font-weight:400;color:var(--muted);line-height:1.5}
+    .hood-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem}
+    .hood-cell{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-beige)}
+    .hood-cell img{width:100%;height:100%;object-fit:cover;display:block}
+    .hood-cell figcaption{position:absolute;left:1.25rem;bottom:1.1rem;z-index:2;color:#fff;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+    .hood-cell figcaption small{display:block;font-weight:400;font-size:.75rem;color:rgba(255,255,255,.85);margin-top:.2rem}
+    .hood-cell::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,9,6,.55),transparent 55%)}
+    .exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem;margin-top:2.75rem}
+    .exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}
+    .svc-reveal{transition-delay:calc(var(--i,0)*70ms)}
+    @media(max-width:1080px){.cap-grid{grid-template-columns:repeat(2,1fr)}.hood-strip{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){.story{padding:6rem 0 5rem}.cap-grid{grid-template-columns:1fr 1fr;gap:.625rem}.cap-tile{padding:1.125rem 1rem;font-size:.8125rem}.hood-strip{grid-template-columns:1fr 1fr;gap:.75rem}.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}}
+  </style>
 </head>
-<body style="background:var(--canvas)">
+<body>
 
-<nav class="nav-wrap nav-page" style="position:sticky;top:0;z-index:40;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between">
-  <a href="index.html" style="font-family:var(--ff-display);font-size:1.25rem;font-weight:300;letter-spacing:.06em;text-decoration:none;color:var(--ink)">VENUE DEN</a>
-  <div style="display:flex;gap:2rem;font-size:.75rem;font-weight:500;letter-spacing:.04em">
-    <a href="brands.html" style="text-decoration:none;color:var(--muted)">Brands</a>
-    <a href="industries.html" style="text-decoration:none;color:var(--muted)">Industries</a>
-    <a href="landlords.html" style="text-decoration:none;color:var(--muted)">Landlords</a>
-    <a href="services.html" style="text-decoration:none;color:var(--ink)">Services</a>
-    <a href="about.html" style="text-decoration:none;color:var(--muted)">About</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
+    <ul class="nav-links">
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="brands.html">Brands</a></li>
+      <li><a href="landlords.html">Landlords</a></li>
+      <li><a href="services.html" style="color:var(--accent)">Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="concierge.html" class="nav-cta">Start a Project</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+    </div>
   </div>
-  <a href="concierge.html" style="font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)">Start a Project →</a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="industries.html">Industries</a>
+    <a href="brands.html">Brands</a>
+    <a href="landlords.html">Landlords</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="concierge.html" class="mobile-menu-cta">Start a Project &#8594;</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<div style="background:var(--dark);padding:8rem 3rem 6rem;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;opacity:.08">
-    <img src="assets/img/ed-millwork.webp" style="width:100%;height:100%;object-fit:cover" alt="">
+<!-- HERO — cinematic build footage -->
+<section class="vchapter" id="chapter0">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/svc-build.mp4" muted playsinline loop preload="auto"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <h1 class="hero-h1">Everything your popup needs.<br><em>One partner.</em></h1>
+      <div class="hero-actions">
+        <a href="concierge.html" class="btn btn-solid btn-lg">Start Your Project</a>
+      </div>
+    </div>
   </div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2">
-    <div style="font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem">Full-Service Production</div>
-    <h1 style="font-family:var(--ff-display);font-size:clamp(3.5rem,7vw,7rem);font-weight:300;color:var(--white);line-height:.9;letter-spacing:-.04em;margin-bottom:2rem">We build<br><em style="font-style:italic">everything.</em></h1>
-    <p style="font-size:1.125rem;color:rgba(255,255,255,.4);max-width:54ch;line-height:1.75;margin-bottom:3rem">We handle everything required to bring your pop-up to life.</p>
-    <a href="concierge.html" style="display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--white);padding:1rem 2.5rem;text-decoration:none;border-radius:1px;transition:opacity .2s">Start Your Project →</a>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap">
+    <p class="story-line dim reveal">You have a product.</p>
+    <p class="story-line dim reveal">You want people to experience it &#8212; not scroll past it.</p>
+    <p class="story-line dim reveal">So you need the right neighborhood. Then the right space. Then a lease, a build, permits, lighting, fixtures, staff, and a hundred details nobody warns you about.</p>
+    <p class="story-line reveal">That&#8217;s where <em>VenueDen</em> comes in.</p>
   </div>
-</div>
+</section>
 
-<!-- SERVICE CATEGORIES -->
-<div style="max-width:1200px;margin:0 auto;padding:6rem 3rem">
-  <div style="text-align:center;margin-bottom:5rem">
-    <div class="eyebrow" style="justify-content:center">What We Do</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--ink);letter-spacing:-.03em;line-height:.95;margin-top:.75rem">The complete popup<br><em style="font-style:italic">ecosystem</em></h2>
+<!-- 01 DISCOVER -->
+<section style="background:var(--bg-soft);padding:8rem 0">
+  <div class="wrap">
+    <div class="split" style="margin:0">
+      <div class="reveal">
+        <div class="stage-head"><span class="stage-num">01</span><p class="label" style="margin:0">Discover</p></div>
+        <h3>It starts with a conversation.</h3>
+        <p>Before we look at a single space, we learn your brand: what you&#8217;re launching, who it&#8217;s for, when it needs to open, and what it needs to achieve. That brief drives everything that follows.</p>
+        <ul class="check-list">
+          <li>Brand, product, and launch goals</li>
+          <li>Audience and neighborhood fit</li>
+          <li>Timeline and budget &#8212; honest from day one</li>
+        </ul>
+      </div>
+      <div class="split-media reveal"><img src="assets/img/ed-capsule.webp" alt="A launch brief taking shape" loading="lazy" /></div>
+    </div>
   </div>
+</section>
 
-  <div class="services-big-grid">
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◻</span>
-      <div class="service-big-title">Space & Leasing</div>
-      <div class="service-big-desc">We source across New York City's most coveted neighborhoods and handle the landlord relationship so you don't have to.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Space sourcing & matching</li>
-        <li class="service-sub-item">Lease negotiation</li>
-        <li class="service-sub-item">Legal review</li>
-        <li class="service-sub-item">Insurance coordination</li>
-        <li class="service-sub-item">Permit filing (NYC DCA)</li>
-        <li class="service-sub-item">Utility setup</li>
-      </ul>
+<!-- 02 FIND THE RIGHT SPACE — video chapter -->
+<section class="vchapter">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/walkthrough.mp4" muted playsinline loop preload="none"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <p class="vkicker">02 — Find the right space</p>
+      <h2 class="vtitle">The city is<br><em>the portfolio.</em></h2>
+      <p class="vsub">We&#8217;re not limited to a listing page. We scout storefronts, open landlord doors, and negotiate short-term leases anywhere in New York &#8212; then walk you through the ones worth your launch.</p>
     </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◈</span>
-      <div class="service-big-title">Design & Concept</div>
-      <div class="service-big-desc">We translate your brand story into a spatial experience — from mood board to buildable plan.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Concept development</li>
-        <li class="service-sub-item">Space planning & layout</li>
-        <li class="service-sub-item">Visual merchandising strategy</li>
-        <li class="service-sub-item">Material & finish specification</li>
-        <li class="service-sub-item">Lighting design</li>
-        <li class="service-sub-item">Signage & wayfinding</li>
-        <li class="service-sub-item">Window display design</li>
-      </ul>
-    </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◧</span>
-      <div class="service-big-title">Build & Fabrication</div>
-      <div class="service-big-desc">We build worlds. Our fabrication crew handles everything from custom joinery to multi-level installations — on time, on budget.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Custom fixture fabrication</li>
-        <li class="service-sub-item">Wall treatments & painting</li>
-        <li class="service-sub-item">Ceiling modifications</li>
-        <li class="service-sub-item">Flooring installation</li>
-        <li class="service-sub-item">Electrical & lighting install</li>
-        <li class="service-sub-item">AV & tech integration</li>
-        <li class="service-sub-item">Strike & restoration</li>
-      </ul>
-    </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◑</span>
-      <div class="service-big-title">Furniture & Props</div>
-      <div class="service-big-desc">Rental furniture and props — vintage, contemporary, custom — sourced to fit the aesthetic of each build.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Display tables & pedestals</li>
-        <li class="service-sub-item">Seating & lounge furniture</li>
-        <li class="service-sub-item">Clothing racks & shelving</li>
-        <li class="service-sub-item">Props & decorative objects</li>
-        <li class="service-sub-item">Plants & greenery</li>
-        <li class="service-sub-item">Mirrors & lighting fixtures</li>
-      </ul>
-    </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◎</span>
-      <div class="service-big-title">Operations & Staffing</div>
-      <div class="service-big-desc">Your brand is only as good as the team representing it. We staff and train your floor so every customer interaction is on-brand.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Brand ambassador staffing</li>
-        <li class="service-sub-item">Security personnel</li>
-        <li class="service-sub-item">Cleaning & janitorial</li>
-        <li class="service-sub-item">POS system setup</li>
-        <li class="service-sub-item">Inventory management</li>
-        <li class="service-sub-item">Daily reporting</li>
-      </ul>
-    </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◐</span>
-      <div class="service-big-title">Content Capture</div>
-      <div class="service-big-desc">Optional production support: when you want the build and the finished space documented professionally, we coordinate trusted photographers and videographers.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Photography coordination</li>
-        <li class="service-sub-item">Videography coordination</li>
-        <li class="service-sub-item">Event-night coordination</li>
-        <li class="service-sub-item">Build &amp; opening documentation</li>
-      </ul>
-    </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◟</span>
-      <div class="service-big-title">Logistics & Shipping</div>
-      <div class="service-big-desc">We handle freight so you don't have to think about it. From warehouse to storefront, every item arrives exactly when and where it should.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Inbound freight coordination</li>
-        <li class="service-sub-item">Warehousing & storage</li>
-        <li class="service-sub-item">Receiving & inventory check-in</li>
-        <li class="service-sub-item">In-store merchandising</li>
-        <li class="service-sub-item">Post-activation pack-out</li>
-        <li class="service-sub-item">Return logistics</li>
-      </ul>
-    </div>
-
-    <div class="service-big-card">
-      <span class="service-big-icon">◌</span>
-      <div class="service-big-title">Concierge & Strategy</div>
-      <div class="service-big-desc">Every project gets a dedicated concierge. One point of contact. Total accountability. From first call to final invoice.</div>
-      <ul class="service-sub-list">
-        <li class="service-sub-item">Dedicated project manager</li>
-        <li class="service-sub-item">Pop-up strategy consultation</li>
-        <li class="service-sub-item">Neighborhood recommendation</li>
-        <li class="service-sub-item">Timeline & budget planning</li>
-        <li class="service-sub-item">Post-event analytics</li>
-        <li class="service-sub-item">Next-campaign planning</li>
-      </ul>
-    </div>
-
   </div>
-</div>
+</section>
 
-<!-- THE PROMISE -->
-<div style="background:var(--ivory);padding:9rem 0">
-  <div style="max-width:900px;margin:0 auto;padding:0 3rem;text-align:center">
-    <div class="eyebrow" style="justify-content:center;display:flex">The promise</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(2.25rem,4.2vw,3.75rem);font-weight:500;color:var(--ink);letter-spacing:-.035em;line-height:1.08;margin:1.25rem 0 2rem">We handle everything required<br>to bring your pop-up <em style="font-style:italic;font-weight:300">to life.</em></h2>
-    <p style="font-size:1.0625rem;color:var(--muted);line-height:1.9;max-width:62ch;margin:0 auto">The lease and the permits. The millwork, the lighting, the window vinyl. The furniture, the freight, the security, the staff on opening night, and the crew that returns the keys broom-clean when it&#8217;s over. One team carries it &#8212; you never manage a vendor.</p>
-    <a href="concierge.html" style="display:inline-block;margin-top:2.75rem;font-size:.875rem;font-weight:600;color:var(--white);background:var(--ink);padding:1.0625rem 2.5rem;text-decoration:none;border-radius:999px">Start your project</a>
+<!-- NEIGHBORHOODS -->
+<section style="background:var(--bg);padding:8rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">Neighborhoods</p>
+      <h2 class="h2" style="max-width:16em">Where a popup opens is half of <em>why it works.</em></h2>
+    </div>
+    <div class="hood-strip">
+      <figure class="hood-cell reveal svc-reveal" style="--i:0"><img src="assets/img/ed-castiron.webp" alt="SoHo cast-iron storefront" loading="lazy" /><figcaption>SoHo<small>Flagship energy, global foot traffic</small></figcaption></figure>
+      <figure class="hood-cell reveal svc-reveal" style="--i:1"><img src="assets/img/ed-loft.webp" alt="Nolita boutique space" loading="lazy" /><figcaption>Nolita<small>Intimate blocks, loyal locals</small></figcaption></figure>
+      <figure class="hood-cell reveal svc-reveal" style="--i:2"><img src="assets/img/ed-skylit.webp" alt="Tribeca skylit loft" loading="lazy" /><figcaption>Tribeca<small>Quiet luxury, collectors&#8217; pace</small></figcaption></figure>
+      <figure class="hood-cell reveal svc-reveal" style="--i:3"><img src="assets/img/ed-whitebox.webp" alt="Williamsburg white-box space" loading="lazy" /><figcaption>Williamsburg<small>Young, early, first-to-know</small></figcaption></figure>
+    </div>
+    <p class="section-note reveal" style="margin-top:2rem">A beauty launch and a streetwear drop don&#8217;t belong on the same block. We match the brand to the street.</p>
   </div>
-</div>
+</section>
 
-<!-- CUSTOM PROPOSALS -->
-<div style="background:var(--canvas);padding:7rem 3rem;text-align:center">
-  <div style="max-width:640px;margin:0 auto">
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.875rem,3vw,2.75rem);font-weight:500;color:var(--ink);letter-spacing:-.03em;line-height:1.15;margin-bottom:1.25rem">Every project is unique.</h2>
-    <p style="font-size:1.0625rem;color:var(--muted);line-height:1.8;margin-bottom:2.5rem">From intimate product launches to full-scale flagship experiences &#8212; tell us about your vision and we&#8217;ll prepare a custom proposal.</p>
-    <a href="concierge.html" style="display:inline-block;font-size:.875rem;font-weight:600;color:var(--white);background:var(--ink);padding:1.0625rem 2.5rem;text-decoration:none;border-radius:999px">Tell us about your project</a>
+<!-- 03 DESIGN & BUILD — transformation triptych -->
+<section class="vchapter vchapter--transform">
+  <div class="vsticky">
+    <video class="vbg tstage active" data-src="assets/video/empty-space.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg tstage" data-src="assets/video/midbuild.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg tstage" data-src="assets/video/doors.mp4" muted playsinline loop preload="none"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent" style="position:relative;z-index:2">
+      <p class="vkicker">03 — Design &amp; build</p>
+      <h2 class="vtitle">Watch the room<br><em>become the brand.</em></h2>
+      <p class="vsub">Construction, fabrication, lighting, fixtures, furniture, signage, install. We run every trade on one schedule and hold the quality bar daily &#8212; you never manage a contractor.</p>
+    </div>
+    <div class="tlabel">
+      <span class="tlabel-text" id="tlabelText">The empty space</span>
+      <span class="tlabel-count" id="tlabelCount">1 / 3</span>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
-<footer style="background:var(--dark);padding:5rem 3rem 3rem">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end">
-    <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:300;color:var(--white);letter-spacing:.04em">VENUE DEN</div>
-    <div style="font-size:.75rem;color:rgba(255,255,255,.35);display:flex;gap:1.5rem"><a href="services.html" style="color:rgba(255,255,255,.5);text-decoration:none">Services</a><a href="about.html" style="color:rgba(255,255,255,.5);text-decoration:none">About</a><a href="faq.html" style="color:rgba(255,255,255,.5);text-decoration:none">FAQ</a><span>© 2026 VenueDen · NYC</span></div>
-    <a href="mailto:hello@venueden.com" style="font-family:var(--ff-display);font-size:1rem;font-weight:300;color:var(--accent);text-decoration:none">hello@venueden.com</a>
+<!-- 04 PREPARE FOR OPENING — capability cards -->
+<section style="background:var(--bg);padding:9rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="stage-head"><span class="stage-num">04</span><p class="label" style="margin:0">Prepare for opening</p></div>
+      <h2 class="h2" style="max-width:15em">The week before doors open, <em>everything happens at once.</em></h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-tile reveal svc-reveal" style="--i:0">Utilities &amp; internet<small>On and tested before move-in</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:1">Vendor coordination<small>One schedule, one point of contact</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:2">Security coordination<small>Sized to the crowd you&#8217;re expecting</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:3">Cleaning coordination<small>Spotless at walkthrough, daily after</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:4">Loading logistics<small>Freight, receiving, check-in</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:5">Staffing coordination<small>A floor team briefed on your brand</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:6">Merchandising<small>Product placed the way it sells</small></div>
+      <div class="cap-tile reveal svc-reveal" style="--i:7">Final walkthrough<small>You arrive to a finished store</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 LAUNCH -->
+<section style="background:var(--bg-soft);padding:8rem 0">
+  <div class="wrap">
+    <div class="split" style="margin:0">
+      <div class="split-media reveal"><img src="assets/img/ed-beauty.webp" alt="Opening day at a finished popup" loading="lazy" /></div>
+      <div class="reveal">
+        <div class="stage-head"><span class="stage-num">05</span><p class="label" style="margin:0">Launch</p></div>
+        <h3>Opening day is yours. We work the edges.</h3>
+        <p>We&#8217;re on site while the line forms &#8212; and if you want the moment documented, we coordinate photographers and videographers we trust, so the store lives beyond its run.</p>
+        <ul class="check-list">
+          <li>Opening-day support on site</li>
+          <li>Photography &amp; videography coordination</li>
+          <li>Build and opening documented for your brand</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 WRAP UP -->
+<section class="statement">
+  <div class="wrap">
+    <div class="stage-head reveal"><span class="stage-num">06</span><p class="label" style="margin:0">Wrap up</p></div>
+    <p class="statement-text reveal">When it&#8217;s over, we strike the build, return the keys broom-clean, and close every loose end. <em>You just walk out.</em></p>
+  </div>
+</section>
+
+<!-- CAPABILITIES INDEX -->
+<section style="background:var(--bg-beige);padding:8rem 0">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">Everything we handle</p>
+      <h2 class="h2">Sixteen jobs. <em>One phone number.</em></h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-tile reveal svc-reveal" style="--i:0;background:var(--bg)">Venue sourcing</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:1;background:var(--bg)">Lease negotiation</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:2;background:var(--bg)">Popup strategy</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:3;background:var(--bg)">Construction</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:4;background:var(--bg)">Fabrication</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:5;background:var(--bg)">Lighting</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:6;background:var(--bg)">Fixtures</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:7;background:var(--bg)">Furniture</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:8;background:var(--bg)">Signage</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:9;background:var(--bg)">Photography</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:10;background:var(--bg)">Videography</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:11;background:var(--bg)">Security coordination</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:12;background:var(--bg)">Cleaning coordination</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:13;background:var(--bg)">Vendor coordination</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:14;background:var(--bg)">Installation</div>
+      <div class="cap-tile reveal svc-reveal" style="--i:15;background:var(--bg)">Teardown</div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED EXPERIENCE -->
+<section style="background:var(--bg);padding:7rem 0">
+  <div class="wrap" style="text-align:center">
+    <p class="label reveal" style="justify-content:center;display:flex">Selected experience</p>
+    <p class="section-note reveal" style="margin:0 auto;max-width:52ch">Past experience and activations connected to teams behind brands including:</p>
+    <div class="exp-row reveal">
+      <span>GLITCH&nbsp;PRODUCTIONS</span>
+      <span>STEVE&nbsp;MADDEN</span>
+      <span>VICTORIA&#8217;S&nbsp;SECRET</span>
+      <span>SAMSUNG</span>
+      <span>LIQUID&nbsp;I.V.</span>
+      <span>MODE&nbsp;MISCHIEF</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL — emotional ending -->
+<section class="vchapter">
+  <div class="vsticky">
+    <video class="vbg" data-src="assets/video/svc-open.mp4" muted playsinline loop preload="none"></video>
+    <div class="vscrim"></div>
+    <div class="wrap vcontent vcontent--center" style="position:relative;z-index:2;text-align:center">
+      <h2 class="vtitle">We don&#8217;t just find spaces.<br><em>We create places people remember.</em></h2>
+      <div class="hero-actions" style="justify-content:center">
+        <a href="concierge.html" class="btn btn-solid btn-lg">Let&#8217;s Build Your Popup</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none">
+      <span>&#169; 2026 VenueDen &#8212; New York City</span>
+      <div class="footer-legal"><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a></div>
+    </div>
   </div>
 </footer>
+
+<script>
+(function() {
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (burger) {
+    burger.addEventListener('click', function(){ nav.classList.toggle('menu-open'); });
+    mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('menu-open'); }); });
+  }
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+  document.querySelectorAll('video.vbg').forEach(function(v) {
+    v.loop = true;
+    var bar = document.createElement('div');
+    bar.className = 'chapter-progress';
+    v.closest('.vsticky').appendChild(bar);
+    v.addEventListener('timeupdate', function() {
+      if (v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')';
+    });
+  });
+
+  // All footage attaches and plays immediately — continuous playback everywhere
+  function attach(v) {
+    if (v.dataset.src && !v.src) {
+      v.src = v.dataset.src;
+      v.load();
+      if (!v.classList.contains('tstage')) {
+        v.classList.add('vbg-fade');
+        v.addEventListener('playing', function() { v.classList.add('ready'); }, { once: true });
+      }
+    }
+    v.play().catch(function(){});
+  }
+  document.querySelectorAll('video').forEach(attach);
+
+  var videoObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('in-view');
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
+
+  // Transformation triptych — crossfade with a deadband against scroll jitter
+  var transform = document.querySelector('.vchapter--transform');
+  var tStages = transform ? transform.querySelectorAll('.tstage') : [];
+  var tLabels = ['The empty space', 'The build', 'Doors open'];
+  var tText = document.getElementById('tlabelText');
+  var tCount = document.getElementById('tlabelCount');
+  var curStage = 0;
+  function updateStage() {
+    if (!transform) return;
+    var r = transform.getBoundingClientRect();
+    var scrollable = r.height - window.innerHeight;
+    if (scrollable <= 0) return;
+    var p = Math.min(Math.max(-r.top / scrollable, 0), 0.999);
+    var raw = p * 3;
+    var stage = Math.floor(raw);
+    if (stage === curStage || Math.abs(raw - Math.round(raw)) < 0.06) return;
+    curStage = stage;
+    tStages.forEach(function(v, i) { v.classList.toggle('active', i === stage); });
+    tText.style.opacity = 0;
+    setTimeout(function() { tText.textContent = tLabels[stage]; tText.style.opacity = 1; }, 250);
+    tCount.textContent = (stage + 1) + ' / 3';
+  }
+  window.addEventListener('scroll', updateStage, { passive: true });
+
+  // Subtle parallax drift on editorial imagery
+  var plxEls = document.querySelectorAll('.split-media img, .hood-cell img');
+  plxEls.forEach(function(el) { el.classList.add('plx'); el.style.transform = 'scale(1.12)'; });
+  var plxTick = false;
+  function parallax() {
+    var vh = window.innerHeight;
+    plxEls.forEach(function(el) {
+      var r = el.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      var p = (r.top + r.height / 2 - vh / 2) / vh;
+      el.style.transform = 'scale(1.12) translateY(' + (p * -14) + 'px)';
+    });
+    plxTick = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!plxTick) { plxTick = true; requestAnimationFrame(parallax); }
+  }, { passive: true });
+  parallax();
+})();
+</script>
 </body>
 </html>
