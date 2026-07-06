@@ -276,9 +276,17 @@
       if (v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')';
     });
   });
-  // Lazy-attach video sources shortly before they scroll into view
+  // Lazy-attach video sources shortly before they scroll into view.
+  // Videos fade in on first frame instead of popping from black.
   function attach(v) {
-    if (v.dataset.src && !v.src) { v.src = v.dataset.src; v.load(); }
+    if (v.dataset.src && !v.src) {
+      v.src = v.dataset.src;
+      v.load();
+      if (!v.classList.contains('tstage')) {
+        v.classList.add('vbg-fade');
+        v.addEventListener('playing', function() { v.classList.add('ready'); }, { once: true });
+      }
+    }
   }
   var lazyObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
@@ -290,19 +298,22 @@
   }, { rootMargin: '120% 0px' });
   document.querySelectorAll('.vchapter').forEach(function(el) { lazyObs.observe(el); });
 
+  // Play/pause with hysteresis: play once a fifth of the chapter is visible,
+  // but only pause when it has fully left the viewport — no thrashing while a
+  // section slides over the pinned video.
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       var vids = e.target.querySelectorAll('video');
-      if (e.isIntersecting) {
+      if (e.intersectionRatio >= 0.2) {
         e.target.classList.add('in-view');
         vids.forEach(function(v) {
           if (!v.classList.contains('tstage') || v.classList.contains('active')) v.play().catch(function(){});
         });
-      } else {
+      } else if (!e.isIntersecting) {
         vids.forEach(function(v) { v.pause(); });
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: [0, 0.2] });
   document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
 
   // Transformation triptych: crossfade stages as you scroll through the chapter
@@ -318,8 +329,11 @@
     var scrollable = r.height - window.innerHeight;
     if (scrollable <= 0) return;
     var p = Math.min(Math.max(-r.top / scrollable, 0), 0.999);
-    var stage = Math.floor(p * 3);
-    if (stage === curStage) return;
+    var raw = p * 3;
+    var stage = Math.floor(raw);
+    // Deadband: only switch stages once clearly past the boundary, so tiny
+    // scroll jitters at a cut point don't flicker the crossfade
+    if (stage === curStage || Math.abs(raw - Math.round(raw)) < 0.06) return;
     curStage = stage;
     tStages.forEach(function(v, i) {
       v.classList.toggle('active', i === stage);

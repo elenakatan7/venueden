@@ -83,7 +83,7 @@ section{position:relative;z-index:2}
 .vchapter .vcontent{opacity:0;transform:translateY(44px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
 .vchapter.in-view .vcontent{opacity:1;transform:none}
 #chapter0 .vcontent{opacity:1;transform:none;transition:none}
-.plx{will-change:transform;transition:transform .1s linear}
+.plx{will-change:transform}
 .vchapter--transform{height:320vh}
 .tstage{opacity:0;transition:opacity .9s var(--ease)}
 .tstage.active{opacity:1}
