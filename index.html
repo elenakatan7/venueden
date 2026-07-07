@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VenueDen — Pop-Up Venue Sourcing &amp; Production | New York City</title>
-  <meta name="description" content="VenueDen is New York's premium pop-up retail agency. We source the right space, produce the build, and deliver a retail experience ready to open." />
-  <meta property="og:title" content="VenueDen — Pop-Up Venue Sourcing &amp; Production, NYC" />
+  <title>VenueDen — New York&#8217;s Pop-Up Production Partner</title>
+  <meta name="description" content="VenueDen is New York&#8217;s pop-up production partner. We source the space, produce the build, and deliver a store ready to open — SoHo to Williamsburg." />
+  <meta property="og:title" content="VenueDen — New York&#8217;s Pop-Up Production Partner" />
   <meta property="og:description" content="We source the right space, produce the build, and deliver a retail experience ready to open." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VenueDen" />
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="preview.css" />
-  <style>.exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem}.exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}@media(max-width:720px){.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}}</style>
+  <style>.stat-row{display:flex;justify-content:center;gap:4.5rem;flex-wrap:wrap;margin-bottom:4rem}.stat-row strong{display:block;font-size:1.75rem;font-weight:600;letter-spacing:-.03em;color:var(--ink)}.stat-row span{font-size:.8125rem;color:var(--muted)}@media(max-width:720px){.stat-row{gap:2rem}.stat-row strong{font-size:1.25rem}}.exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem}.exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}@media(max-width:720px){.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}}</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"VenueDen","description":"Pop-up retail venue sourcing and production agency in New York City.","url":"https://venueden.com","email":"hello@venueden.com","areaServed":"New York City","address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"},"knowsAbout":["NYC popup production","popup venue NYC","Soho popup space","short-term retail lease","pop-up store build-out"]}
 </script>
@@ -58,7 +58,7 @@
         <span class="hero-line">Source the right space.</span>
         <span class="hero-line">Build <em>the experience.</em></span>
       </h1>
-      <p class="hero-sub">Premium pop-up venue sourcing and production in New York City.</p>
+      <p class="hero-sub">New York&#8217;s pop-up production partner.</p>
       <div class="hero-actions">
         <a href="concierge.html" class="btn btn-solid btn-lg">Start your project</a>
       </div>
@@ -70,7 +70,7 @@
 <!-- POSITIONING STATEMENT -->
 <section class="statement">
   <div class="wrap">
-    <p class="statement-text reveal">We source the space, secure the lease, and manage the build. <em>One team, instead of a dozen vendors.</em></p>
+    <p class="statement-text reveal">The best retail experiences are built <em>long before opening day.</em></p>
   </div>
 </section>
 
@@ -128,11 +128,12 @@
 </section>
 
 <!-- CHAPTER: PRODUCTION — scroll-triggered transformation triptych -->
-<section class="vchapter vchapter--transform" id="chapter2">
+<section class="vchapter vchapter--transform" id="chapter2" style="height:400vh">
   <div class="vsticky">
     <video class="vbg tstage active" muted loop playsinline preload="none" data-src="assets/video/empty-space.mp4"></video>
     <video class="vbg tstage" muted loop playsinline preload="none" data-src="assets/video/midbuild.mp4"></video>
     <video class="vbg tstage" muted loop playsinline preload="none" data-src="assets/video/doors.mp4"></video>
+    <video class="vbg tstage" muted loop playsinline preload="none" data-src="assets/video/svc-open.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">Pop-Up Production</p>
@@ -142,7 +143,7 @@
     </div>
     <div class="tlabel">
       <span class="tlabel-text" id="tlabelText">The empty space</span>
-      <span class="tlabel-count" id="tlabelCount">1 / 3</span>
+      <span class="tlabel-count" id="tlabelCount">1 / 4</span>
     </div>
   </div>
 </section>
@@ -179,6 +180,7 @@
 <!-- SELECTED EXPERIENCE -->
 <section class="trusted">
   <div class="wrap" style="text-align:center">
+    <div class="stat-row reveal"><div><strong>30+</strong><span>brands supported</span></div><div><strong>SoHo &#8594; Williamsburg</strong><span>across New York</span></div><div><strong>1 business day</strong><span>response, every inquiry</span></div></div>
     <p class="trusted-label" style="text-align:center;margin-bottom:2.5rem">Selected experience &#8212; teams behind brands including</p>
     <div class="exp-row">
       <span>GLITCH&nbsp;PRODUCTIONS</span>
@@ -310,7 +312,7 @@
   // Transformation triptych: crossfade stages as you scroll through the chapter
   var transform = document.querySelector('.vchapter--transform');
   var tStages = transform ? transform.querySelectorAll('.tstage') : [];
-  var tLabels = ['The empty space', 'The build', 'Doors open'];
+  var tLabels = ['The empty space', 'The build', 'Doors open', 'The crowd'];
   var tText = document.getElementById('tlabelText');
   var tCount = document.getElementById('tlabelCount');
   var curStage = 0;
@@ -320,7 +322,7 @@
     var scrollable = r.height - window.innerHeight;
     if (scrollable <= 0) return;
     var p = Math.min(Math.max(-r.top / scrollable, 0), 0.999);
-    var raw = p * 3;
+    var raw = p * 4;
     var stage = Math.floor(raw);
     // Deadband: only switch stages once clearly past the boundary, so tiny
     // scroll jitters at a cut point don't flicker the crossfade
@@ -332,7 +334,7 @@
     });
     tText.style.opacity = 0;
     setTimeout(function() { tText.textContent = tLabels[stage]; tText.style.opacity = 1; }, 250);
-    tCount.textContent = (stage + 1) + ' / 3';
+    tCount.textContent = (stage + 1) + ' / 4';
   }
   window.addEventListener('scroll', updateStage, { passive: true });
 
