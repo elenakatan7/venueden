@@ -22,33 +22,17 @@
     .flow-node.hl{background:var(--dark);color:#fff}
     .flow-arrow{font-family:var(--ff-serif);font-style:italic;color:var(--accent);font-size:1.25rem}
     /* trust cards */
-    .trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3.5rem}
-    .trust-card{background:var(--bg-soft);border-radius:16px;padding:2rem 1.5rem;transition:transform .45s var(--ease)}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
+    .trust-card{background:var(--bg-soft);border-radius:16px;padding:2.5rem 2.25rem;transition:transform .45s var(--ease)}
     .trust-card:hover{transform:translateY(-4px)}
     .trust-card small{display:block;font-family:var(--ff-serif);font-style:italic;font-size:1rem;color:var(--accent);margin-bottom:.875rem}
     .trust-card h4{font-size:1rem;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:.5rem}
     .trust-card p{font-size:.8125rem;line-height:1.6;color:var(--muted)}
-    /* timeline */
-    .tline{display:grid;grid-template-columns:repeat(5,1fr);gap:1.75rem;margin-top:3.5rem;position:relative}
-    .tline::before{content:"";position:absolute;top:.5rem;left:2%;right:2%;height:1px;background:var(--bg-beige)}
-    .tstep{position:relative;padding-top:2rem}
-    .tstep::before{content:"";position:absolute;top:0;left:0;width:1.0625rem;height:1.0625rem;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-    .tstep h4{font-size:1rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.375rem}
-    .tstep p{font-size:.8125rem;line-height:1.6;color:var(--muted)}
-    .tstep small{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
-    /* spaces portfolio */
-    .port{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-    .port figure{position:relative;margin:0;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-beige)}
-    .port img{width:100%;height:100%;object-fit:cover;display:block}
-    .port figcaption{position:absolute;left:1.375rem;right:1.375rem;bottom:1.25rem;z-index:2;color:#fff}
-    .port figcaption strong{display:block;font-size:1.125rem;font-weight:600;letter-spacing:-.01em}
-    .port figcaption span{font-size:.8125rem;color:rgba(255,255,255,.85)}
-    .port figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,9,6,.55),transparent 45%)}
     /* objections */
     .faq-list{margin-top:3rem}
     .stagger{transition-delay:calc(var(--i,0)*80ms)}
-    @media(max-width:1080px){.trust-grid{grid-template-columns:1fr 1fr}.tline{grid-template-columns:1fr 1fr}.tline::before{display:none}.port{grid-template-columns:1fr}}
-    @media(max-width:720px){.tline{grid-template-columns:1fr}.flow-node{font-size:.8125rem;padding:.8125rem 1.25rem}}
+    @media(max-width:1080px){.trust-grid{grid-template-columns:1fr}}
+    @media(max-width:720px){.flow-node{font-size:.8125rem;padding:.8125rem 1.25rem}}
   </style>
 </head>
 <body>
@@ -121,43 +105,9 @@
       <h2 class="h2">Your property, <em>looked after.</em></h2>
     </div>
     <div class="trust-grid">
-      <div class="trust-card reveal stagger" style="--i:0"><small>01</small><h4>We vet brands</h4><p>Real teams, real plans, insurance in place. You approve every brand before it signs.</p></div>
-      <div class="trust-card reveal stagger" style="--i:1"><small>02</small><h4>We coordinate the process</h4><p>Install to breakdown, our production team runs it &#8212; not the tenant.</p></div>
-      <div class="trust-card reveal stagger" style="--i:2"><small>03</small><h4>We protect the space</h4><p>COIs before move-in, documented walkthroughs, builds designed to be removed.</p></div>
-      <div class="trust-card reveal stagger" style="--i:3"><small>04</small><h4>We manage communication</h4><p>One number to call. Any issue is our problem, not a stranger with keys.</p></div>
-      <div class="trust-card reveal stagger" style="--i:4"><small>05</small><h4>We maximize occupancy</h4><p>Back-to-back activations keep the space lit, earning, and showing beautifully.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section style="background:var(--bg-soft);padding:9rem 0">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="label">The journey</p>
-      <h2 class="h2">Five steps. <em>No workload.</em></h2>
-    </div>
-    <div class="tline">
-      <div class="tstep reveal stagger" style="--i:0"><small>1</small><h4>Tell us about your property</h4><p>Address, size, and a few photos is plenty.</p></div>
-      <div class="tstep reveal stagger" style="--i:1"><small>2</small><h4>We evaluate the space</h4><p>A walkthrough and an honest read on its pop-up potential.</p></div>
-      <div class="tstep reveal stagger" style="--i:2"><small>3</small><h4>We match the right brand</h4><p>Curated from our pipeline. You approve before anything signs.</p></div>
-      <div class="tstep reveal stagger" style="--i:3"><small>4</small><h4>We coordinate the pop-up</h4><p>Install, run, and breakdown &#8212; managed to a standard your building is glad to host.</p></div>
-      <div class="tstep reveal stagger" style="--i:4"><small>5</small><h4>You earn revenue</h4><p>Flexible terms, no listing fees, no lock-in. Handback is broom-clean.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SPACES WE ACTIVATE -->
-<section style="background:var(--bg);padding:9rem 0">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="label">The spaces we activate</p>
-      <h2 class="h2" style="max-width:15em">Every kind of storefront has a <em>brand waiting for it.</em></h2>
-    </div>
-    <div class="port">
-      <figure class="reveal stagger" style="--i:0"><img src="assets/img/ed-castiron.webp" alt="Cast-iron corner storefront" loading="lazy" /><figcaption><strong>The cast-iron corner</strong><span>SoHo &#8212; flagship launches, global names</span></figcaption></figure>
-      <figure class="reveal stagger" style="--i:1"><img src="assets/img/ed-whitebox.webp" alt="White-box gallery space" loading="lazy" /><figcaption><strong>The white box</strong><span>Nolita &#8212; capsule drops, gallery moments</span></figcaption></figure>
-      <figure class="reveal stagger" style="--i:2"><img src="assets/img/ed-skylit.webp" alt="Skylit loft space" loading="lazy" /><figcaption><strong>The skylit loft</strong><span>Tribeca &#8212; showrooms, quiet luxury</span></figcaption></figure>
+      <div class="trust-card reveal stagger" style="--i:0"><small>01</small><h4>We vet the brands</h4><p>Real teams, real plans, insurance in place. You approve every brand before anything signs.</p></div>
+      <div class="trust-card reveal stagger" style="--i:1"><small>02</small><h4>We protect the space</h4><p>COIs before move-in, documented walkthroughs, builds designed to be removed &#8212; and removed properly.</p></div>
+      <div class="trust-card reveal stagger" style="--i:2"><small>03</small><h4>We run everything</h4><p>Install to broom-clean handback, one number to call. Any issue is our problem, not yours.</p></div>
     </div>
   </div>
 </section>
@@ -246,7 +196,7 @@
   var faqs=document.querySelectorAll('.faq-list details');
   faqs.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)faqs.forEach(function(o){if(o!==d)o.open=false})})});
 
-  var plxEls=document.querySelectorAll('.port img');
+  var plxEls=document.querySelectorAll(".trust-card img");
   plxEls.forEach(function(el){el.classList.add('plx');el.style.transform='scale(1.12)'});
   var tick=false;
   function parallax(){
