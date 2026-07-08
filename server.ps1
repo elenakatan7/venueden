@@ -1,8 +1,9 @@
 $root = 'C:\Users\elena\Documents\venue'
+$port = if ($env:PORT) { [int]$env:PORT } else { 8081 }
 $listener = [System.Net.HttpListener]::new()
-$listener.Prefixes.Add('http://localhost:8081/')
+$listener.Prefixes.Add("http://localhost:$port/")
 $listener.Start()
-Write-Host "Serving $root on http://localhost:8081/"
+Write-Host "Serving $root on http://localhost:$port/"
 
 # Handle each request in its own runspace so a slow client can't starve the others
 $pool = [runspacefactory]::CreateRunspacePool(1, 16)
@@ -25,6 +26,8 @@ $handler = {
                 '.jpg'  { 'image/jpeg' }
                 '.svg'  { 'image/svg+xml' }
                 '.webp' { 'image/webp' }
+                '.mp4'  { 'video/mp4' }
+                '.ico'  { 'image/x-icon' }
                 default { 'application/octet-stream' }
             }
             $bytes = [System.IO.File]::ReadAllBytes($filePath)

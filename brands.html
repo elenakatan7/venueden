@@ -39,10 +39,10 @@
     .bwall{background:var(--bg);padding:clamp(7rem,13vh,11rem) 0 clamp(6rem,11vh,9.5rem)}
     .bwall-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;
       gap:clamp(1.75rem,3.4vw,3rem) clamp(2.5rem,4.6vw,4.75rem);max-width:1180px;margin:0 auto;padding:0 3rem}
-    .bwall-grid span{display:inline-block;font-size:clamp(1.25rem,2.5vw,2.125rem);font-weight:600;
-      letter-spacing:.045em;white-space:nowrap;color:var(--ink);opacity:.34;cursor:default;
+    .bwall-grid span{display:inline-block;font-size:clamp(1.375rem,2.7vw,2.375rem);white-space:nowrap;color:var(--ink);cursor:default;
       transition:opacity .5s var(--ease),transform .5s var(--ease)}
-    .bwall-grid span:hover{opacity:1;transform:scale(1.03)}
+    .bwall-grid span.sm{font-size:clamp(1rem,1.8vw,1.5rem)}
+    .bwall-grid span:hover{transform:scale(1.03)}
     .bwall-grid.reveal span{opacity:0;transform:translateY(18px)}
     .bwall-grid.reveal.visible span{opacity:.34;transform:none;transition:opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease) var(--d,0s)}
     .bwall-grid.reveal.visible span:hover{opacity:1;transform:scale(1.03);transition:opacity .5s var(--ease),transform .5s var(--ease)}
@@ -114,44 +114,45 @@
 
 <!-- THE WALL -->
 <section class="bwall" aria-label="Brands we have worked with">
+  <p class="section-note reveal" style="text-align:center;margin:0 auto 4rem;max-width:56ch;padding:0 2rem">Selected experience across projects, activations, and collaborations includes:</p>
   <div class="bwall-grid reveal" id="bwall">
-    <span>AUDEMARS&nbsp;PIGUET</span>
-    <span>NIKE</span>
-    <span>ADIDAS</span>
-    <span>SUPREME</span>
-    <span>NETFLIX</span>
-    <span>SAMSUNG</span>
-    <span>VICTORIA&#8217;S&nbsp;SECRET</span>
-    <span>LULULEMON</span>
-    <span>H&amp;M</span>
-    <span>DAVID&nbsp;YURMAN</span>
-    <span>STEVE&nbsp;MADDEN</span>
-    <span>MAYBELLINE</span>
-    <span>OLAPLEX</span>
-    <span>ULTA&nbsp;BEAUTY</span>
-    <span>REVLON</span>
-    <span>ANASTASIA&nbsp;BEVERLY&nbsp;HILLS</span>
-    <span>WELLA</span>
-    <span>MEDICUBE</span>
-    <span>TORRIDEN</span>
-    <span>BIODANCE</span>
-    <span>DERMA&nbsp;E</span>
-    <span>CLEARDEA</span>
-    <span>CATHAY&nbsp;PACIFIC</span>
-    <span>BACARDI</span>
-    <span>ACTIVISION</span>
-    <span>GLITCH&nbsp;PRODUCTIONS</span>
-    <span>ARIANA&nbsp;GRANDE&nbsp;MERCH</span>
-    <span>GODSPEED</span>
-    <span>LIQUID&nbsp;I.V.</span>
-    <span>THE&nbsp;GIVING&nbsp;MOVEMENT</span>
-    <span>ASOS</span>
-    <span>ADANOLA</span>
-    <span>MADEWELL</span>
-    <span>ONER&nbsp;ACTIVE</span>
-    <span>CAMI&nbsp;NYC</span>
-    <span>GIMAGUAS</span>
-    <span>MODE&nbsp;MISCHIEF</span>
+    <span class="lm lm-bold" data-desc="Retail activation">NIKE</span>
+    <span class="lm lm-bold" data-desc="Brand activation">adidas</span>
+    <span class="lm lm-wide" data-desc="Production support">SAMSUNG</span>
+    <span class="lm lm-serif" data-desc="Popup experience">Victoria&#8217;s&nbsp;Secret</span>
+    <span class="lm lm-bold" data-desc="Brand activation">NETFLIX</span>
+    <span class="lm lm-wide" data-desc="Popup retail">STEVE&nbsp;MADDEN</span>
+    <span class="lm lm-light" data-desc="Retail activation">lululemon</span>
+    <span class="lm lm-serif" data-desc="Venue sourcing">Audemars&nbsp;Piguet</span>
+    <span class="lm lm-serif" data-desc="Venue sourcing">David&nbsp;Yurman</span>
+    <span class="lm lm-bold" data-desc="Retail activation">ULTA&nbsp;BEAUTY</span>
+    <span class="lm lm-light" data-desc="Brand launch">Maybelline</span>
+    <span class="lm lm-bold" data-desc="Event production">BACARDI</span>
+    <span class="lm lm-wide sm" data-desc="Popup retail">SUPREME</span>
+    <span class="lm lm-bold sm" data-desc="Retail activation">H&amp;M</span>
+    <span class="lm lm-light sm" data-desc="Brand launch">OLAPLEX</span>
+    <span class="lm lm-bold sm" data-desc="Retail activation">REVLON</span>
+    <span class="lm lm-serif sm" data-desc="Brand launch">Anastasia&nbsp;Beverly&nbsp;Hills</span>
+    <span class="lm lm-light sm" data-desc="Brand activation">WELLA</span>
+    <span class="lm lm-wide sm" data-desc="Popup experience">MEDICUBE</span>
+    <span class="lm lm-light sm" data-desc="Popup experience">TORRIDEN</span>
+    <span class="lm lm-light sm" data-desc="Popup experience">BIODANCE</span>
+    <span class="lm lm-wide sm" data-desc="Brand launch">DERMA&nbsp;E</span>
+    <span class="lm lm-light sm" data-desc="Popup experience">CLEARDEA</span>
+    <span class="lm lm-serif sm" data-desc="Brand activation">Cathay&nbsp;Pacific</span>
+    <span class="lm lm-bold sm" data-desc="Brand activation">ACTIVISION</span>
+    <span class="lm lm-wide sm" data-desc="Creative collaboration">GLITCH&nbsp;PRODUCTIONS</span>
+    <span class="lm lm-serif sm" data-desc="Popup retail">Ariana&nbsp;Grande&nbsp;Merch</span>
+    <span class="lm lm-wide sm" data-desc="Creative collaboration">GODSPEED</span>
+    <span class="lm lm-bold sm" data-desc="Brand activation">LIQUID&nbsp;I.V.</span>
+    <span class="lm lm-light sm" data-desc="Popup retail">The&nbsp;Giving&nbsp;Movement</span>
+    <span class="lm lm-bold sm" data-desc="Popup retail">ASOS</span>
+    <span class="lm lm-light sm" data-desc="Popup retail">ADANOLA</span>
+    <span class="lm lm-light sm" data-desc="Retail activation">Madewell</span>
+    <span class="lm lm-wide sm" data-desc="Popup retail">ONER&nbsp;ACTIVE</span>
+    <span class="lm lm-serif sm" data-desc="Popup retail">CAMI&nbsp;NYC</span>
+    <span class="lm lm-serif sm" data-desc="Popup retail">Gimaguas</span>
+    <span class="lm lm-wide sm" data-desc="Creative collaboration">MODE&nbsp;MISCHIEF</span>
   </div>
 </section>
 

@@ -5,7 +5,8 @@
       "name": "venue-preview",
       "runtimeExecutable": "powershell",
       "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\elena\\Documents\\venue\\server.ps1"],
-      "port": 8081
+      "port": 8081,
+      "autoPort": true
     },
     {
       "name": "katan-preview",
