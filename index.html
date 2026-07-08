@@ -112,7 +112,7 @@
 <!-- CHAPTER: SOURCING -->
 <section class="vchapter" id="chapter1">
   <div class="vsticky">
-    <video class="vbg" autoplay muted loop playsinline preload="none" data-src="assets/video/walkthrough.mp4"></video>
+    <video class="vbg" autoplay muted loop playsinline preload="metadata" data-src="assets/video/walkthrough.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">Venue Sourcing</p>
@@ -134,10 +134,10 @@
 <!-- CHAPTER: PRODUCTION — scroll-triggered transformation triptych -->
 <section class="vchapter vchapter--transform" id="chapter2" style="height:400vh">
   <div class="vsticky">
-    <video class="vbg tstage active" autoplay muted loop playsinline preload="none" data-src="assets/video/empty-space.mp4"></video>
-    <video class="vbg tstage" autoplay muted loop playsinline preload="none" data-src="assets/video/midbuild.mp4"></video>
-    <video class="vbg tstage" autoplay muted loop playsinline preload="none" data-src="assets/video/doors.mp4"></video>
-    <video class="vbg tstage" autoplay muted loop playsinline preload="none" data-src="assets/video/svc-open.mp4"></video>
+    <video class="vbg tstage active" autoplay muted loop playsinline preload="metadata" data-src="assets/video/empty-space.mp4"></video>
+    <video class="vbg tstage" autoplay muted loop playsinline preload="metadata" data-src="assets/video/midbuild.mp4"></video>
+    <video class="vbg tstage" autoplay muted loop playsinline preload="metadata" data-src="assets/video/doors.mp4"></video>
+    <video class="vbg tstage" autoplay muted loop playsinline preload="metadata" data-src="assets/video/svc-open.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">Pop-Up Production</p>
@@ -170,7 +170,7 @@
 <!-- CHAPTER: THE FINISHED SPACE -->
 <section class="vchapter" id="chapter-result">
   <div class="vsticky">
-    <video class="vbg" autoplay muted loop playsinline preload="none" data-src="assets/video/boutique.mp4"></video>
+    <video class="vbg" autoplay muted loop playsinline preload="metadata" data-src="assets/video/boutique.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent">
       <p class="vkicker">The result</p>
@@ -218,7 +218,7 @@
 <!-- LANDLORD BANNER -->
 <section class="vchapter vchapter--short" id="chapter3">
   <div class="vsticky vsticky--short">
-    <video class="vbg" autoplay muted loop playsinline preload="none" data-src="assets/video/facade.mp4"></video>
+    <video class="vbg" autoplay muted loop playsinline preload="metadata" data-src="assets/video/facade.mp4"></video>
     <div class="vscrim vscrim--heavy"></div>
     <div class="vcontent vcontent--center">
       <p class="vkicker">For property owners</p>
@@ -325,7 +325,7 @@
   // Chapter visibility only drives the text reveals now
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      if (e.isIntersecting) e.target.classList.add('in-view');
+      if (e.isIntersecting) { e.target.classList.add("in-view"); e.target.querySelectorAll("video").forEach(function(v){ if(v.paused) v.play().catch(function(){}); }); }
     });
   }, { threshold: 0.2 });
   document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
@@ -404,12 +404,27 @@
       a.addEventListener('click', function() { nav.classList.remove('menu-open'); });
     });
   }
-  // Mobile autoplay rescue: some phones (Low Power Mode, Data Saver) block
-  // the first play() until a user gesture — kick every paused video then.
-  function kickVideos(){document.querySelectorAll("video").forEach(function(v){if(v.paused)v.play().catch(function(){})})}
-  document.addEventListener("touchstart",kickVideos,{once:true,passive:true});
-  document.addEventListener("scroll",kickVideos,{once:true,passive:true});
-  document.addEventListener("visibilitychange",function(){if(!document.hidden)kickVideos()});
+  // Mobile autoplay rescue: keep restarting any paused video on every
+  // gesture until all of them are rolling (Low Power Mode, Data Saver,
+  // and slow-network stalls all block the first attempts).
+  var kickTick=0;
+  function kickVideos(){
+    var now=Date.now(); if(now-kickTick<400)return; kickTick=now;
+    var allPlaying=true;
+    document.querySelectorAll("video").forEach(function(v){
+      if(v.paused){allPlaying=false;v.play().catch(function(){});}
+    });
+    if(allPlaying){
+      document.removeEventListener("touchstart",kickVideos);
+      document.removeEventListener("touchend",kickVideos);
+      document.removeEventListener("scroll",kickVideos);
+    }
+  }
+  document.addEventListener("touchstart",kickVideos,{passive:true});
+  document.addEventListener("touchend",kickVideos,{passive:true});
+  document.addEventListener("scroll",kickVideos,{passive:true});
+  document.addEventListener("visibilitychange",function(){if(!document.hidden){kickTick=0;kickVideos()}});
+  window.addEventListener("pageshow",function(){kickTick=0;kickVideos()});
 })();
 </script>
 </body>

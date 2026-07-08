@@ -120,7 +120,7 @@
 <!-- 02 FIND THE RIGHT SPACE — video chapter -->
 <section class="vchapter">
   <div class="vsticky">
-    <video class="vbg" autoplay data-src="assets/video/walkthrough.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg" autoplay data-src="assets/video/walkthrough.mp4" muted playsinline loop preload="metadata"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent" style="position:relative;z-index:2">
       <p class="vkicker">02 — Find the right space</p>
@@ -150,9 +150,9 @@
 <!-- 03 DESIGN & BUILD — transformation triptych -->
 <section class="vchapter vchapter--transform">
   <div class="vsticky">
-    <video class="vbg tstage active" autoplay data-src="assets/video/empty-space.mp4" muted playsinline loop preload="none"></video>
-    <video class="vbg tstage" autoplay data-src="assets/video/midbuild.mp4" muted playsinline loop preload="none"></video>
-    <video class="vbg tstage" autoplay data-src="assets/video/doors.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg tstage active" autoplay data-src="assets/video/empty-space.mp4" muted playsinline loop preload="metadata"></video>
+    <video class="vbg tstage" autoplay data-src="assets/video/midbuild.mp4" muted playsinline loop preload="metadata"></video>
+    <video class="vbg tstage" autoplay data-src="assets/video/doors.mp4" muted playsinline loop preload="metadata"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent" style="position:relative;z-index:2">
       <p class="vkicker">03 — Design &amp; build</p>
@@ -262,7 +262,7 @@
 <!-- FINAL — emotional ending -->
 <section class="vchapter">
   <div class="vsticky">
-    <video class="vbg" autoplay data-src="assets/video/svc-open.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg" autoplay data-src="assets/video/svc-open.mp4" muted playsinline loop preload="metadata"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent vcontent--center" style="position:relative;z-index:2;text-align:center">
       <h2 class="vtitle">We don&#8217;t just find spaces.<br><em>We create places people remember.</em></h2>
@@ -327,7 +327,7 @@
 
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      if (e.isIntersecting) e.target.classList.add('in-view');
+      if (e.isIntersecting) { e.target.classList.add("in-view"); e.target.querySelectorAll("video").forEach(function(v){ if(v.paused) v.play().catch(function(){}); }); }
     });
   }, { threshold: 0.2 });
   document.querySelectorAll('.vchapter').forEach(function(el) { videoObs.observe(el); });
@@ -374,12 +374,27 @@
     if (!plxTick) { plxTick = true; requestAnimationFrame(parallax); }
   }, { passive: true });
   parallax();
-  // Mobile autoplay rescue: some phones (Low Power Mode, Data Saver) block
-  // the first play() until a user gesture — kick every paused video then.
-  function kickVideos(){document.querySelectorAll("video").forEach(function(v){if(v.paused)v.play().catch(function(){})})}
-  document.addEventListener("touchstart",kickVideos,{once:true,passive:true});
-  document.addEventListener("scroll",kickVideos,{once:true,passive:true});
-  document.addEventListener("visibilitychange",function(){if(!document.hidden)kickVideos()});
+  // Mobile autoplay rescue: keep restarting any paused video on every
+  // gesture until all of them are rolling (Low Power Mode, Data Saver,
+  // and slow-network stalls all block the first attempts).
+  var kickTick=0;
+  function kickVideos(){
+    var now=Date.now(); if(now-kickTick<400)return; kickTick=now;
+    var allPlaying=true;
+    document.querySelectorAll("video").forEach(function(v){
+      if(v.paused){allPlaying=false;v.play().catch(function(){});}
+    });
+    if(allPlaying){
+      document.removeEventListener("touchstart",kickVideos);
+      document.removeEventListener("touchend",kickVideos);
+      document.removeEventListener("scroll",kickVideos);
+    }
+  }
+  document.addEventListener("touchstart",kickVideos,{passive:true});
+  document.addEventListener("touchend",kickVideos,{passive:true});
+  document.addEventListener("scroll",kickVideos,{passive:true});
+  document.addEventListener("visibilitychange",function(){if(!document.hidden){kickTick=0;kickVideos()}});
+  window.addEventListener("pageshow",function(){kickTick=0;kickVideos()});
 })();
 </script>
 </body>
