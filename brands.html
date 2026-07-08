@@ -103,7 +103,7 @@
 
 <!-- HERO -->
 <header class="bhero" id="bhero">
-  <video muted playsinline loop preload="none" data-vsrc="assets/video/brand-hero.mp4" aria-hidden="true"></video>
+  <video autoplay muted playsinline loop preload="none" data-vsrc="assets/video/brand-hero.mp4" aria-hidden="true"></video>
   <div class="bhero-scrim"></div>
   <div class="bhero-in">
     <h1>Brands We&#8217;ve<br>Worked With</h1>
@@ -157,7 +157,7 @@
 
 <!-- EDITORIAL FILM -->
 <div class="bfilm" aria-hidden="true">
-  <video muted playsinline loop preload="none" data-vsrc="assets/video/boutique.mp4"></video>
+  <video autoplay muted playsinline loop preload="none" data-vsrc="assets/video/boutique.mp4"></video>
 </div>
 
 <!-- ONE TRUE SECTION -->
@@ -209,6 +209,7 @@
   function attach(v){
     if(!v||!v.dataset.vsrc||v.src)return;
     v.src=v.dataset.vsrc;v.load();
+    v.addEventListener("loadeddata",function(){v.play().catch(function(){})});
     v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
     v.play().catch(function(){});
   }
@@ -218,8 +219,13 @@
     var f=document.querySelector('.bfilm video');
     if(f){var vo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){attach(f);vo.disconnect()}})},{rootMargin:'300px'});vo.observe(f)}
   }
-  if(document.readyState==='complete')startVideos();
-  else window.addEventListener('load',startVideos);
+  startVideos();
+  // Mobile autoplay rescue: some phones (Low Power Mode, Data Saver) block
+  // the first play() until a user gesture — kick every paused video then.
+  function kickVideos(){document.querySelectorAll("video").forEach(function(v){if(v.paused)v.play().catch(function(){})})}
+  document.addEventListener("touchstart",kickVideos,{once:true,passive:true});
+  document.addEventListener("scroll",kickVideos,{once:true,passive:true});
+  document.addEventListener("visibilitychange",function(){if(!document.hidden)kickVideos()});
 })();
 </script>
 </body>

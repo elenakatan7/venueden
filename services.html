@@ -68,7 +68,7 @@
 <!-- HERO — cinematic build footage -->
 <section class="vchapter" id="chapter0">
   <div class="vsticky">
-    <video class="vbg" data-src="assets/video/svc-build.mp4" muted playsinline loop preload="auto"></video>
+    <video class="vbg" autoplay data-src="assets/video/svc-build.mp4" muted playsinline loop preload="auto"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent" style="position:relative;z-index:2">
       <h1 class="hero-h1">Everything your popup needs.<br><em>One partner.</em></h1>
@@ -111,7 +111,7 @@
 <!-- 02 FIND THE RIGHT SPACE — video chapter -->
 <section class="vchapter">
   <div class="vsticky">
-    <video class="vbg" data-src="assets/video/walkthrough.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg" autoplay data-src="assets/video/walkthrough.mp4" muted playsinline loop preload="none"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent" style="position:relative;z-index:2">
       <p class="vkicker">02 — Find the right space</p>
@@ -141,9 +141,9 @@
 <!-- 03 DESIGN & BUILD — transformation triptych -->
 <section class="vchapter vchapter--transform">
   <div class="vsticky">
-    <video class="vbg tstage active" data-src="assets/video/empty-space.mp4" muted playsinline loop preload="none"></video>
-    <video class="vbg tstage" data-src="assets/video/midbuild.mp4" muted playsinline loop preload="none"></video>
-    <video class="vbg tstage" data-src="assets/video/doors.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg tstage active" autoplay data-src="assets/video/empty-space.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg tstage" autoplay data-src="assets/video/midbuild.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg tstage" autoplay data-src="assets/video/doors.mp4" muted playsinline loop preload="none"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent" style="position:relative;z-index:2">
       <p class="vkicker">03 — Design &amp; build</p>
@@ -253,7 +253,7 @@
 <!-- FINAL — emotional ending -->
 <section class="vchapter">
   <div class="vsticky">
-    <video class="vbg" data-src="assets/video/svc-open.mp4" muted playsinline loop preload="none"></video>
+    <video class="vbg" autoplay data-src="assets/video/svc-open.mp4" muted playsinline loop preload="none"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent vcontent--center" style="position:relative;z-index:2;text-align:center">
       <h2 class="vtitle">We don&#8217;t just find spaces.<br><em>We create places people remember.</em></h2>
@@ -306,6 +306,7 @@
     if (v.dataset.src && !v.src) {
       v.src = v.dataset.src;
       v.load();
+      v.addEventListener("loadeddata", function () { v.play().catch(function () {}); });
       if (!v.classList.contains('tstage')) {
         v.classList.add('vbg-fade');
         v.addEventListener('playing', function() { v.classList.add('ready'); }, { once: true });
@@ -364,6 +365,12 @@
     if (!plxTick) { plxTick = true; requestAnimationFrame(parallax); }
   }, { passive: true });
   parallax();
+  // Mobile autoplay rescue: some phones (Low Power Mode, Data Saver) block
+  // the first play() until a user gesture — kick every paused video then.
+  function kickVideos(){document.querySelectorAll("video").forEach(function(v){if(v.paused)v.play().catch(function(){})})}
+  document.addEventListener("touchstart",kickVideos,{once:true,passive:true});
+  document.addEventListener("scroll",kickVideos,{once:true,passive:true});
+  document.addEventListener("visibilitychange",function(){if(!document.hidden)kickVideos()});
 })();
 </script>
 </body>

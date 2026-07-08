@@ -63,7 +63,7 @@
 <!-- HERO -->
 <section class="vchapter" id="chapter0">
   <div class="vsticky">
-    <video class="vbg" data-src="assets/video/landlord-hero.mp4" muted playsinline loop preload="auto"></video>
+    <video class="vbg" autoplay data-src="assets/video/landlord-hero.mp4" muted playsinline loop preload="auto"></video>
     <div class="vscrim"></div>
     <div class="wrap vcontent" style="position:relative;z-index:2">
       <h1 class="hero-h1">Generate revenue<br>from your <em>storefront.</em></h1>
@@ -204,6 +204,7 @@
   });
   function attach(v){
     if(v.dataset.src&&!v.src){v.src=v.dataset.src;v.load();
+      v.addEventListener("loadeddata",function(){v.play().catch(function(){})});
       v.classList.add('vbg-fade');
       v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});}
     v.play().catch(function(){});
@@ -230,6 +231,12 @@
   }
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(parallax)}},{passive:true});
   parallax();
+  // Mobile autoplay rescue: some phones (Low Power Mode, Data Saver) block
+  // the first play() until a user gesture — kick every paused video then.
+  function kickVideos(){document.querySelectorAll("video").forEach(function(v){if(v.paused)v.play().catch(function(){})})}
+  document.addEventListener("touchstart",kickVideos,{once:true,passive:true});
+  document.addEventListener("scroll",kickVideos,{once:true,passive:true});
+  document.addEventListener("visibilitychange",function(){if(!document.hidden)kickVideos()});
 })();
 </script>
 </body>
