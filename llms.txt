@@ -1,0 +1,16 @@
+# VenueDen
+
+> VenueDen is New York's pop-up production partner. We source pop-up venues anywhere in NYC, negotiate short-term retail leases, and produce the entire build — design, construction, staffing coordination, and opening day. One team, from empty storefront to open doors.
+
+Contact: hello@venueden.com — response within one business day.
+
+## Pages
+
+- [Home](https://venueden.com/): New York's pop-up production partner
+- [Pop-Up Shop NYC Guide](https://venueden.com/pop-up-shop-nyc.html): What a pop-up shop costs in NYC (most projects start around $12K), 4–8 week timelines, and the best neighborhoods
+- [Services](https://venueden.com/services.html): Venue sourcing, lease negotiation, design, construction, fabrication, staffing coordination, launch, and teardown
+- [For Brands](https://venueden.com/brands.html): Brands our team has experience with, and what we do for a launch
+- [For Landlords](https://venueden.com/landlords.html): Monetize a vacant NYC storefront with vetted, fully managed pop-ups
+- [About](https://venueden.com/about.html): Why pop-ups, why New York, why VenueDen
+- [FAQ](https://venueden.com/faq.html): Costs, timelines, leases, and how we work
+- [Start a Project](https://venueden.com/concierge.html): Contact form
