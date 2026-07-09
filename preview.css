@@ -359,3 +359,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(prefers-reduced-motion:reduce){
   .cred-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;row-gap:1.25rem}
 }
+
+/* ——— Construction & fabrication showcase ——— */
+.build-cap{background:var(--bg-soft);padding:9rem 0}
+.build-cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 3rem;max-width:1080px;margin:4.5rem auto 0}
+.build-cap-col h4{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.125rem;padding-bottom:.75rem;border-bottom:1px solid var(--bg-beige)}
+.build-cap-col ul{list-style:none;margin:0;padding:0}
+.build-cap-col li{font-size:.9375rem;line-height:2;color:var(--muted)}
+.build-cap-foot{text-align:center;font-size:clamp(1.125rem,1.8vw,1.5rem);font-weight:500;letter-spacing:-.02em;color:var(--ink);margin-top:5rem}
+.build-cap-foot em{font-family:var(--ff-serif);font-style:italic;font-weight:300;color:var(--accent)}
+@media(max-width:900px){.build-cap{padding:6rem 0}.build-cap-grid{grid-template-columns:1fr 1fr;gap:2.25rem 2.5rem}}
+@media(max-width:560px){.build-cap-grid{grid-template-columns:1fr;gap:2rem}}
