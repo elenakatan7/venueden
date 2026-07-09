@@ -370,3 +370,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .build-cap-foot em{font-family:var(--ff-serif);font-style:italic;font-weight:300;color:var(--accent)}
 @media(max-width:900px){.build-cap{padding:6rem 0}.build-cap-grid{grid-template-columns:1fr 1fr;gap:2.25rem 2.5rem}}
 @media(max-width:560px){.build-cap-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ——— Environments gallery: any brand, any world ——— */
+.envs{background:var(--bg);padding:9rem 0}
+.envs-head{max-width:640px}
+.envs-head h2{margin-bottom:0}
+.env-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:3.5rem 0 0}
+.env-tile{position:relative;margin:0;border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-beige);transition:opacity .8s var(--ease),transform .6s var(--ease)}
+.env-tile:hover{transform:translateY(-5px)}
+.env-media,.env-media img,.env-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.env-vid{opacity:0;transition:opacity .6s var(--ease)}
+.env-vid.playing{opacity:1}
+.env-tile::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(12,9,6,.62),transparent 55%)}
+.env-tile figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.1rem 1rem;color:#fff}
+.env-name{display:block;font-weight:600;font-size:.9375rem;letter-spacing:-.01em}
+.env-industry{display:block;font-size:.625rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:.25rem}
+.envs-foot{text-align:center;font-family:var(--ff-serif);font-style:italic;font-weight:300;font-size:clamp(1.25rem,2.2vw,1.875rem);color:var(--ink);margin-top:4.5rem}
+@media(max-width:1000px){.env-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.envs{padding:6rem 0}.env-grid{grid-template-columns:1fr 1fr;gap:.75rem}.env-name{font-size:.875rem}}

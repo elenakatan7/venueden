@@ -237,6 +237,30 @@
   </div>
 </section>
 
+<!-- ANY BRAND, ANY WORLD — environment versatility -->
+<section class="envs">
+  <div class="wrap">
+    <div class="envs-head reveal">
+      <p class="label">Creative versatility</p>
+      <h2 class="h2">Any brand.<br><em>Any world.</em></h2>
+      <p class="section-note" style="max-width:52ch;margin-top:1.25rem">One team, every aesthetic. From a raw streetwear warehouse to a spotlit jewelry salon, we build the environment your brand lives in &#8212; never a template.</p>
+    </div>
+    <div class="env-grid">
+      <figure class="env-tile reveal stagger" style="--i:0"><div class="env-media"><img src="assets/img/ed-vacant.webp" alt="Streetwear warehouse pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Streetwear Warehouse</span><span class="env-industry">Fashion &#183; Culture</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:1"><div class="env-media"><img src="assets/img/ed-skylit.webp" alt="Athletic movement studio pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Movement Studio</span><span class="env-industry">Activewear &#183; Wellness</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:2"><div class="env-media"><img src="assets/img/ed-millwork.webp" alt="Luxury watch and jewelry salon pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Watch &amp; Jewelry Salon</span><span class="env-industry">Jewelry &#183; Watches</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:3"><div class="env-media"><img src="assets/img/ed-beauty.webp" alt="High-gloss beauty hall pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Beauty Hall</span><span class="env-industry">Beauty &#183; Cosmetics</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:4"><div class="env-media"><img src="assets/img/ed-whitebox.webp" alt="Clean skincare lab pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Skincare Lab</span><span class="env-industry">Skincare &#183; Wellness</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:5"><div class="env-media"><img src="assets/img/ed-capsule.webp" alt="Intimates boutique pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Intimates Boutique</span><span class="env-industry">Fashion &#183; Lingerie</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:6"><div class="env-media"><img src="assets/img/ed-castiron.webp" alt="Immersive LED entertainment pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Immersive LED</span><span class="env-industry">Entertainment &#183; Tech</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:7"><div class="env-media"><img src="assets/img/ed-loft.webp" alt="Scandinavian minimal fashion boutique pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Scandinavian Boutique</span><span class="env-industry">Fashion &#183; Retail</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:8"><div class="env-media"><img src="assets/img/ed-castiron.webp" alt="Rooftop beach club pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Rooftop Beach Club</span><span class="env-industry">Food &amp; Beverage &#183; Hospitality</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:9"><div class="env-media"><img src="assets/img/ed-loft.webp" alt="Boutique travel lounge pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Travel Lounge</span><span class="env-industry">Hospitality &#183; Travel</span></figcaption></figure>
+    </div>
+    <p class="envs-foot reveal">Every pop-up deserves a space as unique as the brand behind it.</p>
+  </div>
+</section>
+
 <!-- SELECTED EXPERIENCE -->
 <section class="trusted">
   <div class="wrap" style="text-align:center">
@@ -469,6 +493,7 @@
     var now=Date.now(); if(now-kickTick<400)return; kickTick=now;
     var allPlaying=true;
     document.querySelectorAll("video").forEach(function(v){
+      if(v.classList.contains("env-vid"))return; // gallery tiles are managed by their own observer
       if(v.paused){allPlaying=false;v.play().catch(function(){});}
     });
     if(allPlaying){
@@ -482,6 +507,22 @@
   document.addEventListener("scroll",kickVideos,{passive:true});
   document.addEventListener("visibilitychange",function(){if(!document.hidden){kickTick=0;kickVideos()}});
   window.addEventListener("pageshow",function(){kickTick=0;kickVideos()});
+
+  // Environments gallery: play only the most-visible tile's video.
+  // No-op until env-*.mp4 clips are dropped in with data-src (placeholders show till then).
+  var envVids = document.querySelectorAll(".env-vid[data-src]");
+  if (envVids.length) {
+    var envObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (v.dataset.src && !v.src) { v.src = v.dataset.src; v.load(); }
+          v.play().then(function(){ v.classList.add("playing"); }).catch(function(){});
+        } else { v.pause(); v.classList.remove("playing"); }
+      });
+    }, { threshold: 0.55 });
+    envVids.forEach(function(v){ envObs.observe(v); });
+  }
 })();
 </script>
 </body>
