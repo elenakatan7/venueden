@@ -112,8 +112,8 @@
 
 <!-- HERO -->
 <header class="bhero" id="bhero">
-  <video autoplay muted playsinline preload="metadata" aria-hidden="true"></video>
-  <video muted playsinline preload="auto" aria-hidden="true"></video>
+  <video autoplay muted playsinline preload="metadata" poster="assets/img/poster-brands.jpg" aria-hidden="true"></video>
+  <video muted playsinline preload="none" aria-hidden="true"></video>
   <div class="bhero-scrim"></div>
   <div class="bhero-in">
     <h1>Brands We&#8217;ve<br>Worked With</h1>
@@ -240,13 +240,12 @@
     if(vids.length<2)return;
     var cur=vids[0],nxt=vids[1],i=0,switching=false;
     cur.src=heroScenes[0];cur.load();
-    cur.addEventListener('playing',function(){cur.classList.add('ready')},{once:true});
+    cur.addEventListener('playing',function(){cur.classList.add('ready');preloadNext()},{once:true});
     cur.play().catch(function(){});
     function preloadNext(){
       nxt.src=heroScenes[(i+1)%heroScenes.length];
       nxt.load();
     }
-    preloadNext();
     function swap(){
       nxt.classList.add('ready');
       cur.classList.remove('ready');
