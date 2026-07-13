@@ -1,183 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brand Intake — VenueDen | NYC Pop-Up Retail</title>
-  <meta name="description" content="Send VenueDen your moodboards, vision, and pop-up details. We reply within one business day with NYC space options and a plan." />
-  <meta name="robots" content="noindex, follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="VenueDen" />
-  <meta property="og:title" content="Brand Intake — VenueDen" />
-  <meta property="og:description" content="Drop your moodboards and details. Response within one business day." />
-  <meta property="og:image" content="https://venueden.com/assets/img/og-cover.jpg" />
-  <link rel="canonical" href="https://venueden.com/brand-intake.html" />
-  <meta property="og:url" content="https://venueden.com/brand-intake.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://venueden.com/assets/img/og-cover.jpg" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" /></noscript>
-  <link rel="stylesheet" href="preview.css" />
-  <style>
-    .contact-grid{display:grid;grid-template-columns:5fr 6fr;gap:5rem;align-items:start}
-    .contact-aside p{color:var(--muted);line-height:1.75;max-width:38ch}
-    .contact-fact{margin-top:2.5rem}
-    .contact-fact small{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.375rem}
-    .contact-fact span,.contact-fact a{font-size:1.0625rem;font-weight:500;color:var(--ink);text-decoration:none}
-    .cform{display:flex;flex-direction:column;gap:1.25rem}
-    .cform label{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-    .cform input,.cform textarea{width:100%;box-sizing:border-box;background:#fff;border:1px solid var(--bg-beige);border-radius:12px;padding:1rem 1.125rem;font-family:inherit;font-size:1rem;color:var(--ink);outline:none;transition:border-color .25s}
-    .cform input:focus,.cform textarea:focus{border-color:var(--accent)}
-    .cform textarea{resize:vertical;min-height:8.5rem;line-height:1.6}
-    .cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-    .cform button{margin-top:.5rem}
-    .cform input[type=file]{padding:.8rem 1.125rem;font-size:.875rem;color:var(--muted)}
-    .cform input[type=file]::file-selector-button{background:var(--ink);color:#fff;border:none;border-radius:999px;padding:.5rem 1.125rem;margin-right:.875rem;font-family:inherit;font-size:.8125rem;font-weight:600;cursor:pointer}
-    .form-note{font-size:.8125rem;color:var(--muted)}
-    @media(max-width:1080px){.contact-grid{grid-template-columns:1fr;gap:3.5rem}}
-    @media(max-width:720px){.cform .row2{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Intake — VENUE DEN</title>
+<meta name="description" content="Tell us about your brand and your pop-up. We'll come back with spaces, a production outline, and a budget estimate.">
+<style>
+  :root{
+    --ink:#111111;
+    --paper:#faf9f6;
+    --muted:#6b6b6b;
+    --line:#d9d6d0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  em,.serif{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:24px 40px;border-bottom:1px solid var(--line);
+  }
+  .wordmark{font-size:15px;letter-spacing:.35em;font-weight:700;text-decoration:none;color:var(--ink)}
+  header a.mail{font-size:13px;color:var(--muted);text-decoration:none}
+  header a.mail:hover{color:var(--ink)}
+
+  .wrap{max-width:680px;margin:0 auto;padding:72px 24px 96px}
+
+  .kicker{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+  h1{font-size:clamp(34px,6vw,52px);line-height:1.05;font-weight:700;letter-spacing:-.01em;margin-bottom:20px}
+  .intro{font-size:16px;color:var(--muted);max-width:52ch;margin-bottom:56px}
+
+  form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
+  .full{grid-column:1 / -1}
+
+  label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+  .hint{font-size:12px;color:var(--muted);margin-top:6px}
+
+  input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
+    width:100%;
+    background:transparent;
+    border:none;border-bottom:1px solid var(--line);
+    padding:10px 2px;
+    font-size:16px;font-family:inherit;color:var(--ink);
+    border-radius:0;
+    appearance:none;-webkit-appearance:none;
+  }
+  select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'><path d='M1 1l5 5 5-5' fill='none' stroke='%23111' stroke-width='1.5'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:24px}
+  textarea{min-height:120px;resize:vertical;line-height:1.6}
+  input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--ink)}
+  ::placeholder{color:#b3b0aa}
+
+  fieldset{border:none;grid-column:1 / -1}
+  fieldset legend{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+  .checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px 20px}
+  .checks label{
+    display:flex;align-items:center;gap:10px;
+    font-size:14px;letter-spacing:0;text-transform:none;
+    cursor:pointer;font-weight:400;
+  }
+  .checks input{accent-color:var(--ink);width:16px;height:16px;flex:none}
+
+  .section{grid-column:1 / -1;margin-top:28px;padding-top:32px;border-top:1px solid var(--line)}
+  .section .kicker{margin-bottom:0}
+
+  .dropzone{
+    position:relative;
+    border:1px dashed var(--line);
+    padding:36px 24px;
+    text-align:center;
+    cursor:pointer;
+    transition:border-color .2s,background .2s;
+  }
+  .dropzone:hover,.dropzone.dragover{border-color:var(--ink);background:#f3f1ec}
+  .dropzone input[type=file]{
+    position:absolute;inset:0;width:100%;height:100%;
+    opacity:0;cursor:pointer;border:none;padding:0;
+  }
+  .dz-text{font-size:16px}
+  .dz-text em{font-size:17px}
+  .dz-list{list-style:none;margin-top:14px;font-size:13px;color:var(--muted);text-align:left;display:inline-block}
+  .dz-list li{padding:2px 0}
+  .dz-list li::before{content:"·  "}
+
+  button{
+    grid-column:1 / -1;
+    margin-top:16px;
+    background:var(--ink);color:var(--paper);
+    border:none;padding:18px 32px;
+    font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+    cursor:pointer;font-family:inherit;
+    transition:opacity .2s;
+  }
+  button:hover{opacity:.85}
+  .footnote{grid-column:1 / -1;font-size:12px;color:var(--muted);text-align:center}
+
+  footer{border-top:1px solid var(--line);padding:32px 40px;font-size:12px;color:var(--muted);text-align:center}
+  footer a{color:inherit}
+
+  @media(max-width:600px){
+    form{grid-template-columns:1fr}
+    .full,fieldset,.section,button,.footnote{grid-column:1}
+    header{padding:20px 24px}
+  }
+</style>
 </head>
 <body>
 
-<nav class="nav scrolled" id="nav" style="position:sticky">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">VENUE&nbsp;DEN</a>
-    <ul class="nav-links">
-      <li><a href="brands.html">Brands</a></li>
-      <li><a href="landlords.html">Landlords</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="mailto:hello@venueden.com" class="nav-cta">hello@venueden.com</a>
-      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="brands.html">Brands</a>
-    <a href="landlords.html">Landlords</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="mailto:hello@venueden.com" class="mobile-menu-cta">hello@venueden.com &#8594;</a>
-  </div>
-</nav>
-
-<header class="page-hero" style="padding-bottom:4rem">
-  <div class="wrap">
-    <p class="label">Brand intake</p>
-    <h1 class="h2">Show us<br>your <em>vision.</em></h1>
-  </div>
+<header>
+  <a class="wordmark" href="/index.html">VENUE&nbsp;DEN</a>
+  <a class="mail" href="mailto:hello@venueden.com">hello@venueden.com</a>
 </header>
 
-<section style="background:var(--bg);padding-bottom:9rem">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div class="contact-aside">
-        <p>Moodboards, decks, reference images, dates &#8212; drop it all here. We&#8217;ll come back within one business day with spaces and a plan.</p>
-        <div class="contact-fact"><small>Email</small><a href="mailto:hello@venueden.com">hello@venueden.com</a></div>
-        <div class="contact-fact"><small>Response</small><span>Within one business day</span></div>
-        <div class="contact-fact"><small>Hours</small><span>Mon&#8211;Fri, 9am&#8211;7pm ET</span></div>
-      </div>
-      <form class="cform" id="cform">
-        <div class="row2">
-          <div><label for="f-name">Name</label><input id="f-name" name="Name" type="text" autocomplete="name" required></div>
-          <div><label for="f-brand">Brand</label><input id="f-brand" name="Brand" type="text" autocomplete="organization" required></div>
-        </div>
-        <div class="row2">
-          <div><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email" required></div>
-          <div><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555"></div>
-        </div>
-        <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. End of October 2026"></div>
-        <div><label for="f-file">Moodboard or deck <span style="text-transform:none;letter-spacing:0;font-weight:400">(PDF or images, up to 10MB)</span></label><input id="f-file" name="attachment" type="file" accept=".pdf,.png,.jpg,.jpeg,.ppt,.pptx,.key"></div>
-        <div><label for="f-msg">The vision</label><textarea id="f-msg" name="Message" placeholder="The concept, the vibe, the neighborhood if you have one in mind &#8212; and links to anything we should see." required></textarea></div>
-        <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
-        <p class="form-note">We read everything. You&#8217;ll hear back within one business day.</p>
-      </form>
-      <div id="sent" style="display:none">
-        <h3 style="font-size:2rem;letter-spacing:-.03em;margin-bottom:1rem">Thank you.</h3>
-        <p style="color:var(--muted);line-height:1.75;max-width:44ch">Got it. We&#8217;ll reply within one business day. <a href="faq.html" style="color:var(--ink)">Read the FAQ while you wait &#8594;</a></p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+  <p class="kicker">Brand Intake</p>
+  <h1>Tell us about <em>your pop-up.</em></h1>
+  <p class="intro">Five minutes, no obligation. The more we know, the better the spaces and the sharper the budget we bring to your first call.</p>
 
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-bottom" style="border-top:none">
-      <span>&#169; 2026 VenueDen &#8212; New York City</span>
-      <div class="footer-legal"><a href="index.html">Home</a><a href="services.html">Services</a><a href="faq.html">FAQ</a></div>
+  <!-- Submissions are delivered by FormSubmit to hello@venueden.com, cc ryan@venueden.com.
+       NOTE: the first-ever submission triggers an activation email to hello@venueden.com.
+       Click the activation link in that email once, and all future submissions will be delivered. -->
+  <form action="https://formsubmit.co/hello@venueden.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_cc" value="ryan@venueden.com">
+    <input type="hidden" name="_subject" value="New Brand Intake — VenueDen">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://venueden.com/brand-intake.html?submitted=1">
+
+    <div class="section" style="border-top:none;padding-top:0;margin-top:0">
+      <p class="kicker">01 · The brand</p>
     </div>
-  </div>
+
+    <div>
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="brand">Brand / company</label>
+      <input type="text" id="brand" name="brand" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+    <div>
+      <label for="website">Website</label>
+      <input type="url" id="website" name="website" placeholder="https://">
+    </div>
+    <div>
+      <label for="instagram">Instagram / TikTok</label>
+      <input type="text" id="instagram" name="instagram" placeholder="@handle">
+    </div>
+
+    <div class="section">
+      <p class="kicker">02 · The activation</p>
+    </div>
+
+    <div>
+      <label for="dates">Target dates</label>
+      <input type="text" id="dates" name="dates" placeholder="e.g. a weekend in September">
+    </div>
+    <div>
+      <label for="duration">Duration</label>
+      <select id="duration" name="duration">
+        <option>1–3 days</option>
+        <option>4–7 days</option>
+        <option>2–4 weeks</option>
+        <option>1–3 months</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div>
+      <label for="neighborhood">Preferred neighborhood</label>
+      <select id="neighborhood" name="neighborhood">
+        <option>Open to suggestions</option>
+        <option>SoHo</option>
+        <option>Nolita</option>
+        <option>NoHo</option>
+        <option>Tribeca</option>
+        <option>Chelsea</option>
+        <option>Meatpacking</option>
+        <option>Flatiron</option>
+        <option>Williamsburg</option>
+      </select>
+    </div>
+    <div>
+      <label for="size">Space size</label>
+      <select id="size" name="size">
+        <option>Under 500 sq ft</option>
+        <option>500–1,000 sq ft</option>
+        <option>1,000–2,500 sq ft</option>
+        <option>2,500+ sq ft</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="full">
+      <label for="goal">What does success look like?</label>
+      <input type="text" id="goal" name="goal" placeholder="Sales, press, community event, content, launch...">
+    </div>
+
+    <div class="section">
+      <p class="kicker">03 · The build</p>
+    </div>
+
+    <fieldset>
+      <legend>What will you need? Check all that apply.</legend>
+      <div class="checks">
+        <label><input type="checkbox" name="needs[]" value="fabrication"> Custom fabrication</label>
+        <label><input type="checkbox" name="needs[]" value="fixtures"> Retail fixtures &amp; display</label>
+        <label><input type="checkbox" name="needs[]" value="lighting"> Lighting design</label>
+        <label><input type="checkbox" name="needs[]" value="signage"> Signage &amp; vinyl</label>
+        <label><input type="checkbox" name="needs[]" value="paint"> Paint &amp; finishing</label>
+        <label><input type="checkbox" name="needs[]" value="furniture"> Furniture rentals</label>
+        <label><input type="checkbox" name="needs[]" value="styling"> Styling &amp; merchandising</label>
+        <label><input type="checkbox" name="needs[]" value="floral"> Floral installations</label>
+        <label><input type="checkbox" name="needs[]" value="av"> Electrical &amp; AV</label>
+        <label><input type="checkbox" name="needs[]" value="photo"> Photo / video</label>
+        <label><input type="checkbox" name="needs[]" value="breakdown"> Breakdown</label>
+        <label><input type="checkbox" name="needs[]" value="guidance"> Not sure, need guidance</label>
+      </div>
+    </fieldset>
+
+    <div class="full">
+      <label for="budget">Total budget (space + build)</label>
+      <select id="budget" name="budget">
+        <option>Under $10K</option>
+        <option>$10K–$25K</option>
+        <option>$25K–$50K</option>
+        <option>$50K–$100K</option>
+        <option>$100K+</option>
+        <option>Need guidance</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <p class="kicker">04 · Moodboards &amp; references</p>
+    </div>
+
+    <div class="full">
+      <label for="files">Upload moodboards, decks, or examples</label>
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="files" name="files[]" multiple accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.ppt,.pptx,.key">
+        <p class="dz-text"><em>Drop files here</em> or click to browse</p>
+        <p class="hint">Images, PDFs, or decks · up to 25MB each</p>
+        <ul class="dz-list" id="dz-list"></ul>
+      </div>
+    </div>
+    <div class="full">
+      <label for="moodboard">Or paste a link</label>
+      <input type="url" id="moodboard" name="moodboard" placeholder="Drive, Pinterest, Figma, Canva...">
+    </div>
+
+    <div class="full">
+      <label for="vision">The vision</label>
+      <textarea id="vision" name="vision" placeholder="Describe the world you want to build. Themes, references, must-haves."></textarea>
+      <p class="hint">Rough ideas welcome. We'll shape it together.</p>
+    </div>
+
+    <button type="submit">Submit Brand Intake →</button>
+    <p class="footnote">We read every submission and respond within one business day with spaces, a production outline, and a budget estimate.</p>
+  </form>
+</div>
+
+<footer>
+  © 2026 VenueDen — New York City · <a href="mailto:hello@venueden.com">hello@venueden.com</a>
 </footer>
 
 <script>
-(function(){
-  var nav=document.getElementById('nav');
-  var burger=document.getElementById('navBurger');
-  var mobileMenu=document.getElementById('mobileMenu');
-  if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
-  mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
-  // Returning from a native FormSubmit post (attachment path)
-  if(/[?&]sent=1/.test(location.search)){
-    document.getElementById('cform').style.display='none';
-    document.getElementById('sent').style.display='block';
-  }
-  document.getElementById('cform').addEventListener('submit',function(e){
-    e.preventDefault();
-    var form=this;
-    var btn=form.querySelector('button[type="submit"]');
-    btn.disabled=true; btn.textContent='Sending…';
-    var brand=document.getElementById('f-brand').value||'venueden.com';
-    var file=document.getElementById('f-file').files[0];
-    if(file){
-      // FormSubmit only accepts attachments on a native POST, so hand the
-      // browser the form and let FormSubmit redirect back to ?sent=1.
-      [['_subject','Brand intake — '+brand],
-       ['_cc','ryan@venueden.com'],['_template','table'],['_captcha','false'],
-       ['_next','https://venueden.com/brand-intake.html?sent=1']
-      ].forEach(function(p){
-        var h=document.createElement('input');h.type='hidden';h.name=p[0];h.value=p[1];form.appendChild(h);
-      });
-      form.action='https://formsubmit.co/hello@venueden.com';
-      form.method='POST';
-      form.enctype='multipart/form-data';
-      form.submit();
-      return;
-    }
-    var fd=new FormData();
-    fd.append('_subject','Brand intake — '+brand);
-    fd.append('_cc','ryan@venueden.com');
-    fd.append('_template','table');
-    fd.append('_captcha','false');
-    fd.append('Name',document.getElementById('f-name').value);
-    fd.append('Brand',brand);
-    fd.append('Email',document.getElementById('f-email').value);
-    fd.append('Phone',document.getElementById('f-phone').value);
-    fd.append('Target timing',document.getElementById('f-when').value);
-    fd.append('Message',document.getElementById('f-msg').value);
-    fetch('https://formsubmit.co/ajax/hello@venueden.com',{
-      method:'POST',
-      headers:{'Accept':'application/json'},
-      body:fd
-    }).then(function(r){return r.json()}).then(function(j){
-      if(j && (j.success===true || j.success==='true')){
-        form.style.display='none';
-        document.getElementById('sent').style.display='block';
-      } else { throw new Error('formsubmit rejected'); }
-    }).catch(function(){
-      // Backend unreachable — fall back to the visitor's mail app so nothing is lost.
-      var lines=[];
-      form.querySelectorAll('input,textarea').forEach(function(f){ if(f.value&&f.type!=='file') lines.push(f.name+': '+f.value); });
-      window.location.href='mailto:hello@venueden.com?subject='+encodeURIComponent('Brand intake — '+brand)+'&body='+encodeURIComponent('New intake from venueden.com\n\n'+lines.join('\n'));
-      form.style.display='none';
-      document.getElementById('sent').style.display='block';
+  const dz = document.getElementById('dropzone');
+  const input = document.getElementById('files');
+  const list = document.getElementById('dz-list');
+  function render(files){
+    list.innerHTML = '';
+    [...files].forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f.name + ' (' + (f.size/1048576).toFixed(1) + ' MB)';
+      list.appendChild(li);
     });
-  });
-})();
+  }
+  input.addEventListener('change', () => render(input.files));
+  ['dragover','dragenter'].forEach(e => dz.addEventListener(e, ev => {ev.preventDefault(); dz.classList.add('dragover');}));
+  ['dragleave','drop'].forEach(e => dz.addEventListener(e, ev => {ev.preventDefault(); dz.classList.remove('dragover');}));
+  dz.addEventListener('drop', ev => { input.files = ev.dataTransfer.files; render(input.files); });
+
+  // Thank-you state after redirect back from FormSubmit
+  if (new URLSearchParams(location.search).get('submitted') === '1') {
+    document.querySelector('.wrap').innerHTML =
+      '<p class="kicker">Brand Intake</p>' +
+      '<h1>Thank <em>you.</em></h1>' +
+      '<p class="intro">We read every submission and will be in touch within one business day with spaces, a production outline, and a budget estimate.</p>';
+  }
 </script>
+
 </body>
 </html>
