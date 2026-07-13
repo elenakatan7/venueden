@@ -222,9 +222,34 @@
     v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
     v.play().catch(function(){});
   }
+  // Hero plays a story in scenes: the line outside -> the experience inside
+  // -> the build -> a different world -> the packed finale, then loops.
+  var heroScenes=[
+    'assets/video/brand-scene-1-line.mp4',
+    'assets/video/brand-hero.mp4',
+    'assets/video/svc-build.mp4',
+    'assets/video/brand-scene-4-street.mp4',
+    'assets/video/svc-open.mp4'
+  ];
+  function startHeroPlaylist(){
+    var v=document.querySelector('.bhero video');
+    if(!v)return;
+    var i=0;
+    v.removeAttribute('loop');
+    v.src=heroScenes[0]; v.load();
+    v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
+    v.addEventListener('ended',function(){
+      i=(i+1)%heroScenes.length;
+      v.src=heroScenes[i]; v.load();
+      v.play().catch(function(){});
+    });
+    // Preload the next scene so cuts feel seamless
+    var pre=document.createElement('link');pre.rel='prefetch';pre.href=heroScenes[1];document.head.appendChild(pre);
+    v.play().catch(function(){});
+  }
   function startVideos(){
     if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    attach(document.querySelector('.bhero video'));
+    startHeroPlaylist();
     var f=document.querySelector('.bfilm video');
     if(f){var vo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){attach(f);vo.disconnect()}})},{rootMargin:'300px'});vo.observe(f)}
   }
