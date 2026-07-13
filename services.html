@@ -310,7 +310,8 @@
     });
   });
 
-  // All footage attaches and plays immediately — continuous playback everywhere
+  // Videos load lazily as you approach each section — light initial page,
+  // continuous playback once a section is near the viewport.
   function attach(v) {
     if (v.dataset.src && !v.src) {
       v.src = v.dataset.src;
@@ -323,7 +324,26 @@
     }
     v.play().catch(function(){});
   }
-  document.querySelectorAll('video').forEach(attach);
+  var heroVid = document.querySelector('#chapter0 video');
+  if (heroVid) attach(heroVid);
+  var pending = [].slice.call(document.querySelectorAll('video[data-src]')).filter(function(v) { return v !== heroVid; });
+  function loadNearby() {
+    var vh = window.innerHeight;
+    pending = pending.filter(function(v) {
+      var sec = v.closest('section') || v;
+      var r = sec.getBoundingClientRect();
+      if (r.top < vh * 1.6 && r.bottom > -vh * 0.6) { attach(v); return false; }
+      return true;
+    });
+    if (!pending.length) window.removeEventListener('scroll', onLazyScroll);
+  }
+  var lazyTick = false;
+  function onLazyScroll() {
+    if (!lazyTick) { lazyTick = true; requestAnimationFrame(function() { lazyTick = false; loadNearby(); }); }
+  }
+  window.addEventListener('scroll', onLazyScroll, { passive: true });
+  window.addEventListener('resize', onLazyScroll, { passive: true });
+  loadNearby();
 
   var videoObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
