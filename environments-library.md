@@ -1,82 +1,67 @@
-# VenueDen — Environment Library (roster-driven)
+# VenueDen — Environment Library v2 (research-grounded, unbranded)
 
-10 pop-up environments mapped to the real client roster. Each has a production-ready
-Higgsfield prompt (kling3_0_turbo, 16:9, 5s). Fire when credits are topped up (~75 needed).
-House style: cinematic, architectural, editorial. Kodak Portra palette, film grain, slow
-camera, shallow depth of field, natural light, premium materials, no text, no logos.
+Prompts informed by the real design language of the roster's actual NYC retail moments —
+no brand names, no logos, no copied photos. Each generates an ORIGINAL environment that
+evokes the aesthetic. Fire on any funded Higgsfield account (2 credits/image via Nano
+Banana Pro at 3:4, or ~7.5 credits/5s video via kling turbo at 16:9).
 
----
-
-## 1. Streetwear Warehouse — bold / raw / cultural
-**Brands:** Supreme · Godspeed · Mode Mischief · Nike & adidas drops · Ariana Grande Merch
-> Cinematic footage inside a raw concrete warehouse pop-up in downtown New York: exposed
-> ductwork, polished cement floor, a single bold sculptural display plinth, dramatic
-> directional spotlight cutting through haze, matte black steel racks, one figure in
-> streetwear browsing. Moody high-contrast lighting, film grain, slow dolly push, shallow
-> depth of field, no text, no logos.
-
-## 2. Movement Studio — clean / athletic / kinetic
-**Brands:** lululemon · Oner Active · Adanola · The Giving Movement · Nike/adidas training
-> Cinematic footage of a bright minimalist activewear pop-up: pale oak floors, full-height
-> windows with sheer light, a curved white display wall, potted olive tree, soft morning
-> sun, a person moving calmly through the space. Airy, warm-neutral palette, film grain,
-> smooth tracking shot, shallow depth of field, no text, no logos.
-
-## 3. Watch & Jewelry Salon — dark / opulent / precise
-**Brands:** Audemars Piguet · David Yurman
-> Cinematic footage inside an intimate luxury jewelry salon: deep walnut walls, backlit
-> glass vitrines glowing warm, brushed brass details, a velvet display tray under a single
-> focused spotlight, dark and reverent atmosphere. Rich low-key lighting, film grain, slow
-> creeping dolly, extreme shallow depth of field, no text, no logos.
-
-## 4. Beauty Hall — glossy / bright / mirrored
-**Brands:** Ulta Beauty · Maybelline · Revlon · Anastasia Beverly Hills · Wella
-> Cinematic footage of a high-gloss beauty pop-up: mirrored vanity stations with warm
-> globe bulbs, blush-pink lacquered surfaces, marble counters, soft even beauty lighting,
-> a person testing product at a lit mirror. Bright, luminous, editorial, film grain, slow
-> lateral dolly, shallow depth of field, no text, no logos.
-
-## 5. Skincare Lab — clean / dewy / clinical-luxe
-**Brands:** Olaplex · Medicube · Torriden · Biodance · Derma E · Cleardea
-> Cinematic footage of a serene clean-skincare pop-up: matte white micro-cement walls,
-> pale stone plinths, a trickling water feature, frosted glass, cool diffused daylight,
-> single glossy product bottle catching light, dewy fresh mood. Minimal, calm, film grain,
-> slow dolly, shallow depth of field, no text, no logos.
-
-## 6. Intimates Boutique — soft / sensual / warm
-**Brands:** Victoria's Secret
-> Cinematic footage of a plush intimates pop-up: draped rose-blush fabric walls, soft
-> champagne lighting, a curved tufted bench, sheer curtains, brushed gold rails, warm and
-> sensual atmosphere. Dreamy, glowing, film grain, slow floating camera, shallow depth of
-> field, no text, no logos.
-
-## 7. Immersive LED — dark / glowing / futuristic
-**Brands:** Netflix · Activision · Glitch Productions · Samsung
-> Cinematic footage inside an immersive entertainment pop-up: floor-to-ceiling glowing LED
-> walls washing the room in shifting blue and magenta light, glossy black floor with
-> reflections, a lone figure silhouetted against the screens, atmospheric haze. High-tech,
-> cinematic, film grain, slow dolly, shallow depth of field, no text, no logos.
-
-## 8. Scandinavian Boutique — pale / minimal / editorial
-**Brands:** H&M · ASOS · Madewell · CAMI NYC · Steve Madden · Gimaguas
-> Cinematic footage of a Scandinavian-minimal fashion pop-up: white plaster walls, blonde
-> ash floors, a single sculptural clothing rail, ceramic vase with dried branches, huge
-> soft north-facing window, quiet daylight. Serene, warm-white, editorial, film grain,
-> slow tracking shot, shallow depth of field, no text, no logos.
-
-## 9. Rooftop Beach Club — sunset / social / energetic
-**Brands:** Bacardi · Liquid I.V.
-> Cinematic footage of a golden-hour rooftop bar pop-up in New York: warm terracotta
-> floors, rattan furniture, hanging greenery, a sleek bar catching low sun, city skyline
-> behind, people mingling with drinks, warm breeze. Lush, sun-drenched, film grain, slow
-> drifting camera, shallow depth of field, no text, no logos.
-
-## 10. Travel Lounge — refined / warm / hospitality
-**Brands:** Cathay Pacific
-> Cinematic footage of a boutique airline lounge pop-up: warm walnut paneling, low leather
-> lounge chairs, a curved reception desk, soft amber pendant lighting, a floor-to-ceiling
-> window with soft dusk light, calm and elevated travel atmosphere. Refined, warm, film
-> grain, slow dolly, shallow depth of field, no text, no logos.
+House style suffix for every prompt:
+"...editorial architectural photography, film grain, premium magazine quality, no text, no logos, no brand names"
 
 ---
-Coverage: all 37 roster brands map to at least one environment.
+
+## 1. Sport Innovation Atrium  *(grounded in: 5th Ave sport flagship language — buzzing
+atrium, textured glass, stem-track lighting, pristine white "lab" floor)*
+> Editorial architectural photograph of a multi-level athletic retail atrium: textured
+> rippled-glass wall glowing with daylight, a pristine white product-lab floor with a
+> single sculptural running shoe on a backlit plinth, stem-mounted track lighting, energy
+> of a stadium concourse distilled into retail, warm gray concrete + white palette.
+
+## 2. Skate-Culture Concrete Hall  *(grounded in: Bowery/Williamsburg skate-brand
+minimalism — exposed brick, skylights, birch-plywood bowl, low metal benches)*
+> Editorial photograph of a minimal streetwear store in a raw industrial hall: exposed
+> whitewashed brick, big square skylights pouring daylight, a curved birch plywood
+> skate-bowl form at the rear, one long low steel bench, sparse garment rail, gritty but
+> immaculate.
+
+## 3. Blush Dream Closet  *(grounded in: SoHo lingerie/collab pop-up language — blush
+hues, cascading florals, lace, embellishment bar, plush oversized props)*
+> Editorial photograph of a two-level blush-pink boutique pop-up: cascading fresh florals
+> down a staircase, lace-trimmed drapery, a mirrored vanity embellishment bar, soft
+> champagne lighting, whimsical and feminine, thousands of pink stems.
+
+## 4. Three-Story LED Canyon  *(grounded in: Meatpacking experiential flagship — giant
+multi-story LED wall, industrial steel beams, amphitheater seating)*
+> Editorial photograph inside a three-story experiential tech space: a colossal
+> floor-to-ceiling LED wall washing amphitheater bleacher seating in blue-violet light,
+> exposed industrial steel beams, silhouetted visitors, digital-cathedral scale.
+
+## 5. Watch & Jewelry Salon ✅ GENERATED (live on site)
+## 6. Beauty Hall ✅ COVERED (Elena's Beauty Balm render, live on site)
+## 7. Immersive LED ✅ GENERATED (in Higgsfield assets, awaiting download)
+## 8. Streetwear Warehouse ✅ GENERATED (in Higgsfield assets, awaiting download)
+
+## 9. Movement Studio  *(activewear roster: calm, pale-wood, mirror walls, morning light)*
+> Editorial photograph of a serene activewear studio-store: pale oak floor, full-height
+> mirror wall, sheer curtains diffusing morning sun, sculptural white display podium with
+> folded knitwear, olive tree in a clay pot, hushed and warm.
+
+## 10. Skincare Conservatory  *(K-beauty/clean-skincare roster: glass, plants, water, dew)*
+> Editorial photograph of a greenhouse-conservatory skincare pop-up: glass roof with
+> dappled light through hanging plants, pale stone plinths with glossy amber product
+> bottles, a thin sheet of water running down a textured stone wall, fresh and dewy.
+
+## 11. Golden-Hour Rooftop Bar  *(spirits/hydration roster: terracotta, rattan, skyline)*
+> Editorial photograph of a golden-hour Manhattan rooftop bar pop-up: terracotta tile,
+> rattan lounge seating, hanging greenery, a marble bar catching low sun, skyline in soft
+> haze, guests mid-laugh in the distance.
+
+## 12. First-Class Lounge  *(airline roster: walnut, brass, dusk, quiet luxury)*
+> Editorial photograph of a boutique airline-lounge pop-up: warm walnut paneling, curved
+> brass reception desk, low leather chairs, amber pendant light, floor-to-ceiling window
+> at dusk, calm and elevated.
+
+---
+Remaining to generate: #1, #2, #3, #4, #9, #10, #11, #12 (8 images ≈ 16 credits, or 8
+videos ≈ 60 credits). Sources studied: Dezeen, ArchDaily, Metropolis, BizBash, MG2,
+designboom coverage of the real spaces.
