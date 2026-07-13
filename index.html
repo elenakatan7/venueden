@@ -17,7 +17,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" /></noscript>
   <link rel="stylesheet" href="preview.css" />
   <style>.stat-row{display:flex;justify-content:center;gap:4.5rem;flex-wrap:wrap;margin-bottom:4rem}.stat-row strong{display:block;font-size:1.75rem;font-weight:600;letter-spacing:-.03em;color:var(--ink)}.stat-row span{font-size:.8125rem;color:var(--muted)}@media(max-width:720px){.stat-row{gap:2rem}.stat-row strong{font-size:1.25rem}}.exp-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem 3.25rem}.exp-row span{font-size:.9375rem;font-weight:600;letter-spacing:.14em;color:var(--muted)}@media(max-width:720px){.exp-row{gap:.875rem 1.75rem}.exp-row span{font-size:.75rem}}</style>
 <script type="application/ld+json">
@@ -53,7 +54,7 @@
 <!-- HERO -->
 <section class="vchapter" id="chapter0">
   <div class="vsticky">
-    <video class="vbg vbg-fade" muted loop autoplay playsinline preload="auto" poster="assets/img/poster-index.jpg">
+    <video class="vbg vbg-fade" muted loop autoplay playsinline preload="metadata" poster="assets/img/poster-index.jpg">
       <source src="assets/video/hero-soho.mp4" type="video/mp4" />
     </video>
     <div class="vscrim"></div>
@@ -74,7 +75,7 @@
 <!-- POSITIONING STATEMENT -->
 <section class="statement">
   <div class="wrap">
-    <p class="statement-text reveal">Good stores are built <em>long before opening day.</em></p>
+    <p class="statement-text reveal">Great pop-ups look effortless. <em>They never are.</em></p>
   </div>
 </section>
 
@@ -82,7 +83,6 @@
 <section class="help" id="how">
   <div class="wrap">
     <p class="label reveal">How we help</p>
-    <h2 class="h2 reveal">Three ways in.<br><em>Same crew.</em></h2>
     <div class="help-grid">
       <a href="services.html" class="help-card reveal">
         <div class="help-media"><img src="assets/img/ed-castiron.webp" alt="Cast-iron storefront in SoHo" loading="lazy" /></div>
@@ -246,18 +246,18 @@
       <p class="section-note" style="max-width:52ch;margin-top:1.25rem">Raw streetwear warehouse or spotlit jewelry salon, we build the world your brand lives in. No templates.</p>
     </div>
     <div class="env-grid">
-      <figure class="env-tile reveal stagger" style="--i:0"><div class="env-media"><img src="assets/img/env-sport-atrium.jpg" alt="Athletic retail atrium pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Sport Innovation Atrium</span><span class="env-industry">Sportswear &#183; Sneakers</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:1"><div class="env-media"><img src="assets/img/env-screening-room.jpg" alt="Cinematic screening room pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Screening Room</span><span class="env-industry">Entertainment &#183; Streaming</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:2"><div class="env-media"><img src="assets/img/env-movement-studio.jpg" alt="Serene activewear studio pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Movement Studio</span><span class="env-industry">Activewear &#183; Wellness</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:3"><div class="env-media"><img src="assets/img/env-led-canyon.jpg" alt="Immersive LED experiential pop-up environment" loading="lazy"></div><figcaption><span class="env-name">LED Canyon</span><span class="env-industry">Technology &#183; Immersive</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:4"><div class="env-media"><img src="assets/img/env-dream-closet.jpg" alt="Blush pink dream closet pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Dream Closet</span><span class="env-industry">Lingerie &#183; Fashion</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:5"><div class="env-media"><img src="assets/img/env-skate-hall.jpg" alt="Minimal streetwear skate hall pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Skate Hall</span><span class="env-industry">Streetwear &#183; Culture</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:6"><div class="env-media"><img src="assets/img/env-jewelry-salon.jpg" alt="Luxury watch and jewelry salon pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Watch &amp; Jewelry Salon</span><span class="env-industry">Jewelry &#183; Watches</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:7"><div class="env-media"><img src="assets/img/env-skincare-conservatory.jpg" alt="Greenhouse conservatory skincare pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Skincare Conservatory</span><span class="env-industry">Skincare &#183; Clean beauty</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:8"><div class="env-media"><img src="assets/img/env-footwear-gallery.jpg" alt="Bold footwear gallery pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Footwear Gallery</span><span class="env-industry">Footwear &#183; Fashion</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:9"><div class="env-media"><img src="assets/img/env-travel-lounge.jpg" alt="Boutique airline lounge pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Travel Lounge</span><span class="env-industry">Travel &#183; Hospitality</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:10"><div class="env-media"><img src="assets/img/env-beauty-hall.jpg" alt="Millennial-pink beauty pop-up environment with giant lip gloss sculpture" loading="lazy"></div><figcaption><span class="env-name">Beauty Hall</span><span class="env-industry">Beauty &#183; Cosmetics</span></figcaption></figure>
-      <figure class="env-tile reveal stagger" style="--i:11"><div class="env-media"><img src="assets/img/env-rooftop-bar.jpg" alt="Golden hour rooftop bar pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Rooftop Bar</span><span class="env-industry">Spirits &#183; F&amp;B</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:0"><div class="env-media"><img src="assets/img/env-sport-atrium.webp" alt="Athletic retail atrium pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Sport Innovation Atrium</span><span class="env-industry">Sportswear &#183; Sneakers</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:1"><div class="env-media"><img src="assets/img/env-screening-room.webp" alt="Cinematic screening room pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Screening Room</span><span class="env-industry">Entertainment &#183; Streaming</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:2"><div class="env-media"><img src="assets/img/env-movement-studio.webp" alt="Serene activewear studio pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Movement Studio</span><span class="env-industry">Activewear &#183; Wellness</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:3"><div class="env-media"><img src="assets/img/env-led-canyon.webp" alt="Immersive LED experiential pop-up environment" loading="lazy"></div><figcaption><span class="env-name">LED Canyon</span><span class="env-industry">Technology &#183; Immersive</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:4"><div class="env-media"><img src="assets/img/env-dream-closet.webp" alt="Blush pink dream closet pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Dream Closet</span><span class="env-industry">Lingerie &#183; Fashion</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:5"><div class="env-media"><img src="assets/img/env-skate-hall.webp" alt="Minimal streetwear skate hall pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Skate Hall</span><span class="env-industry">Streetwear &#183; Culture</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:6"><div class="env-media"><img src="assets/img/env-jewelry-salon.webp" alt="Luxury watch and jewelry salon pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Watch &amp; Jewelry Salon</span><span class="env-industry">Jewelry &#183; Watches</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:7"><div class="env-media"><img src="assets/img/env-skincare-conservatory.webp" alt="Greenhouse conservatory skincare pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Skincare Conservatory</span><span class="env-industry">Skincare &#183; Clean beauty</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:8"><div class="env-media"><img src="assets/img/env-footwear-gallery.webp" alt="Bold footwear gallery pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Footwear Gallery</span><span class="env-industry">Footwear &#183; Fashion</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:9"><div class="env-media"><img src="assets/img/env-travel-lounge.webp" alt="Boutique airline lounge pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Travel Lounge</span><span class="env-industry">Travel &#183; Hospitality</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:10"><div class="env-media"><img src="assets/img/env-beauty-hall.webp" alt="Millennial-pink beauty pop-up environment with giant lip gloss sculpture" loading="lazy"></div><figcaption><span class="env-name">Beauty Hall</span><span class="env-industry">Beauty &#183; Cosmetics</span></figcaption></figure>
+      <figure class="env-tile reveal stagger" style="--i:11"><div class="env-media"><img src="assets/img/env-rooftop-bar.webp" alt="Golden hour rooftop bar pop-up environment" loading="lazy"></div><figcaption><span class="env-name">Rooftop Bar</span><span class="env-industry">Spirits &#183; F&amp;B</span></figcaption></figure>
     </div>
     <p class="envs-foot reveal">Twelve worlds. One crew built them all.</p>
   </div>
