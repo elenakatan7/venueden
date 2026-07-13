@@ -103,17 +103,7 @@
           <div><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email" required></div>
           <div><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555"></div>
         </div>
-        <div class="row2">
-          <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
-          <div><label for="f-budget">Budget</label><select id="f-budget" name="Budget">
-            <option value="" selected>Select a range</option>
-            <option>Under $15K</option>
-            <option>$15K &#8211; $50K</option>
-            <option>$50K &#8211; $150K</option>
-            <option>$150K+</option>
-            <option>Not sure yet</option>
-          </select></div>
-        </div>
+        <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
         <div><label for="f-file">Deck or brief <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional &#8212; PDF or images, up to 10MB)</span></label><input id="f-file" name="attachment" type="file" accept=".pdf,.png,.jpg,.jpeg,.ppt,.pptx,.key"></div>
         <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind &#8212; and anything else useful." required></textarea></div>
         <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
@@ -185,7 +175,6 @@
     fd.append('Email',document.getElementById('f-email').value);
     fd.append('Phone',document.getElementById('f-phone').value);
     fd.append('Target timing',document.getElementById('f-when').value);
-    fd.append('Budget',document.getElementById('f-budget').value);
     fd.append('Message',document.getElementById('f-msg').value);
     var file=document.getElementById('f-file').files[0];
     if(file){
