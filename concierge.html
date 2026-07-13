@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Start a Project — VenueDen | NYC Pop-Up Retail</title>
-  <meta name="description" content="Tell us about your pop-up. VenueDen responds within one business day with space options, a production outline, and an honest budget." />
+  <meta name="description" content="Tell us about your pop-up. VenueDen replies within one business day with NYC space options and a budget." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VenueDen" />
   <meta property="og:title" content="Start a Project — VenueDen" />
@@ -32,6 +32,9 @@
     .cform textarea{resize:vertical;min-height:8.5rem;line-height:1.6}
     .cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
     .cform button{margin-top:.5rem}
+    .who-toggle{display:flex;gap:.5rem}
+    .who-toggle .who{margin:0;background:#fff;border:1px solid var(--bg-beige);border-radius:999px;padding:.625rem 1.375rem;font-family:inherit;font-size:.875rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .25s}
+    .who-toggle .who.on{background:var(--ink);border-color:var(--ink);color:#fff}
     .form-note{font-size:.8125rem;color:var(--muted)}
     @media(max-width:1080px){.contact-grid{grid-template-columns:1fr;gap:3.5rem}}
     @media(max-width:720px){.cform .row2{grid-template-columns:1fr}}
@@ -78,13 +81,16 @@
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-aside">
-        <p>A few lines is enough &#8212; the brand, the moment, and roughly when. We&#8217;ll come back with space directions, a production outline, and an honest budget.</p>
+        <p>A few lines is enough. We&#8217;ll come back within one business day with spaces, a plan, and a budget.</p>
         <div class="contact-fact"><small>Email</small><a href="mailto:hello@venueden.com">hello@venueden.com</a></div>
         <div class="contact-fact"><small>Response</small><span>Within one business day</span></div>
         <div class="contact-fact"><small>Hours</small><span>Mon&#8211;Fri, 9am&#8211;7pm ET</span></div>
-        <div class="contact-fact"><small>Landlords</small><span>Same form &#8212; tell us about the space instead.</span></div>
       </div>
       <form class="cform" id="cform">
+        <div class="who-toggle" role="group" aria-label="Who are you?">
+          <button type="button" class="who on" id="who-brand">I&#8217;m a brand</button>
+          <button type="button" class="who" id="who-landlord">I&#8217;m a landlord</button>
+        </div>
         <div class="row2">
           <div><label for="f-name">Name</label><input id="f-name" name="Name" type="text" autocomplete="name" required></div>
           <div><label for="f-brand">Brand or property</label><input id="f-brand" name="Brand / property" type="text" autocomplete="organization" required></div>
@@ -95,11 +101,11 @@
         </div>
         <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind &#8212; and anything else useful." required></textarea></div>
         <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
-        <p class="form-note">We read every inquiry. Expect a response within one business day.</p>
+        <p class="form-note">We read everything. You&#8217;ll hear back within one business day.</p>
       </form>
       <div id="sent" style="display:none">
         <h3 style="font-size:2rem;letter-spacing:-.03em;margin-bottom:1rem">Thank you.</h3>
-        <p style="color:var(--muted);line-height:1.75;max-width:44ch">Your inquiry is on its way to us. We&#8217;ll reply within one business day. <a href="faq.html" style="color:var(--ink)">Read the FAQ while you wait &#8594;</a></p>
+        <p style="color:var(--muted);line-height:1.75;max-width:44ch">Got it. We&#8217;ll reply within one business day. <a href="faq.html" style="color:var(--ink)">Read the FAQ while you wait &#8594;</a></p>
       </div>
     </div>
   </div>
@@ -121,6 +127,24 @@
   var mobileMenu=document.getElementById('mobileMenu');
   if(burger){burger.addEventListener('click',function(){nav.classList.toggle('menu-open')});
   mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
+  // Brand / landlord toggle: same form, different labels
+  var isLandlord=false;
+  var bBrand=document.getElementById('who-brand'),bLand=document.getElementById('who-landlord');
+  function setMode(landlord){
+    isLandlord=landlord;
+    bBrand.classList.toggle('on',!landlord);
+    bLand.classList.toggle('on',landlord);
+    document.querySelector('label[for="f-brand"]').textContent=landlord?'Property address':'Brand';
+    document.querySelector('label[for="f-when"]').textContent=landlord?'Availability':'Target timing';
+    document.getElementById('f-when').placeholder=landlord?'e.g. vacant now':'e.g. September 2026';
+    document.querySelector('label[for="f-msg"]').textContent=landlord?'Tell us about the space':'What are you planning?';
+    document.getElementById('f-msg').placeholder=landlord
+      ?'Size, frontage, neighborhood, and anything else useful.'
+      :'The brand, the idea, the neighborhood if you have one in mind.';
+  }
+  bBrand.addEventListener('click',function(){setMode(false)});
+  bLand.addEventListener('click',function(){setMode(true)});
+  setMode(false);
   document.getElementById('cform').addEventListener('submit',function(e){
     e.preventDefault();
     var form=this;
@@ -128,10 +152,11 @@
     btn.disabled=true; btn.textContent='Sending…';
     var brand=document.getElementById('f-brand').value||'venueden.com';
     var payload={
-      _subject:'Pop-up inquiry — '+brand,
+      _subject:(isLandlord?'Space submission — ':'Pop-up inquiry — ')+brand,
       _cc:'ryan@venueden.com',
       _template:'table',
       _captcha:'false',
+      'I am':isLandlord?'Landlord':'Brand',
       Name:document.getElementById('f-name').value,
       'Brand or property':brand,
       Email:document.getElementById('f-email').value,
