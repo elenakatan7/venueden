@@ -98,8 +98,9 @@
         </div>
         <div class="row2">
           <div><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email" required></div>
-          <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
+          <div><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555"></div>
         </div>
+        <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
         <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind &#8212; and anything else useful." required></textarea></div>
         <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
         <p class="form-note">We read everything. You&#8217;ll hear back within one business day.</p>
@@ -161,6 +162,7 @@
       Name:document.getElementById('f-name').value,
       'Brand or property':brand,
       Email:document.getElementById('f-email').value,
+      Phone:document.getElementById('f-phone').value,
       'Target timing':document.getElementById('f-when').value,
       Message:document.getElementById('f-msg').value
     };
