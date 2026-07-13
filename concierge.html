@@ -28,8 +28,11 @@
     .contact-fact span,.contact-fact a{font-size:1.0625rem;font-weight:500;color:var(--ink);text-decoration:none}
     .cform{display:flex;flex-direction:column;gap:1.25rem}
     .cform label{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-    .cform input,.cform textarea{width:100%;box-sizing:border-box;background:#fff;border:1px solid var(--bg-beige);border-radius:12px;padding:1rem 1.125rem;font-family:inherit;font-size:1rem;color:var(--ink);outline:none;transition:border-color .25s}
-    .cform input:focus,.cform textarea:focus{border-color:var(--accent)}
+    .cform input,.cform textarea,.cform select{width:100%;box-sizing:border-box;background:#fff;border:1px solid var(--bg-beige);border-radius:12px;padding:1rem 1.125rem;font-family:inherit;font-size:1rem;color:var(--ink);outline:none;transition:border-color .25s}
+    .cform input:focus,.cform textarea:focus,.cform select:focus{border-color:var(--accent)}
+    .cform select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.125rem center}
+    .cform input[type=file]{padding:.8rem 1.125rem;font-size:.875rem;color:var(--muted)}
+    .cform input[type=file]::file-selector-button{background:var(--ink);color:#fff;border:none;border-radius:999px;padding:.5rem 1.125rem;margin-right:.875rem;font-family:inherit;font-size:.8125rem;font-weight:600;cursor:pointer}
     .cform textarea{resize:vertical;min-height:8.5rem;line-height:1.6}
     .cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
     .cform button{margin-top:.5rem}
@@ -100,7 +103,18 @@
           <div><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email" required></div>
           <div><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555"></div>
         </div>
-        <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
+        <div class="row2">
+          <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
+          <div><label for="f-budget">Budget</label><select id="f-budget" name="Budget">
+            <option value="" selected>Select a range</option>
+            <option>Under $15K</option>
+            <option>$15K &#8211; $50K</option>
+            <option>$50K &#8211; $150K</option>
+            <option>$150K+</option>
+            <option>Not sure yet</option>
+          </select></div>
+        </div>
+        <div><label for="f-file">Deck or brief <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional &#8212; PDF or images, up to 10MB)</span></label><input id="f-file" name="attachment" type="file" accept=".pdf,.png,.jpg,.jpeg,.ppt,.pptx,.key"></div>
         <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind &#8212; and anything else useful." required></textarea></div>
         <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
         <p class="form-note">We read everything. You&#8217;ll hear back within one business day.</p>
@@ -153,24 +167,27 @@
     var btn=form.querySelector('button[type="submit"]');
     btn.disabled=true; btn.textContent='Sending…';
     var brand=document.getElementById('f-brand').value||'venueden.com';
-    var payload={
-      _subject:(isLandlord?'Space submission — ':'Pop-up inquiry — ')+brand,
-      _cc:'ryan@venueden.com',
-      _template:'table',
-      _captcha:'false',
-      'I am':isLandlord?'Landlord':'Brand',
-      Name:document.getElementById('f-name').value,
-      'Brand or property':brand,
-      Email:document.getElementById('f-email').value,
-      Phone:document.getElementById('f-phone').value,
-      'Target timing':document.getElementById('f-when').value,
-      Message:document.getElementById('f-msg').value
-    };
-    // Delivers straight to hello@venueden.com via FormSubmit — no mail app needed.
+    // Multipart so the optional attachment comes through; FormSubmit
+    // delivers straight to hello@venueden.com — no mail app needed.
+    var fd=new FormData();
+    fd.append('_subject',(isLandlord?'Space submission — ':'Pop-up inquiry — ')+brand);
+    fd.append('_cc','ryan@venueden.com');
+    fd.append('_template','table');
+    fd.append('_captcha','false');
+    fd.append('I am',isLandlord?'Landlord':'Brand');
+    fd.append('Name',document.getElementById('f-name').value);
+    fd.append('Brand or property',brand);
+    fd.append('Email',document.getElementById('f-email').value);
+    fd.append('Phone',document.getElementById('f-phone').value);
+    fd.append('Target timing',document.getElementById('f-when').value);
+    fd.append('Budget',document.getElementById('f-budget').value);
+    fd.append('Message',document.getElementById('f-msg').value);
+    var file=document.getElementById('f-file').files[0];
+    if(file)fd.append('attachment',file,file.name);
     fetch('https://formsubmit.co/ajax/hello@venueden.com',{
       method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
+      headers:{'Accept':'application/json'},
+      body:fd
     }).then(function(r){return r.json()}).then(function(j){
       if(j && (j.success===true || j.success==='true')){
         form.style.display='none';
@@ -179,7 +196,7 @@
     }).catch(function(){
       // Backend unreachable — fall back to the visitor's mail app so nothing is lost.
       var lines=[];
-      form.querySelectorAll('input,textarea').forEach(function(f){ if(f.value) lines.push(f.name+': '+f.value); });
+      form.querySelectorAll('input,textarea,select').forEach(function(f){ if(f.value&&f.type!=='file') lines.push(f.name+': '+f.value); });
       window.location.href='mailto:hello@venueden.com?subject='+encodeURIComponent('Pop-up inquiry — '+brand)+'&body='+encodeURIComponent('New inquiry from venueden.com\n\n'+lines.join('\n'));
       form.style.display='none';
       document.getElementById('sent').style.display='block';
