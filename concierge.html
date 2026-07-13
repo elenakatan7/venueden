@@ -161,6 +161,11 @@
   bBrand.addEventListener('click',function(){setMode(false)});
   bLand.addEventListener('click',function(){setMode(true)});
   setMode(false);
+  // Returning from a native FormSubmit post (attachment path)
+  if(/[?&]sent=1/.test(location.search)){
+    document.getElementById('cform').style.display='none';
+    document.getElementById('sent').style.display='block';
+  }
   document.getElementById('cform').addEventListener('submit',function(e){
     e.preventDefault();
     var form=this;
@@ -183,7 +188,22 @@
     fd.append('Budget',document.getElementById('f-budget').value);
     fd.append('Message',document.getElementById('f-msg').value);
     var file=document.getElementById('f-file').files[0];
-    if(file)fd.append('attachment',file,file.name);
+    if(file){
+      // FormSubmit only accepts attachments on a native POST, so hand the
+      // browser the form and let FormSubmit redirect back to ?sent=1.
+      [['_subject',(isLandlord?'Space submission — ':'Pop-up inquiry — ')+brand],
+       ['_cc','ryan@venueden.com'],['_template','table'],['_captcha','false'],
+       ['I am',isLandlord?'Landlord':'Brand'],
+       ['_next','https://venueden.com/concierge.html?sent=1']
+      ].forEach(function(p){
+        var h=document.createElement('input');h.type='hidden';h.name=p[0];h.value=p[1];form.appendChild(h);
+      });
+      form.action='https://formsubmit.co/hello@venueden.com';
+      form.method='POST';
+      form.enctype='multipart/form-data';
+      form.submit();
+      return;
+    }
     fetch('https://formsubmit.co/ajax/hello@venueden.com',{
       method:'POST',
       headers:{'Accept':'application/json'},
