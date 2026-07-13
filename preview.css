@@ -375,7 +375,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .envs{background:var(--bg);padding:9rem 0}
 .envs-head{max-width:640px}
 .envs-head h2{margin-bottom:0}
-.env-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:3.5rem 0 0}
+.env-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:3.5rem 0 0}
 .env-tile{position:relative;margin:0;border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-beige);transition:opacity .8s var(--ease),transform .6s var(--ease)}
 .env-tile:hover{transform:translateY(-5px)}
 .env-media,.env-media img,.env-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
