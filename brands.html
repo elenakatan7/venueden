@@ -239,16 +239,22 @@
   // Hero plays a story in scenes: the line outside -> the experience inside
   // -> the build -> a different world -> the packed finale, then loops.
   var heroScenes=[
-    'assets/video/brand-scene-1-line.mp4',
-    'assets/video/brand-scene-doors.mp4',
-    'assets/video/brand-scene-night.mp4'
+    'assets/video/brand-scene-1-line.mp4'
   ];
   // Double-buffered playlist: the next scene preloads in a hidden layer,
   // then the layers crossfade just before the current clip ends — no black
   // gaps, no hard cuts.
   function startHeroPlaylist(){
     var vids=document.querySelectorAll('.bhero video');
-    if(vids.length<2)return;
+    if(!vids.length)return;
+    if(heroScenes.length<2){
+      var solo=vids[0];
+      solo.loop=true;
+      solo.src=heroScenes[0];solo.load();
+      solo.addEventListener('playing',function(){solo.classList.add('ready')},{once:true});
+      solo.play().catch(function(){});
+      return;
+    }
     var cur=vids[0],nxt=vids[1],i=0,switching=false;
     cur.src=heroScenes[0];cur.load();
     cur.addEventListener('playing',function(){cur.classList.add('ready');preloadNext()},{once:true});
