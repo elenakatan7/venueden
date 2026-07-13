@@ -388,3 +388,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .envs-foot{text-align:center;font-family:var(--ff-serif);font-style:italic;font-weight:300;font-size:clamp(1.25rem,2.2vw,1.875rem);color:var(--ink);margin-top:4.5rem}
 @media(max-width:1000px){.env-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){.envs{padding:6rem 0}.env-grid{grid-template-columns:1fr 1fr;gap:.75rem}.env-name{font-size:.875rem}}
+
+/* ——— Environments: cinematic drift (moving images without video) ——— */
+@keyframes envDrift{
+  0%{transform:scale(1.06) translate(0,0)}
+  50%{transform:scale(1.14) translate(-1.5%,1.5%)}
+  100%{transform:scale(1.06) translate(1%,-1%)}
+}
+.env-tile .env-media img{animation:envDrift 18s ease-in-out infinite alternate;will-change:transform}
+.env-tile:nth-child(2n) .env-media img{animation-duration:22s;animation-direction:alternate-reverse}
+.env-tile:nth-child(3n) .env-media img{animation-duration:26s}
+.env-tile:hover .env-media img{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.env-tile .env-media img{animation:none}}
