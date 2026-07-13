@@ -112,7 +112,8 @@
 
 <!-- HERO -->
 <header class="bhero" id="bhero">
-  <video autoplay muted playsinline loop preload="metadata" data-vsrc="assets/video/brand-hero.mp4" aria-hidden="true"></video>
+  <video autoplay muted playsinline preload="metadata" aria-hidden="true"></video>
+  <video muted playsinline preload="auto" aria-hidden="true"></video>
   <div class="bhero-scrim"></div>
   <div class="bhero-in">
     <h1>Brands We&#8217;ve<br>Worked With</h1>
@@ -231,21 +232,41 @@
     'assets/video/brand-scene-4-street.mp4',
     'assets/video/svc-open.mp4'
   ];
+  // Double-buffered playlist: the next scene preloads in a hidden layer,
+  // then the layers crossfade just before the current clip ends — no black
+  // gaps, no hard cuts.
   function startHeroPlaylist(){
-    var v=document.querySelector('.bhero video');
-    if(!v)return;
-    var i=0;
-    v.removeAttribute('loop');
-    v.src=heroScenes[0]; v.load();
-    v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
-    v.addEventListener('ended',function(){
+    var vids=document.querySelectorAll('.bhero video');
+    if(vids.length<2)return;
+    var cur=vids[0],nxt=vids[1],i=0,switching=false;
+    cur.src=heroScenes[0];cur.load();
+    cur.addEventListener('playing',function(){cur.classList.add('ready')},{once:true});
+    cur.play().catch(function(){});
+    function preloadNext(){
+      nxt.src=heroScenes[(i+1)%heroScenes.length];
+      nxt.load();
+    }
+    preloadNext();
+    function swap(){
+      nxt.classList.add('ready');
+      cur.classList.remove('ready');
+      var t=cur;cur=nxt;nxt=t;
       i=(i+1)%heroScenes.length;
-      v.src=heroScenes[i]; v.load();
-      v.play().catch(function(){});
-    });
-    // Preload the next scene so cuts feel seamless
-    var pre=document.createElement('link');pre.rel='prefetch';pre.href=heroScenes[1];document.head.appendChild(pre);
-    v.play().catch(function(){});
+      setTimeout(function(){
+        nxt.pause();
+        switching=false;
+        preloadNext();
+      },1800);
+    }
+    setInterval(function(){
+      if(switching||!cur.duration||cur.paused&&!cur.ended)return;
+      var remaining=cur.duration-cur.currentTime;
+      if((remaining<1.0||cur.ended)&&nxt.readyState>=3){
+        switching=true;
+        nxt.currentTime=0;
+        nxt.play().then(swap).catch(function(){swap()});
+      }
+    },200);
   }
   function startVideos(){
     if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
@@ -262,6 +283,8 @@
     var now=Date.now(); if(now-kickTick<400)return; kickTick=now;
     var allPlaying=true;
     document.querySelectorAll("video").forEach(function(v){
+      // never kick the hidden standby hero layer — it plays on cue
+      if(v.closest('.bhero')&&!v.classList.contains('ready'))return;
       if(v.paused){allPlaying=false;v.play().catch(function(){});}
     });
     if(allPlaying){
