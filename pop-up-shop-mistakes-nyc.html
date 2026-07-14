@@ -21,20 +21,24 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" /></noscript>
   <link rel="stylesheet" href="preview.css" />
   <style>
-    .guide{max-width:760px;margin:0 auto;padding:0 3rem}
-    .guide h2{font-size:clamp(1.5rem,2.6vw,2.125rem);font-weight:600;letter-spacing:-.03em;margin:4rem 0 1.25rem}
+    .guide{max-width:680px;margin:0 auto;padding:0 3rem}
+    .guide h2{font-size:clamp(1.4rem,2.4vw,1.75rem);font-weight:650;letter-spacing:-.02em;line-height:1.25;margin:3.5rem 0 1rem;padding-top:2.5rem;border-top:1px solid var(--line)}
+    .guide h2:first-of-type{border-top:none;padding-top:0}
     .guide h2 em{font-family:var(--ff-serif);font-style:italic;font-weight:300}
-    .guide p{font-size:1.0625rem;line-height:1.85;color:var(--muted);margin-bottom:1.25rem}
-    .guide ul{margin:0 0 1.25rem 1.25rem;list-style:none}
-    .guide li{font-size:1.0625rem;line-height:1.85;color:var(--muted);margin-bottom:.5rem}
-    .guide strong{color:var(--ink);font-weight:600}
-    .guide .pull{font-family:var(--ff-serif);font-style:italic;font-size:1.375rem;color:var(--ink);line-height:1.5;margin:2rem 0}
-    .guide a{color:var(--ink)}
+    .guide p{font-size:1.1875rem;line-height:1.75;color:#2e2823;margin-bottom:1.4rem;letter-spacing:.001em}
+    .guide ul{margin:0 0 1.5rem 0;list-style:none;padding:0}
+    .guide li{font-size:1.125rem;line-height:1.7;color:#2e2823;margin-bottom:.75rem;padding-left:1.5rem;position:relative}
+    .guide li::before{content:"";position:absolute;left:0;top:.65em;width:.5rem;height:2px;background:var(--accent)}
+    .guide strong{color:var(--ink);font-weight:650}
+    .guide .pull{font-family:var(--ff-serif);font-style:italic;font-size:1.625rem;color:var(--ink);line-height:1.45;margin:2.5rem 0;padding-left:1.5rem;border-left:3px solid var(--accent)}
+    .guide a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(0,0,0,.25);text-underline-offset:3px}
+    .guide a:hover{text-decoration-color:var(--accent)}
     .guide-cta{background:var(--bg-soft);border-radius:18px;padding:2.5rem;margin:3.5rem 0;text-align:center}
     .guide-cta p{margin-bottom:1.5rem}
-    .byline{font-size:.9375rem;color:var(--muted);margin-top:2rem}
+    .guide-cta a{text-decoration:none}
+    .byline{font-size:1rem;color:var(--muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line)}
     .byline b{color:var(--ink)}
-    @media(max-width:720px){.guide{padding:0 1.75rem}}
+    @media(max-width:720px){.guide{padding:0 1.5rem}.guide p{font-size:1.125rem}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Article","headline":"Everything Brands Get Wrong About Pop-Up Shops in NYC","author":{"@type":"Person","name":"Elena","jobTitle":"Founder","worksFor":{"@type":"Organization","name":"VenueDen"}},"publisher":{"@type":"Organization","name":"VenueDen","logo":{"@type":"ImageObject","url":"https://venueden.com/favicon.svg"}},"image":"https://venueden.com/assets/img/og-cover.jpg","datePublished":"2026-07-14","mainEntityOfPage":"https://venueden.com/pop-up-shop-mistakes-nyc.html"}
