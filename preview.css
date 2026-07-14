@@ -234,6 +234,7 @@ section{position:relative;z-index:2}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:2rem}
 .footer-logo{font-size:1.0625rem;font-weight:700;letter-spacing:.14em;margin-bottom:1rem}
 .footer-tag{font-size:.9375rem;color:rgba(255,255,255,.5);max-width:32ch;margin-bottom:1.25rem}
+.footer-addr{font-style:normal;font-size:.9375rem;color:rgba(255,255,255,.5);margin-bottom:.5rem}
 .footer-email{font-size:.9375rem;font-weight:500;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:border-color .2s}
 .footer-email:hover{border-color:var(--accent)}
 .footer-col-title{font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
