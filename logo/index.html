@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VenueDen — Logo</title>
+<style>
+  :root{--ink:#191512;--muted:#7A7062;--line:#E4DCCE;--canvas:#FAF7F2;--ivory:#F3EEE5;--accent:#C8501F;--dark:#14100C}
+  *{margin:0;box-sizing:border-box}
+  body{font-family:'Geist','Inter',-apple-system,'Segoe UI',sans-serif;background:var(--canvas);color:var(--ink);padding:3rem clamp(1.5rem,5vw,5rem) 5rem}
+  h1{font-weight:300;font-size:2.2rem;letter-spacing:-.03em;margin-bottom:.4rem}
+  .sub{color:var(--muted);font-size:.9rem;margin-bottom:3rem}
+  .lbl{font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 1rem}
+  .card{background:#fff;border:.5px solid var(--line);border-radius:3px;padding:3rem;margin-bottom:2rem;display:flex;align-items:center;justify-content:center}
+  .card.dark{background:var(--dark)}
+  .card.canvas{background:var(--canvas)}
+  .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+  img{max-width:100%}
+  .lockup{width:min(520px,100%)}
+  .stacked{width:200px}
+  .mk{width:96px}
+  .fav-row{display:flex;align-items:center;gap:1.5rem}
+  .fav-row img{border-radius:22%}
+  .swatches{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+  .sw{width:130px;border:.5px solid var(--line);border-radius:3px;overflow:hidden;background:#fff}
+  .sw div{height:64px}
+  .sw span{display:block;padding:.5rem .6rem;font-size:.72rem;color:var(--muted)}
+  section{margin-bottom:3rem}
+</style>
+</head>
+<body>
+  <h1>VenueDen logo</h1>
+  <p class="sub">The coiled den. A plan-view wall spiralling inward &mdash; at once a den/nest, a floor plan, a maze (the city, navigated), and a fingerprint (identity). The fine arc at the mouth is the architect&rsquo;s door-swing markup: the den, drawn open. Monoline wordmark drawn as paths (no font dependency).</p>
+
+  <section>
+    <p class="lbl">Primary lockup</p>
+    <div class="card canvas"><img class="lockup" src="venueden-lockup.svg" alt=""></div>
+    <p class="lbl">Reversed — on ink</p>
+    <div class="card dark"><img class="lockup" src="venueden-lockup-reverse.svg" alt=""></div>
+  </section>
+
+  <section class="row">
+    <div>
+      <p class="lbl">Stacked</p>
+      <div class="card"><img class="stacked" src="venueden-stacked.svg" alt=""></div>
+    </div>
+    <div>
+      <p class="lbl">Mark</p>
+      <div class="card"><img class="mk" src="venueden-mark.svg" alt=""></div>
+    </div>
+    <div>
+      <p class="lbl">Favicon / avatar</p>
+      <div class="card"><div class="fav-row">
+        <img src="venueden-favicon.svg" width="64" height="64" alt="">
+        <img src="venueden-favicon.svg" width="32" height="32" alt="">
+        <img src="venueden-favicon.svg" width="16" height="16" alt="">
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="lbl">Color</p>
+    <div class="swatches">
+      <div class="sw"><div style="background:#C8501F"></div><span>Clay — #C8501F</span></div>
+      <div class="sw"><div style="background:#191512"></div><span>Ink — #191512</span></div>
+      <div class="sw"><div style="background:#FAF7F2"></div><span>Canvas — #FAF7F2</span></div>
+      <div class="sw"><div style="background:#F3EEE5"></div><span>Ivory — #F3EEE5</span></div>
+    </div>
+  </section>
+</body>
+</html>
