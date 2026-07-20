@@ -44,8 +44,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s}
 .nav.scrolled{background:rgba(250,247,242,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1360px;margin:0 auto;padding:0 4rem}
-.nav-logo{font-size:1rem;font-weight:700;letter-spacing:.14em;color:#fff;transition:color .3s;display:inline-flex;align-items:center;gap:.65rem}
-.nav-mark{width:30px;height:30px;display:block;flex-shrink:0}
+.nav-logo{font-size:1rem;font-weight:700;letter-spacing:.14em;color:#fff;transition:color .3s}
 .nav.scrolled .nav-logo{color:var(--ink)}
 .nav-links{display:flex;gap:2.25rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8);transition:color .2s}
