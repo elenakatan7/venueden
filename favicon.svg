@@ -1,1 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#FAF7F2"/><text x="32" y="45" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#191512" text-anchor="middle">V</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Venue Den Logo</title>
+  <desc id="desc">White architectural doorway mark centered inside a black circle.</desc>
+
+  <circle cx="540" cy="540" r="500" fill="#000000"/>
+
+  <!-- Outer architectural frame -->
+  <path
+    d="M310 790
+       L310 405
+       L650 205
+       L650 435"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="28"
+    stroke-linecap="square"
+    stroke-linejoin="miter"/>
+
+  <!-- Inner doorway / forward plane -->
+  <path
+    d="M500 760
+       L500 490
+       L575 445
+       L800 575
+       L800 790"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="28"
+    stroke-linecap="square"
+    stroke-linejoin="miter"/>
+
+  <!-- Connecting floor line -->
+  <path
+    d="M310 790 L500 760"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="28"
+    stroke-linecap="square"/>
+
+  <!-- Solid inner face -->
+  <path
+    d="M500 490
+       L575 445
+       L575 690
+       L500 735
+       Z"
+    fill="#FFFFFF"/>
+</svg>
