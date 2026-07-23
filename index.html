@@ -18,6 +18,7 @@
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" /></noscript>
   <link rel="stylesheet" href="preview.css" />
@@ -58,6 +59,8 @@
     <video class="vbg vbg-fade" muted loop autoplay playsinline preload="metadata" poster="assets/img/poster-index.jpg">
       <source src="assets/video/hero-soho.mp4" type="video/mp4" />
     </video>
+    <video class="vbg vbg-rot" muted loop playsinline preload="none" aria-hidden="true" data-rot="assets/video/boutique.mp4"></video>
+    <video class="vbg vbg-rot" muted loop playsinline preload="none" aria-hidden="true" data-rot="assets/video/doors.mp4"></video>
     <div class="vscrim"></div>
     <div class="vcontent vcontent--center">
       <h1 class="hero-h1">
@@ -410,6 +413,30 @@
   // Hero is above the fold — start it immediately.
   var heroVid = document.querySelector('#chapter0 video');
   if (heroVid) attach(heroVid);
+
+  // Rotating hero: crossfade through finished-space loops. The extra clips
+  // load a few seconds after window load (so LCP stays light), and the
+  // rotation only advances to a clip that is actually ready to play.
+  var rotVids = [].slice.call(document.querySelectorAll('#chapter0 .vbg-rot'));
+  if (!reduce && rotVids.length) {
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        rotVids.forEach(function(v) { if (!v.src) { v.src = v.dataset.rot; v.load(); } });
+      }, 3500);
+      var state = -1; // -1 = primary hero showing
+      setInterval(function() {
+        var next = state + 1;
+        if (next >= rotVids.length) next = -1;
+        if (next >= 0 && rotVids[next].readyState < 3) next = -1; // not buffered — fall back to primary
+        rotVids.forEach(function(v, i) {
+          var on = (i === next);
+          v.classList.toggle('on', on);
+          if (on) v.play().catch(function(){}); else setTimeout(function(){ if (!v.classList.contains('on')) v.pause(); }, 1700);
+        });
+        state = next;
+      }, 7000);
+    });
+  }
   // Every other video loads ~1.5 screens before it scrolls into view, so the
   // initial page stays light but playback still feels continuous on scroll.
   var pending = [].slice.call(document.querySelectorAll('video[data-src]'));
