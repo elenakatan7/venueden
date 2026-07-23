@@ -8,7 +8,12 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--ff);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* Lenis smooth-scroll: when active, hand scrolling to the rAF loop */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+body{font-family:var(--ff);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -37,8 +42,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-solid--invert:hover{background:var(--accent);color:#fff}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal{opacity:0;transform:translateY(30px) scale(.985);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.visible{opacity:1;transform:none}
+/* staggered cascade — each item reads its own --i (set inline in the markup) */
+.reveal.stagger{transition-delay:calc(var(--i,0)*.075s)}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s}
@@ -47,7 +54,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nav-logo{font-size:1rem;font-weight:700;letter-spacing:.14em;color:#fff;transition:color .3s}
 .nav.scrolled .nav-logo{color:var(--ink)}
 .nav-links{display:flex;gap:2.25rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8);transition:color .2s}
+.nav-links a{position:relative;font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8);transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:currentColor;opacity:.75;transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1)}
 .nav.scrolled .nav-links a{color:var(--ink-2)}
 .nav-links a:hover{color:#fff}
 .nav.scrolled .nav-links a:hover{color:var(--accent)}
@@ -105,9 +114,10 @@ section{position:relative;z-index:2}
 .vsub--center{margin-left:auto;margin-right:auto}
 .hero-h1{font-size:clamp(2.75rem,6.6vw,6rem);font-weight:600;line-height:1.02;letter-spacing:-.04em;color:#fff;margin-bottom:1.75rem}
 .hero-h1 em{color:rgba(255,255,255,.95)}
-.hero-line{display:block;opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.hero-line.in{opacity:1;transform:none}
-.hero-line:nth-child(2){transition-delay:.12s}
+.hero-line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero-line-i{display:block;opacity:0;transform:translateY(112%);transition:opacity 1s var(--ease),transform 1.15s var(--ease);will-change:opacity,transform}
+.hero-line.in .hero-line-i{opacity:1;transform:none}
+.hero-line:nth-child(2) .hero-line-i{transition-delay:.14s}
 .hero-sub{font-size:clamp(1.0625rem,1.5vw,1.375rem);font-weight:400;color:rgba(255,255,255,.85);margin-bottom:2.75rem;opacity:0;animation:fadeUp .8s var(--ease) .5s forwards}
 .hero-actions{display:flex;gap:1rem;justify-content:center;opacity:0;animation:fadeUp .8s var(--ease) .7s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -318,7 +328,7 @@ section{position:relative;z-index:2}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .reveal,.vcontent,.hero-line{opacity:1!important;transform:none!important}
+  .reveal,.vcontent,.hero-line,.hero-line-i{opacity:1!important;transform:none!important}
   .plx{transform:none!important}
 }
 
