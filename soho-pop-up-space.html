@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>/*__https_upgrade__*/if(location.protocol==="http:")location.replace(location.href.replace(/^http:/,"https:"));</script>
+<script>/*__https_upgrade__*/if(location.protocol==="http:"&&location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")location.replace(location.href.replace(/^http:/,"https:"));</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SoHo Pop-Up Space — Rent &amp; Produce a Pop-Up in SoHo NYC | VenueDen</title>
@@ -137,5 +137,7 @@
   mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open')})});}
 })();
 </script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="assets/js/motion.js" defer></script>
 </body>
 </html>
