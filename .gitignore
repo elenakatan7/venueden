@@ -128,3 +128,4 @@ aesthetic-research.md
 .prettierrc
 .prettierignore
 node_modules/
+picks-*.html
