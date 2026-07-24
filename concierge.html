@@ -4,11 +4,11 @@
 <script>/*__https_upgrade__*/if(location.protocol==="http:"&&location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")location.replace(location.href.replace(/^http:/,"https:"));</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start a Project — VenueDen | NYC Pop-Up Retail</title>
+  <title>Start a Project with VenueDen | NYC Pop-Up Retail</title>
   <meta name="description" content="Tell us about your pop-up. VenueDen replies within one business day with NYC space options and a budget." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VenueDen" />
-  <meta property="og:title" content="Start a Project — VenueDen" />
+  <meta property="og:title" content="Start a Project with VenueDen" />
   <meta property="og:description" content="Response within one business day." />
   <meta property="og:image" content="https://venueden.com/assets/img/og-cover.jpg" />
   <link rel="canonical" href="https://venueden.com/concierge.html" />
@@ -106,8 +106,8 @@
           <div><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555"></div>
         </div>
         <div><label for="f-when">Target timing</label><input id="f-when" name="Target timing" type="text" placeholder="e.g. September 2026"></div>
-        <div><label for="f-file">Deck or brief <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional &#8212; PDF or images, up to 10MB)</span></label><input id="f-file" name="attachment" type="file" accept=".pdf,.png,.jpg,.jpeg,.ppt,.pptx,.key"></div>
-        <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind &#8212; and anything else useful." required></textarea></div>
+        <div><label for="f-file">Deck or brief <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional: PDF or images, up to 10MB)</span></label><input id="f-file" name="attachment" type="file" accept=".pdf,.png,.jpg,.jpeg,.ppt,.pptx,.key"></div>
+        <div><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="Message" placeholder="The brand, the idea, the neighborhood if you have one in mind, and anything else useful." required></textarea></div>
         <button type="submit" class="btn btn-solid btn-lg" style="width:100%">Send &#8594;</button>
         <p class="form-note">We read everything. You&#8217;ll hear back within one business day.</p>
       </form>
@@ -122,7 +122,7 @@
 <footer class="footer">
   <div class="wrap">
     <div class="footer-bottom" style="border-top:none">
-      <span>&#169; 2026 VenueDen &#8212; New York City</span>
+      <span>&#169; 2026 VenueDen, New York City</span>
       <div class="footer-legal"><a href="index.html">Home</a><a href="services.html">Services</a><a href="faq.html">FAQ</a></div>
     </div>
   </div>
@@ -167,7 +167,7 @@
     // Multipart so the optional attachment comes through; FormSubmit
     // delivers straight to hello@venueden.com — no mail app needed.
     var fd=new FormData();
-    fd.append('_subject',(isLandlord?'Space submission — ':'Pop-up inquiry — ')+brand);
+    fd.append('_subject',(isLandlord?'Space submission: ':'Pop-up inquiry: ')+brand);
     fd.append('_cc','ryan@venueden.com');
     fd.append('_template','table');
     fd.append('_captcha','false');
@@ -182,7 +182,7 @@
     if(file){
       // FormSubmit only accepts attachments on a native POST, so hand the
       // browser the form and let FormSubmit redirect back to ?sent=1.
-      [['_subject',(isLandlord?'Space submission — ':'Pop-up inquiry — ')+brand],
+      [['_subject',(isLandlord?'Space submission: ':'Pop-up inquiry: ')+brand],
        ['_cc','ryan@venueden.com'],['_template','table'],['_captcha','false'],
        ['I am',isLandlord?'Landlord':'Brand'],
        ['_next','https://venueden.com/concierge.html?sent=1']
@@ -208,7 +208,7 @@
       // Backend unreachable — fall back to the visitor's mail app so nothing is lost.
       var lines=[];
       form.querySelectorAll('input,textarea,select').forEach(function(f){ if(f.value&&f.type!=='file') lines.push(f.name+': '+f.value); });
-      window.location.href='mailto:hello@venueden.com?subject='+encodeURIComponent('Pop-up inquiry — '+brand)+'&body='+encodeURIComponent('New inquiry from venueden.com\n\n'+lines.join('\n'));
+      window.location.href='mailto:hello@venueden.com?subject='+encodeURIComponent('Pop-up inquiry: '+brand)+'&body='+encodeURIComponent('New inquiry from venueden.com\n\n'+lines.join('\n'));
       form.style.display='none';
       document.getElementById('sent').style.display='block';
     });
