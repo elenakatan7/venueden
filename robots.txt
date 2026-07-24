@@ -1,10 +1,10 @@
-# venueden.com — all crawlers welcome, including AI assistants and agents.
+# venueden.com: all crawlers welcome, including AI assistants and agents.
 # Machine-readable site summary: https://venueden.com/llms.txt
 
 User-agent: *
 Allow: /
 
-# AI search & assistant crawlers — explicitly welcome
+# AI search & assistant crawlers: explicitly welcome
 User-agent: GPTBot
 Allow: /
 

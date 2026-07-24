@@ -1,8 +1,8 @@
-# SoHo Pop-Up Brand Shortlist — 100 Targets
+# SoHo Pop-Up Brand Shortlist: 100 Targets
 
 **For:** VenueDen outreach · **Compiled:** July 8, 2026
-**Criteria:** (1) Established brand — big at home, in Europe/Asia, or online in the US. (2) No permanent brick-and-mortar store in NYC (wholesale, dept-store counters, and past pop-ups are fine — past pop-ups are a *plus*). (3) Demonstrated appetite for pop-ups: ran them in other cities, does experiential marketing, announced US expansion, or is digitally-native and testing physical retail.
-**Note:** NYC-store status was web-verified July 2026 but retail moves fast — re-verify before each pitch. Decision-maker contacts for many of these are findable via the Apollo search saved in your browser tab.
+**Criteria:** (1) Established brand: big at home, in Europe/Asia, or online in the US. (2) No permanent brick-and-mortar store in NYC (wholesale, dept-store counters, and past pop-ups are fine; past pop-ups are a *plus*). (3) Demonstrated appetite for pop-ups: ran them in other cities, does experiential marketing, announced US expansion, or is digitally-native and testing physical retail.
+**Note:** NYC-store status was web-verified July 2026 but retail moves fast; re-verify before each pitch. Decision-maker contacts for many of these are findable via the Apollo search saved in your browser tab.
 
 ---
 
@@ -14,17 +14,17 @@
 
 ---
 
-## Tier 1 — Hottest (51): serial pop-up operators or active NYC testers, no permanent NYC store
+## Tier 1, Hottest (51): serial pop-up operators or active NYC testers, no permanent NYC store
 
 These brands have already spent money on pop-ups (many in SoHo itself) or are mid-US-entry right now.
 
 | # | Brand | From | Category | NYC status | Pop-up evidence |
 |---|---|---|---|---|---|
 | 2 | Trinny London | UK | Makeup | Ran 4-month SoHo pop-up (124 Prince St, 2025) to test permanent NYC store | Founder publicly committed to "cracking the US"; Prince St was its first owned NA store |
-| 3 | Rhode (Hailey Bieber) | USA | Skincare | Past SoHo pop-ups (127 Greene St), no permanent store | Serial pop-up brand — NYC, LA, London; pop-ups are its core retail strategy |
+| 3 | Rhode (Hailey Bieber) | USA | Skincare | Past SoHo pop-ups (127 Greene St), no permanent store | Serial pop-up brand: NYC, LA, London; pop-ups are its core retail strategy |
 | 4 | TIRTIR | S. Korea | Makeup | 3+ NYC pop-ups in a year (458 Broadway, Herald Sq, 45 Grand St) | "Going local with pop-up stores" is its stated US strategy; #1 Amazon US foundation |
 | 5 | Anua | S. Korea | Skincare | SoHo debut pop-up at 21 Greene St (June 2026) | Kendall Jenner just signed as first global ambassador; US escalation underway |
-| 6 | Laneige | S. Korea | Skincare | Serial NYC activations (Donut Shop, JuicePop, SoHo balloon install) | 4+ NYC activations in 2025–26; never a large-format owned experience |
+| 6 | Laneige | S. Korea | Skincare | Serial NYC activations (Donut Shop, JuicePop, SoHo balloon install) | 4+ NYC activations in 2025-26; never a large-format owned experience |
 | 7 | Beauty of Joseon | S. Korea | Skincare | Times Square "SPF Grocery" pop-up sold out (2,500 visitors) | Announced further global campaigns from a North America base |
 | 8 | Sol de Janeiro | USA/Brazil | Body care | Serial NYC pop-ups incl. 150 Spring St SoHo | ~$1B revenue, multiple NYC pop-ups yearly, experiential is core marketing |
 | 9 | Glow Recipe | USA (K-beauty) | Skincare | NYC-HQ'd, repeat NYC pop-ups (Bingsoo Café 2025) | Multiple NYC activations per year; zero owned retail |
@@ -35,8 +35,8 @@ These brands have already spent money on pop-ups (many in SoHo itself) or are mi
 | 14 | Salt & Stone | USA | Body/fragrance | First NYC "Scent Library" pop-up + SoHo sampling truck | Scaling experiential as its awareness driver |
 | 15 | Augustinus Bader | Germany | Luxury skincare | Shop-in-shop at The Webster SoHo; Nordstrom pop-up 2026, SoHo pop-up truck 2023 | Already invests in SoHo presence; spa expansion strategy stated |
 | 16 | Quince | USA | Apparel/home | First-ever pop-up was NYC (Apr 2026), then LA, Toronto | ~$1B+ revenue; publicly testing physical retail via pop-up tour |
-| 17 | Parke | USA | Womenswear | Repeated SoHo pop-ups 2024–25, no permanent store | 3 a.m. lines, ~$300K weekends; pop-ups ARE its retail model |
-| 18 | Béis (Shay Mitchell) | USA | Luggage | Repeat NYC pop-ups (131 Greene St holiday 2025) | No permanent stores anywhere — pop-ups are its only retail channel |
+| 17 | Parke | USA | Womenswear | Repeated SoHo pop-ups 2024-25, no permanent store | 3 a.m. lines, ~$300K weekends; pop-ups ARE its retail model |
+| 18 | Béis (Shay Mitchell) | USA | Luggage | Repeat NYC pop-ups (131 Greene St holiday 2025) | No permanent stores anywhere; pop-ups are its only retail channel |
 | 19 | Calpak | USA | Luggage | First SoHo pop-up sold out (2019); "Corner Store" Bleecker St 2026 | Publicly opening first stores; proven SoHo sell-through |
 | 20 | Revolve | USA | Fashion e-comm | Repeat NYFW "Revolve Gallery" Manhattan pop-ups | $1.1B public co.; experiential arm (Revolve Festival); testing retail (Aspen) |
 | 21 | Rare Beauty (Selena Gomez) | USA | Makeup | Past NYC activations (Hudson St 2026, Sephora takeovers) | Forbes-profiled pop-up strategy; mass Gen-Z draw |
@@ -45,16 +45,16 @@ These brands have already spent money on pop-ups (many in SoHo itself) or are mi
 | 24 | Chamberlain Coffee | USA | Coffee/lifestyle | Three NYC pop-up collabs (Blank Street, Pop Up Grocer, Levi's) | Café residency model proven; Gen-Z queue magnet |
 | 25 | Fishwife | USA | Tinned seafood | Immersive Nolita pop-up (247 Elizabeth St, 2024) | Time Out-covered hit; chef collabs (Rubirosa) |
 | 26 | Erewhon | USA | Grocery/wellness | Confirmed Manhattan is first East Coast market (Kith Ivy tonic bar) | A public-facing pop-up would be a cultural event; testing new formats |
-| 27 | Beams | Japan | Select-shop lifestyle | Mulberry St pop-up (Jan–Feb 2025) as explicit US test | President says permanent US store is the goal; world pop-up tour |
+| 27 | Beams | Japan | Select-shop lifestyle | Mulberry St pop-up (Jan-Feb 2025) as explicit US test | President says permanent US store is the goal; world pop-up tour |
 | 28 | Porter-Yoshida | Japan | Bags | First-ever NYC pop-up (21 Spring St, Sept 2025) | Brand director: post-COVID strategy is direct retail expansion |
 | 29 | Human Made (NIGO) | Japan | Streetwear | Tribeca pop-up (2023), no permanent NYC store | Scaling retail; 2026 Harajuku global flagship; KAWS/Blue Bottle collabs |
-| 30 | Loft | Japan | Stationery/lifestyle | None — president publicly says a NYC store is the goal | Constant in-store pop-up programming; instant queue-generator |
+| 30 | Loft | Japan | Stationery/lifestyle | None; president publicly says a NYC store is the goal | Constant in-store pop-up programming; instant queue-generator |
 | 31 | Hobonichi | Japan | Stationery | Annual NYC partner pop-ups (Yoseka, CIBONE Brooklyn) | 700K+ planners/yr; direct format is the obvious next step |
 | 32 | Olive Young | S. Korea | K-beauty retail | First US store opened (Pasadena); East Coast/NYC named next; past NYC activation | Korea's #1 beauty retailer, 1,300+ stores; explicit US rollout plan |
 | 33 | Matin Kim | S. Korea | Fashion/bags | None in US; viral in North America | 27 global stores planned in 5 yrs; Shibuya pop-up did ¥37M in 12 days; pop-up-first entry model |
 | 34 | Mardi Mercredi | S. Korea | Fashion | US wholesale only | Dozens of pop-ups (Tokyo, Singapore, Jakarta); goal of 50% overseas share |
 | 35 | Emis | S. Korea | Headwear | None in US | Serial overseas pop-ups that converted into permanent stores |
-| 36 | Musinsa | S. Korea | Fashion platform | None; US store debut on stated roadmap | Pop-up-first entry model — Tokyo pop-up drew 82K visitors |
+| 36 | Musinsa | S. Korea | Fashion platform | None; US store debut on stated roadmap | Pop-up-first entry model; Tokyo pop-up drew 82K visitors |
 | 37 | Percival | UK | Menswear | "Percival Arms" pub pop-up, Nolita (2023) | 311% YoY US growth; publicly stated pop-up-led US expansion |
 | 38 | Corteiz | UK | Streetwear | Guerrilla NYC drops (2023, 2025) | Announced USA pop-up tour; entire model is takeover pop-ups |
 | 39 | Pangaia | UK | Sustainable apparel | 3 past NYC pop-ups (Nordstrom, MoMA Design Store) | Serial pop-up operator; digitally native testing physical |
@@ -72,14 +72,14 @@ These brands have already spent money on pop-ups (many in SoHo itself) or are mi
 | 51 | Vitaly | Canada | Jewelry | Stores only in Toronto + LA | Its own retail page advertises "exclusive pop-ups" as core strategy |
 | 52 | Hem | Sweden | Furniture/design | Appointment-only Broome St studio; past SoHo pop-up (325 W Broadway) | Launched US via month-long SoHo pop-up; experiential studio events |
 
-## Tier 2 — Strong (41): expansion signals, proven experiential DNA, NYC is the gap
+## Tier 2, Strong (41): expansion signals, proven experiential DNA, NYC is the gap
 
 | # | Brand | From | Category | NYC status | Pop-up evidence |
 |---|---|---|---|---|---|
 | 53 | C.P. Company | Italy | Technical outerwear | None (1990s store closed); NYC wholesale | President: NY flagship "not out of the equation"; rolling out flagships + anniversary exhibitions |
 | 54 | Casablanca | France | Accessible luxury | First US store is Beverly Hills; past Nordstrom NYC pop-up | US retail push underway; NYC is the missing coast |
 | 55 | Patta | Netherlands | Streetwear | NYC pop-up 2019; US webshop | Global pop-up strategy on record (Tokyo, Seoul, Shanghai) |
-| 56 | Nanushka | Hungary | Accessible luxury | Former Mercer St flagship closed | Knows SoHo works; needs lower-commitment format — exactly a pop-up |
+| 56 | Nanushka | Hungary | Accessible luxury | Former Mercer St flagship closed | Knows SoHo works; needs lower-commitment format, exactly a pop-up |
 | 57 | Represent (incl. 247) | UK | Luxury streetwear | NYC showroom + wholesale only | LA flagship opened; US is its biggest market; publicly retail-expansion minded |
 | 58 | Soeur | France | Womenswear | Announced US expansion + US office (BoF) | Sister-brand to the Sézane wave that proved out in Nolita |
 | 59 | Samsøe Samsøe | Denmark | Contemporary | None in US | CEO publicly announced plans for own US stores |
@@ -87,11 +87,11 @@ These brands have already spent money on pop-ups (many in SoHo itself) or are mi
 | 61 | Autry | Italy | Heritage sneakers | US wholesale + distribution office | Opening European flagships; formally entered US market |
 | 62 | Charlotte Tilbury | UK | Makeup | Counters only (incl. Bloomingdale's SoHo) | Theatrical "Beauty Wonderland" activations globally; ~$1B revenue |
 | 63 | Medik8 | UK | Skincare | Ran motion-reactive interactive NYC storefront (2026) | L'Oréal majority stake; US is #2 market growing +200% |
-| 64 | Typology | France | Skincare | None — US is DTC-only | Snøhetta-designed Paris pop-up became permanent; proven pop-up-to-retail playbook |
+| 64 | Typology | France | Skincare | None; US is DTC-only | Snøhetta-designed Paris pop-up became permanent; proven pop-up-to-retail playbook |
 | 65 | Natura Bissé | Spain | Luxury skincare | Dept-store/spa only | Touring "Pure Air Bubble" pop-up spa awaits a Manhattan run |
 | 66 | Ultra Violette | Australia | SPF skincare | Sephora-only; US launch 2025 | Announced US as key growth market; activation-led brand |
 | 67 | Sulwhasoo | S. Korea | Luxury K-beauty | Sephora/dept only | Global "20 pop-up openings" campaign; year-long Met Museum sponsorship |
-| 68 | Tamburins | S. Korea | Fragrance | None in US | Gentle Monster's sibling — exhibition-store DNA; parent already proved NYC |
+| 68 | Tamburins | S. Korea | Fragrance | None in US | Gentle Monster's sibling: exhibition-store DNA; parent already proved NYC |
 | 69 | Ader Error | S. Korea | Fashion | Kith pop-up (2018) | Brand built on art-installation pop-ups |
 | 70 | #FR2 | Japan | Streetwear | None in US (HBX wholesale) | Pop-up-driven expansion ("Popup Rabbits" concept across Asia) |
 | 71 | visvim | Japan | Fashion/footwear | Tribeca pop-up (2017) | Has run NYC + international pop-ups in its F.I.L. format |
@@ -118,7 +118,7 @@ These brands have already spent money on pop-ups (many in SoHo itself) or are mi
 | 92 | Ace & Tate | Netherlands | Eyewear | US e-comm just launched, zero US stores | Retail-first growth (90 EU stores from digital roots) |
 | 93 | Alessi | Italy | Home/kitchen | Past SoHo flagship closed; wholesale only | Heritage NYC retail history; anniversary activations |
 
-## Tier 3 — Worth pitching (7): great SoHo fit, earlier-stage signal
+## Tier 3, Worth pitching (7): great SoHo fit, earlier-stage signal
 
 | # | Brand | From | Category | NYC status | Pop-up evidence |
 |---|---|---|---|---|---|
@@ -134,7 +134,7 @@ These brands have already spent money on pop-ups (many in SoHo itself) or are mi
 
 ### How to use this list
 
-- **Tier 1 first.** These 51 have already written checks for pop-ups — the pitch is "your next one, produced end-to-end in SoHo," not "your first one."
+- **Tier 1 first.** These 51 have already written checks for pop-ups. The pitch is "your next one, produced end-to-end in SoHo," not "your first one."
 - **Timing hooks:** marathon week (Saucony, Brooks, Satisfy, Mizuno), NYFW (Cecilie Bahnsen, Revolve, Ader Error), holiday (Béis, Calpak, Loft, Hobonichi), summer SPF season (Ultra Violette, Beauty of Joseon, Supergoop-adjacent).
 - **Contacts:** the Apollo people search already loaded in your browser covers the retail-expansion / NA-president titles for the European and Japanese brands here; the US DTC brands are best reached via VP Brand Marketing / Head of Retail titles from the first search.
 - Statuses verified via web July 2026; re-check a brand's store locator the week you pitch.

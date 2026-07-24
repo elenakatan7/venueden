@@ -1,35 +1,37 @@
-# VenueDen Outreach Kit — SoHo Pop-Up Prospects
+# VenueDen Outreach Kit: SoHo Pop-Up Prospects
 
 **For:** First outreach wave off the 100-brand shortlist · **Compiled:** July 8, 2026
 Pairs with [soho-popup-brand-shortlist.md](soho-popup-brand-shortlist.md).
+
+> **⚠️ Superseded (July 24, 2026):** Elena's rule: outreach emails are **3 to 4 sentences**, short plain subjects, no dashes, nothing template-shaped. Templates A/B below are kept for the positioning logic only; do not send them as written. The reference standard is [40-emails-ready-for-ryan.md](40-emails-ready-for-ryan.md).
 
 ---
 
 ## The positioning
 
-Every brand on the Tier 1 list has already *done* pop-ups. So the pitch is **not** "you should do a pop-up." It's: **"Your next New York pop-up, sourced and produced end-to-end by one team — so you show up in SoHo without running a construction project from another city (or another country)."**
+Every brand on the Tier 1 list has already *done* pop-ups. So the pitch is **not** "you should do a pop-up." It's: **"Your next New York pop-up, sourced and produced end-to-end by one team, so you show up in SoHo without running a construction project from another city (or another country)."**
 
 That reframes VenueDen from a vendor into the thing that makes a US/NYC activation actually feasible for a lean brand team. Three proof points to lean on, drawn from the site:
-1. **Source the right space** — a search across the whole city, not a fixed inventory.
-2. **Produce the build** — every trade coordinated by one team until the store is ready to open.
-3. **One standard of care** — turnkey, so the brand's team flies in to a finished space.
+1. **Source the right space**: a search across the whole city, not a fixed inventory.
+2. **Produce the build**: every trade coordinated by one team until the store is ready to open.
+3. **One standard of care**: turnkey, so the brand's team flies in to a finished space.
 
 ---
 
-## Cold email — Template A (international brands entering the US)
+## Cold email, Template A (international brands entering the US)
 
 **Subject lines (A/B):**
 - `Your New York pop-up, handled`
-- `[Brand] in SoHo — without the construction headache`
+- `[Brand] in SoHo, without the construction headache`
 - `Bringing [Brand] to New York`
 
 > Hi [First name],
 >
-> I saw [Brand]'s [pop-up in London / US expansion news / recent activation] — congratulations, it looked fantastic.
+> I saw [Brand]'s [pop-up in London / US expansion news / recent activation]. Congratulations, it looked fantastic.
 >
 > I run VenueDen. We're New York's pop-up production partner: we source the right SoHo space, produce the entire build, and hand your team a store that's ready to open. For a brand running its US entry from [home city], that means you get a New York activation without managing a lease negotiation, a GC, and five trades from across an ocean.
 >
-> We work across the whole city — matched to your brand, budget, and timeline — and coordinate design, build, lighting, signage, and styling under one roof.
+> We work across the whole city, matched to your brand, budget, and timeline, and coordinate design, build, lighting, signage, and styling under one roof.
 >
 > Would a 20-minute call in the next couple of weeks be useful? Even if New York isn't on the [year] calendar yet, I'd love to be the first call when it is.
 >
@@ -37,7 +39,7 @@ That reframes VenueDen from a vendor into the thing that makes a US/NYC activati
 > Elena
 > VenueDen · venueden.com
 
-## Cold email — Template B (US DTC brands with no NYC store)
+## Cold email, Template B (US DTC brands with no NYC store)
 
 **Subject lines (A/B):**
 - `Your next pop-up, produced in SoHo`
@@ -46,9 +48,9 @@ That reframes VenueDen from a vendor into the thing that makes a US/NYC activati
 
 > Hi [First name],
 >
-> [Brand]'s [SoHo pop-up / recent activation] clearly worked — [specific detail: the lines, the sell-through, the concept]. I run VenueDen, and we produce exactly that kind of moment end-to-end: we find the SoHo space, build it out, and deliver it ready to open, so your team lands in a finished store instead of managing contractors remotely.
+> [Brand]'s [SoHo pop-up / recent activation] clearly worked. [Specific detail: the lines, the sell-through, the concept]. I run VenueDen, and we produce exactly that kind of moment end-to-end: we find the SoHo space, build it out, and deliver it ready to open, so your team lands in a finished store instead of managing contractors remotely.
 >
-> The brands we work with treat pop-ups as a channel, not a one-off — and the hard part is never the idea, it's sourcing the right block and coordinating the build on a tight timeline. That's the part we own.
+> The brands we work with treat pop-ups as a channel, not a one-off, and the hard part is never the idea, it's sourcing the right block and coordinating the build on a tight timeline. That's the part we own.
 >
 > Open to a quick call? I can share a couple of SoHo spaces that would suit [Brand] specifically.
 >
@@ -60,13 +62,13 @@ That reframes VenueDen from a vendor into the thing that makes a US/NYC activati
 
 ---
 
-## First wave — top 15 to send this week
+## First wave: top 15 to send this week
 
 Ranked for reply-likelihood: brands mid-US-entry or with a repeat NYC pop-up habit, where the timing hook is live *now*.
 
 | Brand | Why now | Target title (for Apollo) | Template |
 |---|---|---|---|
-| Trinny London | Prince St pop-up was a test *for a permanent store* — they're deciding now | Head of Retail / GM North America | A |
+| Trinny London | Prince St pop-up was a test *for a permanent store*; they're deciding now | Head of Retail / GM North America | A |
 | Quince | First-ever pop-up (NYC, Apr 2026) → actively scaling retail | VP Retail / Head of Physical Retail | B |
 | Parke | Pop-ups are their whole model; each one bigger than the last | Founder / Head of Ops (small team) | B |
 | Béis | Serial NYC pop-ups, no permanent store anywhere | VP Brand Marketing / Head of Retail | B |
@@ -92,4 +94,4 @@ The searches are still loaded in your browser tab:
 
 To turn this into a send-ready list I can, on your go-ahead:
 1. Filter Apollo to these 15 companies and capture the right decision-maker's name + title (no credit cost).
-2. Reveal verified emails for the batch — **~1 Apollo credit each** (you have 90), so ~15 credits for this wave. I'll confirm the exact count before spending.
+2. Reveal verified emails for the batch: **~1 Apollo credit each** (you have 90), so ~15 credits for this wave. I'll confirm the exact count before spending.

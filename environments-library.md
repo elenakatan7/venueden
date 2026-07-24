@@ -1,6 +1,6 @@
-# VenueDen — Environment Library v2 (research-grounded, unbranded)
+# VenueDen Environment Library v2 (research-grounded, unbranded)
 
-Prompts informed by the real design language of the roster's actual NYC retail moments —
+Prompts informed by the real design language of the roster's actual NYC retail moments:
 no brand names, no logos, no copied photos. Each generates an ORIGINAL environment that
 evokes the aesthetic. Fire on any funded Higgsfield account (2 credits/image via Nano
 Banana Pro at 3:4, or ~7.5 credits/5s video via kling turbo at 16:9).
@@ -10,7 +10,7 @@ House style suffix for every prompt:
 
 ---
 
-## 1. Sport Innovation Atrium  *(grounded in: 5th Ave sport flagship language — buzzing
+## 1. Sport Innovation Atrium  *(grounded in: 5th Ave sport flagship language; buzzing
 atrium, textured glass, stem-track lighting, pristine white "lab" floor)*
 > Editorial architectural photograph of a multi-level athletic retail atrium: textured
 > rippled-glass wall glowing with daylight, a pristine white product-lab floor with a
@@ -18,19 +18,19 @@ atrium, textured glass, stem-track lighting, pristine white "lab" floor)*
 > of a stadium concourse distilled into retail, warm gray concrete + white palette.
 
 ## 2. Skate-Culture Concrete Hall  *(grounded in: Bowery/Williamsburg skate-brand
-minimalism — exposed brick, skylights, birch-plywood bowl, low metal benches)*
+minimalism; exposed brick, skylights, birch-plywood bowl, low metal benches)*
 > Editorial photograph of a minimal streetwear store in a raw industrial hall: exposed
 > whitewashed brick, big square skylights pouring daylight, a curved birch plywood
 > skate-bowl form at the rear, one long low steel bench, sparse garment rail, gritty but
 > immaculate.
 
-## 3. Blush Dream Closet  *(grounded in: SoHo lingerie/collab pop-up language — blush
+## 3. Blush Dream Closet  *(grounded in: SoHo lingerie/collab pop-up language; blush
 hues, cascading florals, lace, embellishment bar, plush oversized props)*
 > Editorial photograph of a two-level blush-pink boutique pop-up: cascading fresh florals
 > down a staircase, lace-trimmed drapery, a mirrored vanity embellishment bar, soft
 > champagne lighting, whimsical and feminine, thousands of pink stems.
 
-## 4. Three-Story LED Canyon  *(grounded in: Meatpacking experiential flagship — giant
+## 4. Three-Story LED Canyon  *(grounded in: Meatpacking experiential flagship; giant
 multi-story LED wall, industrial steel beams, amphitheater seating)*
 > Editorial photograph inside a three-story experiential tech space: a colossal
 > floor-to-ceiling LED wall washing amphitheater bleacher seating in blue-violet light,
