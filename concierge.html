@@ -178,8 +178,27 @@
     fd.append('Phone',document.getElementById('f-phone').value);
     fd.append('Target timing',document.getElementById('f-when').value);
     fd.append('Message',document.getElementById('f-msg').value);
+    // Backup copy to the founder's personal inbox so a broken Workspace
+    // route can never silently swallow a lead. Fire-and-forget.
+    function sendBackupCopy(){
+      try{
+        var bd=new FormData();
+        bd.append('_subject','[Backup] '+(isLandlord?'Space submission: ':'Pop-up inquiry: ')+brand);
+        bd.append('_template','table');
+        bd.append('_captcha','false');
+        bd.append('I am',isLandlord?'Landlord':'Brand');
+        bd.append('Name',document.getElementById('f-name').value);
+        bd.append('Brand or property',brand);
+        bd.append('Email',document.getElementById('f-email').value);
+        bd.append('Phone',document.getElementById('f-phone').value);
+        bd.append('Target timing',document.getElementById('f-when').value);
+        bd.append('Message',document.getElementById('f-msg').value);
+        fetch('https://formsubmit.co/ajax/elenakatan7@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:bd}).catch(function(){});
+      }catch(err){}
+    }
     var file=document.getElementById('f-file').files[0];
     if(file){
+      sendBackupCopy();
       // FormSubmit only accepts attachments on a native POST, so hand the
       // browser the form and let FormSubmit redirect back to ?sent=1.
       [['_subject',(isLandlord?'Space submission: ':'Pop-up inquiry: ')+brand],
@@ -195,6 +214,7 @@
       form.submit();
       return;
     }
+    sendBackupCopy();
     fetch('https://formsubmit.co/ajax/hello@venueden.com',{
       method:'POST',
       headers:{'Accept':'application/json'},
