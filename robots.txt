@@ -1,5 +1,6 @@
 # venueden.com: all crawlers welcome, including AI assistants and agents.
 # Machine-readable site summary: https://venueden.com/llms.txt
+# Full site content in one file: https://venueden.com/llms-full.txt
 
 User-agent: *
 Allow: /
