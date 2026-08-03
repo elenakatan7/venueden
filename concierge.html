@@ -184,6 +184,7 @@
       try{
         var bd=new FormData();
         bd.append('_subject','[Backup] '+(isLandlord?'Space submission: ':'Pop-up inquiry: ')+brand);
+        bd.append('_cc','ryan@venueden.com');
         bd.append('_template','table');
         bd.append('_captcha','false');
         bd.append('I am',isLandlord?'Landlord':'Brand');
